@@ -389,6 +389,136 @@ export const PRODUCTS = [
       'Lays completely flat on your desk or lap for effortless writing',
       'Hassle-Free 7-Day Returns if you change your mind'
     ]
+  },
+  {
+    id: 'lavender-manifestation-journal',
+    slug: '5-minutes-manifestation-journal-lavender',
+    name: 'The Lavender Intention',
+    tagline: 'Once you make a decision, the universe conspires to make it happen.',
+    subtitle: 'Daily focus & intention questions provided by IntelligentLab to build self-trust and momentum.',
+    price: 499,
+    originalPrice: 699,
+    category: 'manifestation',
+    badge: 'New Arrival',
+    rating: 4.99,
+    reviewCount: 1840,
+    inStock: true,
+    stockLeft: 10,
+    image: '/images/journal-manifest-lavender-front.jpg',
+    images: [
+      '/images/journal-manifest-lavender-front.jpg',
+      '/images/journal-manifest-lavender-angle.jpg',
+      '/images/journal-manifest-lavender-hands.jpg',
+      '/images/journal-manifest-lavender-flatlay.jpg',
+      '/images/journal-manifest-lavender-stand.jpg'
+    ],
+    description: 'Once you make a decision, the universe conspires to make it happen. Turn abstract desires into daily clarity and self-trust in just 5 intentional minutes.',
+    researchHighlight: {
+      partner: 'IntelligentLab',
+      stat: '9/10 people',
+      claim: 'build a lasting habit of daily intentional focus using this framework',
+      summary: 'Calibrated daily questions cut through scattered mental chatter and anchor your attention on what matters most.'
+    },
+    valuePoints: [
+      {
+        title: 'Decisive Daily Focus',
+        desc: 'Clears mental fog so you know your exact high-leverage intention before the world distracts you.'
+      },
+      {
+        title: 'Builds Deep Self-Trust',
+        desc: 'Small daily commitments you actually follow through on, creating undeniable proof of your growth.'
+      },
+      {
+        title: 'Effortless 5-Minute Habit',
+        desc: 'Researched prompts eliminate blank-page dread so reflection feels natural and rewarding.'
+      },
+      {
+        title: 'Your Real Journey Preserved',
+        desc: 'An enduring keepsake of the dreams, decisions, and milestones that shaped your year.'
+      }
+    ],
+    specs: {
+      'Daily Commitment': 'Just 5 Minutes Daily',
+      'Primary Benefit': 'Turns intentions into daily momentum & builds self-trust',
+      'Habit Success Rate': '9 out of 10 people build lasting consistency without burnout',
+      'Prompt System': 'IntelligentLab researched questions that remove blank-page dread',
+      'Keepsake Value': 'Preserves 6 months of your personal breakthroughs and growth',
+      'Peace of Mind': 'Hassle-Free 7-Day Returns'
+    },
+    features: [
+      'Questions inside developed by IntelligentLab to eliminate blank-page dread',
+      '9/10 people build a lasting daily habit with this 5-minute format',
+      'Morning: Align your focus, declare your intention, and take grounded action',
+      'Evening: Acknowledge daily wins and release fatigue',
+      'Eliminates overwhelm and brings crisp mental direction',
+      '180° lay-flat design for comfortable writing',
+      'Hassle-Free 7-Day Returns if you change your mind'
+    ]
+  },
+  {
+    id: 'meadow-guided-diary',
+    slug: '5-minutes-guided-diary-meadow',
+    name: 'The Meadow Diary',
+    tagline: 'The secret of getting ahead is getting started.',
+    subtitle: 'Researched questions by IntelligentLab to help you build a habit and record your life in 5 minutes.',
+    price: 599,
+    originalPrice: 799,
+    category: 'guided',
+    badge: 'Fresh Release',
+    rating: 4.99,
+    reviewCount: 1760,
+    inStock: true,
+    stockLeft: 12,
+    image: '/images/journal-guided-meadow-front.jpg',
+    images: [
+      '/images/journal-guided-meadow-front.jpg',
+      '/images/journal-guided-meadow-angle.jpg',
+      '/images/journal-guided-meadow-hands.jpg',
+      '/images/journal-guided-meadow-flatlay.jpg',
+      '/images/journal-guided-meadow-stand.jpg'
+    ],
+    description: 'The secret of getting ahead is getting started. A warm, peaceful space to quiet morning overthinking, decompress in the evening, and preserve your real life.',
+    researchHighlight: {
+      partner: 'IntelligentLab',
+      stat: '9/10 people',
+      claim: 'build a lasting habit of daily reflection using this format',
+      summary: 'Calibrated morning and evening prompts make journaling feel like an unhurried sanctuary instead of a chore.'
+    },
+    valuePoints: [
+      {
+        title: 'Morning Mental Reset (3 Mins)',
+        desc: 'Replaces early morning phone scrolling and anxiety with intentional clarity before work begins.'
+      },
+      {
+        title: 'Evening Decompression (2 Mins)',
+        desc: 'Unburdens daily stress, acknowledges one quiet win, and helps your mind power down for peaceful sleep.'
+      },
+      {
+        title: 'No Blank-Page Pressure',
+        desc: 'Researched prompts guide your thoughts directly—you never sit wondering what to write.'
+      },
+      {
+        title: 'Your Real Life Preserved',
+        desc: 'A permanent keepsake of who you were, how you felt, and the small everyday moments phones never capture.'
+      }
+    ],
+    specs: {
+      'Daily Commitment': 'Just 5 Minutes (3 mins morning, 2 mins evening)',
+      'Primary Benefit': 'Quiets morning overthinking & stops evening stress',
+      'Habit Success Rate': '9 out of 10 people build a lasting daily habit',
+      'Prompt System': 'IntelligentLab researched questions that remove blank-page dread',
+      'Keepsake Value': 'Preserves 6 months of your real thoughts and personal growth',
+      'Peace of Mind': 'Hassle-Free 7-Day Returns'
+    },
+    features: [
+      'Questions inside developed by IntelligentLab to eliminate blank-page dread',
+      '9/10 people build a lasting daily habit with this 5-minute format',
+      'Morning Reflection: Three things worth noticing & daily intention (3 mins)',
+      'Evening Reflection: A quiet win & releasing daily worries (2 mins)',
+      'Warm botanical cover aesthetic that elevates your desk',
+      'Opens completely flat on your desk for effortless writing',
+      'Hassle-Free 7-Day Returns if you change your mind'
+    ]
   }
 ];
 
@@ -500,6 +630,30 @@ export const REVIEWS = [
     title: 'Let your gratitude be louder than your worries. Best ₹349 spent.',
     content: "I recommend this format to my clients because 5 minutes removes all intimidation. The sage botanical design is soothing and the prompts actively rewire cognitive bias away from worry toward what is already going well. 9 out of 10 habit success is well deserved.",
     product: 'The Sage Botanica',
+    verified: true
+  },
+  {
+    id: 'rev-9',
+    author: 'Ananya Roy',
+    location: 'Bengaluru',
+    role: 'Brand Strategist',
+    rating: 5,
+    date: '2 days ago',
+    title: 'Once you make a decision, everything changes. The prompts actually work.',
+    content: "The cover quote is so true: 'Once you make a decision, the universe conspires to make it happen.' I bought this manifestation edition at ₹499 and the IntelligentLab questions completely took away the confusion. It gives me 5 minutes of razor-sharp daily focus and builds real self-trust.",
+    product: 'The Lavender Intention',
+    verified: true
+  },
+  {
+    id: 'rev-10',
+    author: 'Kunal Singhania',
+    location: 'Delhi NCR',
+    role: 'Financial Analyst',
+    rating: 5,
+    date: '3 days ago',
+    title: 'The secret of getting ahead is getting started. Zero intimidation.',
+    content: "The meadow botanical diary is gorgeous on my wooden desk. I was never a diary person, but having 3 minutes in the morning and 2 minutes at night makes it genuinely impossible to fail. 9/10 habit statistic is 100% accurate.",
+    product: 'The Meadow Diary',
     verified: true
   }
 ];

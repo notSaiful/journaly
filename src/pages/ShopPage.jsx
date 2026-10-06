@@ -16,7 +16,11 @@ export default function ShopPage({ onAddToCart, onQuickView }) {
 
   const filteredProducts = activeCategory === 'all'
     ? PRODUCTS
-    : PRODUCTS.filter((p) => p.category === activeCategory);
+    : PRODUCTS.filter((p) => {
+        if (activeCategory === 'gratitude') return p.category === 'gratitude' || p.category === 'guided';
+        if (activeCategory === 'manifestation') return p.category === 'manifestation' || p.category === 'focus';
+        return p.category === activeCategory;
+      });
 
   const handleProductSelect = (product) => {
     trackEvent('view_product', { productId: product.id, name: product.name });
