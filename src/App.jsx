@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
@@ -227,8 +226,6 @@ function AppContent() {
       {/* Dynamic SEO & Schema Engine */}
       <SEOHead />
 
-      {/* 1. Scarcity & Perks Announcement Bar */}
-      <AnnouncementBar currency={currency} setCurrency={setCurrency} />
 
       {/* 2. Primary Navigation */}
       <Navbar
