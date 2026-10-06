@@ -242,7 +242,7 @@ export default function TrackOrderPage() {
             <div className="pt-4 border-t border-[#E5DDCF] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6A6054]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-800 flex-shrink-0" />
-                <span>60-Day "Keep It" Empty Book Refund Guarantee</span>
+                <span>Hassle-Free 7-Day Returns & Easy Support</span>
               </div>
               <span className="text-[11px] font-mono text-[#8C7E72]">
                 Need help? Email care@journaly.in

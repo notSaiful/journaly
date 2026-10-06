@@ -13,7 +13,7 @@ const ROUTE_SEO = {
   },
   '/shop': {
     title: 'Shop 5-Minute Guided, Gratitude & Manifestation Journals | JOURNALY India',
-    description: 'Explore the JOURNALY collection: Gratitude Journal (₹349), Manifestation Journal (₹499), and Guided Journal (₹599). Scientifically calibrated prompts by IntelligentLab with 60-day empty-book guarantee.',
+    description: 'Explore the JOURNALY collection: The Bloom Journal (₹349), The Coral Intention (₹499), and The Daisy Journal (₹599). Scientifically calibrated prompts by IntelligentLab with hassle-free 7-day returns.',
     keywords: 'buy journal online India, gratitude journal 349, manifestation diary, guided daily prompts, habit journal',
     image: 'https://journaly.in/images/journal-collection-stacked.jpg'
   },
@@ -37,8 +37,8 @@ const ROUTE_SEO = {
   },
   '/faq': {
     title: 'Frequently Asked Questions — 5-Minute Journaling Habit | JOURNALY',
-    description: 'Answers to common questions about our 5-minute habit format, IntelligentLab research, 60-day empty-book refund guarantee, and express delivery in India.',
-    keywords: 'journaling questions, habit FAQ, empty book guarantee refund, shipping times India',
+    description: 'Answers to common questions about our 5-minute habit format, IntelligentLab research, hassle-free 7-day returns, and express delivery in India.',
+    keywords: 'journaling questions, habit FAQ, 7 day return policy, shipping times India',
     image: 'https://journaly.in/images/journal-daisy-angle.jpg'
   },
   '/contact': {
@@ -69,9 +69,9 @@ const ROUTE_SEO = {
     keywords: 'shipping policy, delivery timeframe India, bluedart tracking'
   },
   '/refund-cancellation-policy': {
-    title: 'Refund & 60-Day Guarantee Policy | JOURNALY India',
-    description: 'Our 60-day empty-book 100% full refund policy. Write for 60 days—if you do not build a lasting habit, keep the journal and receive a full refund.',
-    keywords: 'refund policy, cancellation, 60 day money back guarantee'
+    title: 'Refund & Returns Policy | JOURNALY India',
+    description: 'Our hassle-free 7-day return policy. If you change your mind, contact us within 7 days of delivery for a seamless return and full refund.',
+    keywords: 'refund policy, cancellation, 7 day returns, journal returns'
   },
   '/admin': {
     title: 'Admin Fulfillment Portal | JOURNALY',
@@ -95,7 +95,7 @@ export default function SEOHead() {
       if (product) {
         pageMeta = {
           title: `${product.name} (₹${product.price}) | JOURNALY`,
-          description: `${product.subtitle} Researched questions by IntelligentLab. 9/10 people build a lasting daily habit. Free express delivery in India with 60-day trial guarantee.`,
+          description: `${product.subtitle} Researched questions by IntelligentLab. 9/10 people build a lasting daily habit. Free express delivery in India with hassle-free 7-day returns.`,
           keywords: `${product.name}, 5 minute habit, ${product.category} journal, buy online India, ₹${product.price}`,
           image: `${SITE_URL}${product.image}`,
           isProduct: true,

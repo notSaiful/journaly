@@ -14,8 +14,7 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
       ...signatureProduct,
       customId: `${signatureProduct.id}-habit-page`,
       quantity: 1,
-      price: signatureProduct.price,
-      selectedColor: 'Watercolour Blossom'
+      price: signatureProduct.price
     });
   };
 
@@ -54,7 +53,7 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
           <div className="mt-6 flex items-center gap-6 text-xs text-[#6A6054]">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-700" />
-              60-Day Empty Book Guarantee
+              Hassle-Free 7-Day Returns
             </span>
             <span className="flex items-center gap-1.5">
               <Truck className="w-4 h-4 text-emerald-700" />
@@ -197,7 +196,7 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-[#6A6054] font-light max-w-lg mx-auto leading-relaxed">
-            Every day gets somewhere to live. Researched IntelligentLab questions backed by our 60-day empty book trial.
+            Every day gets somewhere to live. Researched IntelligentLab questions backed by our hassle-free 7-day returns.
           </p>
 
           <div className="mt-8 flex justify-center">

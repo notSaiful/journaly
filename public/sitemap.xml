@@ -40,7 +40,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-daisy-front.jpg</image:loc>
-      <image:title>5 Minutes Guided Journal — Daisy Meadow</image:title>
+      <image:title>The Daisy Journal</image:title>
     </image:image>
   </url>
   <url>
@@ -50,7 +50,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-floral-front.png</image:loc>
-      <image:title>5 Minutes Gratitude Journal — Watercolour Blossom</image:title>
+      <image:title>The Bloom Journal</image:title>
     </image:image>
   </url>
   <url>
@@ -60,7 +60,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-manifest-coral-front.jpg</image:loc>
-      <image:title>5 Minutes Manifestation Journal — Coral Daisy</image:title>
+      <image:title>The Coral Intention</image:title>
     </image:image>
   </url>
   <url>
@@ -70,7 +70,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-guided-blush-front.jpg</image:loc>
-      <image:title>5 Minutes Guided Diary — Blush Bloom</image:title>
+      <image:title>The Calm Haven</image:title>
     </image:image>
   </url>
   <url>
@@ -80,7 +80,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-guided-noir-front.jpg</image:loc>
-      <image:title>5 Minutes Guided Diary — Contour Noir</image:title>
+      <image:title>The Contour Diary</image:title>
     </image:image>
   </url>
   <url>
@@ -90,7 +90,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://journaly.in/images/journal-gratitude-sage-front.jpg</image:loc>
-      <image:title>5 Minutes Gratitude Journal — Sage Botanical</image:title>
+      <image:title>The Sage Botanica</image:title>
     </image:image>
   </url>
   <url>

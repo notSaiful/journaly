@@ -8,7 +8,7 @@ export default function AnnouncementBar({ currency, setCurrency }) {
   const messages = [
     { icon: Sparkles, text: 'Researched Prompts by IntelligentLab — 9/10 Build a Lasting Habit' },
     { icon: Truck, text: 'Free Express Priority Delivery Across India' },
-    { icon: ShieldCheck, text: '60-Day "Empty Book" Trial: Keep it & Get 100% Refund if Not Transformed' }
+    { icon: ShieldCheck, text: 'Hassle-Free Returns & Easy Support' }
   ];
 
   useEffect(() => {

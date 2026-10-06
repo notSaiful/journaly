@@ -85,7 +85,7 @@ export default function ProductQuickView({ product, onClose, onAddToCart }) {
               </div>
               <div className="flex items-center gap-1.5 font-medium text-[#1E1B18]">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-800" />
-                <span>60-Day "Keep It" Empty Book Guarantee</span>
+                <span>Hassle-Free Returns & Dedicated Support</span>
               </div>
             </div>
           </div>

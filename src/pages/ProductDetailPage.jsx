@@ -96,7 +96,7 @@ export default function ProductDetailPage({ onAddToCart }) {
           </div>
 
           {/* Buy Box Column (5 Cols on Desktop) */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-5">
             
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-[#8C7E72] mb-1.5 uppercase tracking-widest">
@@ -113,13 +113,14 @@ export default function ProductDetailPage({ onAddToCart }) {
                 "{product.tagline}"
               </p>
 
-              <p className="text-xs sm:text-sm text-[#6A6054] font-light mt-2 leading-relaxed">
-                {product.subtitle}
+              {/* Short, minimal & emotional description */}
+              <p className="text-xs sm:text-sm text-[#5C5247] mt-3 leading-relaxed font-light">
+                {product.description}
               </p>
             </div>
 
             {/* Price & Rating */}
-            <div className="flex items-center justify-between py-4 border-y border-[#E5DDCF]/80">
+            <div className="flex items-center justify-between py-3.5 border-y border-[#E5DDCF]/80">
               <div className="flex items-baseline gap-3">
                 <span className="font-serif text-3xl sm:text-4xl font-medium text-[#1E1B18]">
                   ₹{product.price}
@@ -145,40 +146,32 @@ export default function ProductDetailPage({ onAddToCart }) {
               </div>
             </div>
 
-            {/* INTELLIGENTLAB RESEARCH HIGHLIGHT (KEY VALUE PROP) */}
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-[#F4EFE6] to-[#FAF7F2] border border-[#E5DDCF] shadow-xs">
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-xl bg-[#E5A93C]/15 text-[#1E1B18] flex-shrink-0 mt-0.5">
-                  <Award className="w-5 h-5 text-[#8C6D46]" />
-                </div>
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-white text-[#1E1B18] border border-[#E5DDCF] font-semibold">
-                      Research Partner: IntelligentLab
-                    </span>
+            {/* Values Provided to Your Day (Direct, Emotional, Clear) */}
+            <div className="space-y-3 pt-1">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#8C6D46] font-semibold">
+                  Values Provided by this Journal
+                </span>
+                <span className="text-[10px] font-mono text-[#345941] bg-emerald-50/80 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                  9/10 Habit Success Rate
+                </span>
+              </div>
+
+              <div className="space-y-2.5">
+                {product.valuePoints?.map((vp, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5 text-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E5A93C] mt-1.5 flex-shrink-0" />
+                    <p className="text-[#3D352E] leading-relaxed">
+                      <strong className="font-semibold text-[#1E1B18]">{vp.title}:</strong>{' '}
+                      <span className="text-[#6A6054] font-light">{vp.desc}</span>
+                    </p>
                   </div>
-                  <h4 className="text-sm font-medium text-[#1E1B18]">
-                    9/10 people build a lasting habit of journaling using this format.
-                  </h4>
-                  <p className="text-xs text-[#6A6054] font-light leading-relaxed">
-                    The questions inside are researched questions provided by IntelligentLab to help you effortlessly build daily habits and reflect on your real life without blank-page intimidation.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Product Key Points */}
-            <div className="space-y-2 text-xs text-[#4A4138]">
-              {product.features?.slice(0, 4).map((f, i) => (
-                <div key={i} className="flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#345941] flex-shrink-0" />
-                  <span>{f}</span>
-                </div>
-              ))}
-            </div>
-
             {/* Quantity & Add to Bag (White Button) */}
-            <div className="flex items-center gap-3 pt-3">
+            <div className="flex items-center gap-3 pt-2">
               <div className="flex items-center border border-[#E5DDCF] rounded-full bg-white px-3 py-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -207,10 +200,10 @@ export default function ProductDetailPage({ onAddToCart }) {
             </div>
 
             {/* Reassurance Badges */}
-            <div className="pt-4 border-t border-[#E5DDCF]/80 grid grid-cols-2 gap-3 text-[11px] text-[#6A6054]">
+            <div className="pt-3 border-t border-[#E5DDCF]/80 grid grid-cols-2 gap-3 text-[11px] text-[#6A6054]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-800 flex-shrink-0" />
-                <span>60-Day Empty Book Trial</span>
+                <span>Hassle-Free 7-Day Returns</span>
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="w-4 h-4 text-emerald-800 flex-shrink-0" />

@@ -45,8 +45,6 @@ function AppContent() {
     {
       ...PRODUCTS[0],
       customId: 'daisy-default',
-      selectedColor: 'Daisy Meadow',
-      selectedColorHex: '#4A7F96',
       customImage: '/images/journal-daisy-front.jpg',
       paperRuling: 'Daily Guided Prompts',
       quantity: 1,
@@ -99,7 +97,6 @@ function AppContent() {
       ...product,
       customId: `${product.id}-upsell`,
       quantity: 1,
-      selectedColor: 'Daisy Meadow',
       price: product.price
     });
   };

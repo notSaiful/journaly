@@ -148,7 +148,7 @@ export default function HomeSocialProof() {
           ))}
         </div>
 
-        {/* 60-Day Empty Book Guarantee Banner (Beige, Minimal) */}
+        {/* Hassle-Free Returns Banner (Beige, Minimal) */}
         <div className="p-8 sm:p-10 rounded-2xl bg-[#FAF7F2] text-[#1E1B18] border border-[#E5DDCF] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-full bg-[#E5A93C]/15 text-[#E5A93C] flex items-center justify-center flex-shrink-0 mt-1">
@@ -156,13 +156,13 @@ export default function HomeSocialProof() {
             </div>
             <div>
               <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#E5A93C] font-semibold block mb-1">
-                Risk-Free Habit Commitment
+                Simple & Transparent Policy
               </span>
               <h3 className="font-medium text-xl sm:text-2xl text-[#1E1B18]">
-                The 60-Day Empty-Book Guarantee
+                Hassle-Free Returns & Concierge Support
               </h3>
               <p className="text-xs sm:text-sm text-[#6A6054] font-light mt-1 max-w-xl">
-                Write in it for 60 days. If the five-minute habit doesn’t bring you clarity, keep the journal and we will refund every rupee. No forms, no friction.
+                We want you to feel complete peace of mind. If you ever feel your journal isn't the right fit, we provide straightforward, hassle-free returns.
               </p>
             </div>
           </div>

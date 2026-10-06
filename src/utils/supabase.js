@@ -29,7 +29,7 @@ const INITIAL_ORDERS = [
     city: 'Bengaluru',
     postal_code: '560066',
     items: [
-      { name: '5 Minutes Guided Journal — Daisy Meadow', quantity: 1, price: 599 }
+      { name: 'The Daisy Journal', quantity: 1, price: 599 }
     ],
     amount: 599,
     currency: 'INR',
@@ -49,7 +49,7 @@ const INITIAL_ORDERS = [
     city: 'New Delhi',
     postal_code: '110024',
     items: [
-      { name: '5 Minutes Gratitude Journal — Watercolour Blossom', quantity: 2, price: 349 }
+      { name: 'The Bloom Journal', quantity: 2, price: 349 }
     ],
     amount: 698,
     currency: 'INR',
@@ -69,7 +69,7 @@ const INITIAL_ORDERS = [
     city: 'Mumbai',
     postal_code: '400020',
     items: [
-      { name: '5 Minutes Manifestation Journal — Coral Daisy', quantity: 1, price: 499 }
+      { name: 'The Coral Intention', quantity: 1, price: 499 }
     ],
     amount: 499,
     currency: 'INR',

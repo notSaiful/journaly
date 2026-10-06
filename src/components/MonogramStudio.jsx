@@ -284,12 +284,12 @@ export default function MonogramStudio({ onAddToCart }) {
             {/* Guarantee Pill */}
             <div className="flex items-center justify-center gap-4 text-[11px] text-[#8C8072] pt-1 font-light">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#6A6054]" /> 60-Day Guarantee
+                <ShieldCheck className="w-3.5 h-3.5 text-[#6A6054]" /> Hassle-Free 7-Day Returns
               </span>
               <span>•</span>
-              <span>Free Exchanges</span>
+              <span>Express Delivery</span>
               <span>•</span>
-              <span>Handcrafted in London</span>
+              <span>Atelier Craftsmanship</span>
             </div>
 
           </div>

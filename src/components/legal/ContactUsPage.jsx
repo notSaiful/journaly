@@ -193,7 +193,7 @@ export default function ContactUsPage() {
                 >
                   <option value="General Inquiry">General Inquiry</option>
                   <option value="Order Tracking">Order & Delivery Tracking</option>
-                  <option value="Refund Request">Refund / 60-Day Guarantee</option>
+                  <option value="Refund Request">Refund & Returns Assistance</option>
                   <option value="Monogram Query">Custom Monogram Inquiry</option>
                   <option value="Corporate Gifting">Corporate & Bulk Gifting</option>
                 </select>

@@ -13,7 +13,7 @@ export default function GuaranteeFAQ({ onShopClick }) {
     <section className="py-20 lg:py-28 bg-[#FAF7F2] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Risk Reversal Guarantee Feature Box in Minimalist Linen Sandstone */}
+        {/* Reassurance Banner in Minimalist Linen Sandstone */}
         <div className="mb-20 max-w-4xl mx-auto bg-[#F4EFE6] border border-[#E5DDCF] rounded-3xl p-8 sm:p-12 text-[#2B2520] shadow-sm relative overflow-hidden">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left relative z-10">
             <div className="w-16 h-16 rounded-2xl bg-[#EBE3D5] border border-[#D9CFBF] flex items-center justify-center flex-shrink-0 text-[#8C6D46] shadow-xs">
@@ -22,16 +22,15 @@ export default function GuaranteeFAQ({ onShopClick }) {
 
             <div className="flex-1 space-y-2">
               <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#8C6D46] block font-medium">
-                60-Day "Empty Book" Guarantee
+                Hassle-Free 7-Day Returns
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-normal tracking-tight text-[#2B2520]">
-                If your mind isn't clearer after 60 days, keep the book. We'll refund every penny.
+                Simple, transparent returns if you change your mind.
               </h3>
               <p className="text-xs sm:text-sm text-[#6A6054] leading-relaxed max-w-2xl font-light">
-                We don't want you to worry about whether you'll stick with journaling. 
-                Write in it every morning. Fill pages, cross things out, spill coffee on it. 
-                If you don't feel calmer and more focused, simply email us for an instant 100% refund. 
-                You will never have to return the book.
+                We want you to feel complete peace of mind with every order. 
+                If you ever change your mind or need assistance, simply email our team at care@journaly.in 
+                within 7 days of delivery for a swift, courteous resolution.
               </p>
             </div>
           </div>

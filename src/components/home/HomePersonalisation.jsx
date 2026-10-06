@@ -13,12 +13,11 @@ export default function HomePersonalisation({ onAddToCart }) {
     if (onAddToCart) {
       onAddToCart({
         id: 'gratitude-journal-custom',
-        name: '5 Minutes Gratitude Journal',
+        name: 'The Bloom Journal',
         customId: `gratitude-custom-${customName}-${foilType}`,
-        price: 36,
+        price: 349,
         quantity: 1,
         image: '/images/journal-floral-front.png',
-        selectedColor: 'Watercolour Blossom',
         monogram: customName.toUpperCase(),
         foilType: foilType === 'gold' ? '24K Gold Foil' : foilType === 'silver' ? 'Silver Chrome' : 'Blind Deboss'
       });

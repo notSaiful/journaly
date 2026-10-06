@@ -139,7 +139,7 @@ export default function Footer({ onOpenLegal }) {
               </li>
               <li>
                 <button onClick={() => handleLink('/refund-cancellation-policy', 'refund')} className="hover:text-[#1E1B18] transition-colors cursor-pointer text-left">
-                  60-Day Empty Book Trial
+                  Hassle-Free Returns
                 </button>
               </li>
               <li>
@@ -169,11 +169,6 @@ export default function Footer({ onOpenLegal }) {
               <li>
                 <button onClick={() => handleLink('/business')} className="hover:text-[#1E1B18] transition-colors cursor-pointer text-left">
                   Corporate & Atelier Gifts
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleLink('/admin')} className="hover:text-[#1E1B18] transition-colors cursor-pointer text-left font-mono text-[11px] text-[#8C6D46]">
-                  Admin & Tracking Portal
                 </button>
               </li>
             </ul>

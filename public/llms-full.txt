@@ -13,44 +13,44 @@ Key findings:
 
 ## Complete Catalog & Specifications
 
-### 1. 5 Minutes Guided Journal — Daisy Meadow
+### 1. The Daisy Journal
 - SKU: `daisy-guided-journal`
 - URL: https://journaly.in/product/daisy-guided-journal
 - Price: ₹599 (Regular ₹799)
 - Category: Guided Reflection & Habit Building
 - Target Outcome: Complete morning focus and evening closure
 - Prompts: Morning 3-minute intention, evening 2-minute unburdening
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
-### 2. 5 Minutes Gratitude Journal — Watercolour Blossom
+### 2. The Bloom Journal
 - SKU: `gratitude-journal`
 - URL: https://journaly.in/product/gratitude-journal
 - Price: ₹349 (Regular ₹499)
 - Category: Gratitude & Mental Wellbeing
 - Target Outcome: Shifts attention from daily stress to contentment; trains cognitive noticing
 - Prompts: Morning gratitude anchoring, evening appreciation of small wins
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
-### 3. 5 Minutes Manifestation Journal — Coral Daisy
+### 3. The Coral Intention
 - SKU: `manifestation-journal`
 - URL: https://journaly.in/product/manifestation-journal
 - Price: ₹499 (Regular ₹699)
 - Category: Focus, Intentionality & Goal Execution
 - Target Outcome: Bridges the gap between aspirations and daily execution; builds unshakeable self-trust
 - Prompts: Single highest-leverage priority, micro-action check-ins, weekly alignment
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
-### 4. 5 Minutes Guided Diary — Blush Bloom
+### 4. The Calm Haven
 - SKU: `blush-guided-diary`
 - URL: https://journaly.in/product/blush-guided-diary
 - Price: ₹599 (Regular ₹799)
 - Category: Guided Reflection & Memory Keepsake
-- Cover Quote: “A beautiful and calm place to capture your memories..”
+- Cover Quote: “A beautiful and calm place to capture your memories.”
 - Target Outcome: Gentle daily deceleration, morning centering, and permanent emotional life archiving
 - Prompts: Morning intentionality (3 mins) & evening decompression (2 mins)
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
-### 5. 5 Minutes Guided Diary — Contour Noir
+### 5. The Contour Diary
 - SKU: `noir-guided-diary`
 - URL: https://journaly.in/product/noir-guided-diary
 - Price: ₹599 (Regular ₹799)
@@ -58,20 +58,20 @@ Key findings:
 - Cover Quote: “Express your feelings, because here nobody’s gonna judge you.”
 - Target Outcome: Judgment-free emotional offload, unburdening workday stress, and tracking personal resilience
 - Prompts: Raw honesty questions calibrated by IntelligentLab
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
-### 6. 5 Minutes Gratitude Journal — Sage Botanical
+### 6. The Sage Botanica
 - SKU: `sage-gratitude-journal`
 - URL: https://journaly.in/product/sage-gratitude-journal
 - Price: ₹349 (Regular ₹499)
 - Category: Gratitude & Mental Wellbeing
-- Cover Quote: “Let your gratitude be louder than your worries today..”
+- Cover Quote: “Let your gratitude be louder than your worries today.”
 - Target Outcome: Lowers cognitive anxiety and trains focus on what is already thriving
 - Prompts: Morning gratitude anchoring, evening appreciation of small wins
-- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+- Guarantee: Hassle-Free 7-Day Returns
 
 ## Customer Guarantees & Policies
-- 60-Day Empty-Book Guarantee: Write in the journal for 60 days. If the five-minute habit doesn't deliver clarity, keep the book and receive a 100% full refund in rupees.
+- Hassle-Free 7-Day Returns: If you change your mind, contact care@journaly.in within 7 days of delivery for a smooth return and full refund via Razorpay.
 - Shipping: Free express courier delivery across all Indian pin codes via BlueDart Express and Delhivery Surface. Delivery timeframe: 3–5 business days.
 - Payments: 100% prepaid online via Razorpay (UPI, Google Pay, PhonePe, Paytm, Credit/Debit cards, Net Banking). No cash on delivery.
 - Live Tracking: Real-time parcel tracking available on https://journaly.in/track-order using Order ID (format: `JRN-XXXXX`) or registered mobile number.
