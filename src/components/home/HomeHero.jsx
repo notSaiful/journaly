@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useRouter } from '../../utils/router';
 import { trackEvent } from '../../utils/analytics';
+import LoopingVideo from '../common/LoopingVideo';
 
 export default function HomeHero() {
   const { navigate } = useRouter();
@@ -21,12 +22,8 @@ export default function HomeHero() {
   return (
     <section className="relative w-full h-[88vh] min-h-[600px] max-h-[880px] flex items-center justify-center overflow-hidden bg-[#FAF7F2] select-none">
       {/* Background Looping Film: 100% Natural Lighting, Undarkened */}
-      <video
+      <LoopingVideo
         src="/videos/hero-film.mp4"
-        autoPlay
-        muted
-        playsInline
-        loop
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none brightness-100 contrast-100"
       />
 

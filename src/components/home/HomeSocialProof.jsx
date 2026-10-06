@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, ShieldCheck, CheckCircle } from 'lucide-react';
 import { REVIEWS } from '../../data/products';
+import LoopingVideo from '../common/LoopingVideo';
 
 export default function HomeSocialProof() {
   return (
@@ -27,12 +28,8 @@ export default function HomeSocialProof() {
           {/* Testimonial Video 1: Gift Prep & Unboxing */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-[#E5DDCF] flex flex-col group">
             <div className="relative aspect-[16/10] overflow-hidden bg-[#EFE8DD]">
-              <video
+              <LoopingVideo
                 src="/videos/testimonial-gift-prep.mp4"
-                autoPlay
-                muted
-                playsInline
-                loop
                 className="w-full h-full object-cover object-center brightness-100 contrast-100"
               />
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-[#1E1B18] border border-[#E5DDCF] shadow-xs flex items-center gap-1.5">
@@ -68,12 +65,8 @@ export default function HomeSocialProof() {
           {/* Testimonial Video 2: Editorial Journal Progress & Habit */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-[#E5DDCF] flex flex-col group">
             <div className="relative aspect-[16/10] overflow-hidden bg-[#EFE8DD]">
-              <video
+              <LoopingVideo
                 src="/videos/testimonial-editorial-journal.mp4"
-                autoPlay
-                muted
-                playsInline
-                loop
                 className="w-full h-full object-cover object-center brightness-100 contrast-100"
               />
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-[#1E1B18] border border-[#E5DDCF] shadow-xs flex items-center gap-1.5">
