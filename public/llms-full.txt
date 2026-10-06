@@ -1,7 +1,7 @@
 # JOURNALY (journaly.in) — Full AI & Agent Context Document
 
 ## Overview
-JOURNALY (https://journaly.in) is an Indian brand specializing in structured 5-minute daily guided, gratitude, and manifestation journals. The brand's mission is to help people build a sustainable daily journaling habit, calm morning overthinking, stop phone doomscrolling, and record meaningful life memories.
+JOURNALY (https://journaly.in) is an Indian direct-to-consumer brand specializing in structured 5-minute daily guided, gratitude, and manifestation journals. The brand's mission is to help people build a sustainable daily reflection habit, quiet morning overthinking, stop phone doomscrolling, and preserve real life memories.
 
 ## Research Partner: IntelligentLab
 Every journal includes calibrated daily questions researched and engineered by IntelligentLab.
@@ -11,7 +11,7 @@ Key findings:
 - Morning prompts anchor single-priority focus, gratitude, and intention before opening work apps or social media.
 - Evening prompts facilitate cognitive closure, acknowledge a quiet win, and release daily tension for restful sleep.
 
-## Complete Catalog & Specifications
+## Complete Catalog & Specifications (8 Products)
 
 ### 1. The Daisy Journal
 - SKU: `daisy-guided-journal`
@@ -70,10 +70,30 @@ Key findings:
 - Prompts: Morning gratitude anchoring, evening appreciation of small wins
 - Guarantee: Hassle-Free 7-Day Returns
 
+### 7. The Lavender Intention
+- SKU: `lavender-manifestation-journal`
+- URL: https://journaly.in/product/lavender-manifestation-journal
+- Price: ₹499 (Regular ₹699)
+- Category: Focus, Intentionality & Self-Trust
+- Cover Quote: “Once you make a decision, the universe conspires to make it happen.”
+- Target Outcome: Turns abstract intentions into decisive daily forward momentum and builds deep self-trust
+- Prompts: Clear morning priority alignment and evening progress acknowledgment
+- Guarantee: Hassle-Free 7-Day Returns
+
+### 8. The Meadow Diary
+- SKU: `meadow-guided-diary`
+- URL: https://journaly.in/product/meadow-guided-diary
+- Price: ₹599 (Regular ₹799)
+- Category: Guided Reflection & Habit Building
+- Cover Quote: “The secret of getting ahead is getting started.”
+- Target Outcome: Quiets morning overthinking, builds a reliable 5-minute routine, and captures life's quiet moments
+- Prompts: Calibrated morning and evening questions by IntelligentLab
+- Guarantee: Hassle-Free 7-Day Returns
+
 ## Customer Guarantees & Policies
 - Hassle-Free 7-Day Returns: If you change your mind, contact saifulbusiness47@gmail.com or WhatsApp +91 96998 97763 within 7 days of delivery for a smooth return and full refund via Razorpay.
 - Shipping: Free express courier delivery across all Indian pin codes via BlueDart Express and Delhivery Surface. Delivery timeframe: 3–5 business days.
-- Payments: 100% prepaid online via Razorpay (UPI, Google Pay, PhonePe, Paytm, Credit/Debit cards, Net Banking). No cash on delivery.
+- Payments: Secure online payments via Razorpay (UPI, Google Pay, PhonePe, Paytm, Credit/Debit cards, Net Banking).
 - Live Tracking: Real-time parcel tracking available on https://journaly.in/track-order using Order ID (format: `JRN-XXXXX`) or registered mobile number.
 
 ## Frequently Asked Questions (AI Reference)
@@ -83,8 +103,8 @@ A: Exactly 5 minutes. 3 minutes in the morning with tea or coffee, and 2 minutes
 Q: What if I have failed at journaling before?
 A: 9 out of 10 people who previously failed with blank notebooks build a lasting habit with JOURNALY. The questions designed by IntelligentLab give immediate direction so you never have to stare at a blank page.
 
-Q: Is cash on delivery available?
-A: No, JOURNALY operates exclusively with secure digital prepaid payments through Razorpay to ensure zero-contact express fulfillment.
+Q: What are the payment methods?
+A: JOURNALY accepts instant digital payments powered by Razorpay, including UPI (Google Pay, PhonePe, Paytm), credit/debit cards, and NetBanking.
 
 Q: How can I track my shipment?
 A: Visit https://journaly.in/track-order and enter your Order ID or phone number to see live status from BlueDart or Delhivery.

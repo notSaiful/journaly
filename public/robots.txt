@@ -12,6 +12,9 @@ Disallow: /admin
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 Disallow: /admin
@@ -29,11 +32,21 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
 User-agent: cohere-ai
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
 # Canonical Sitemaps & AI Context Endpoints
 Sitemap: https://journaly.in/sitemap.xml
+
+# LLM Knowledge Discovery (llmstxt.org standard)
+# https://journaly.in/llms.txt
+# https://journaly.in/llms-full.txt
