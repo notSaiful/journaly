@@ -105,9 +105,9 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
 
             <div className="p-6 rounded-2xl bg-white border border-[#E5DDCF] shadow-xs">
               <span className="text-xs font-mono uppercase tracking-widest text-stone-400 block mb-2">Doubt 03</span>
-              <h3 className="font-serif text-xl font-medium text-[#1E1B18] mb-2">"What if I miss a day?"</h3>
+              <h3 className="font-serif text-xl font-medium text-[#1E1B18] mb-2">"Do I need writing skills?"</h3>
               <p className="text-xs sm:text-sm text-[#6A6054] font-light leading-relaxed">
-                There are zero dates printed. No blank gaps, no streak counters, and zero guilt.
+                None at all. Guided prompts give your thoughts immediate direction—you simply write honest thoughts in a couple sentences.
               </p>
             </div>
           </div>

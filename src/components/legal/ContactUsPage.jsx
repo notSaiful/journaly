@@ -78,8 +78,8 @@ export default function ContactUsPage() {
               <Mail className="w-4 h-4 text-[#8C6D46] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-[11px] font-mono uppercase text-[#8C8072] block">Concierge & Refund Desk</span>
-                <a href="mailto:support@journaly.com" className="text-[#2B2520] font-medium hover:text-[#8C6D46] underline">
-                  support@journaly.com
+                <a href="mailto:saifulbusiness47@gmail.com" className="text-[#2B2520] font-medium hover:text-[#8C6D46] underline">
+                  saifulbusiness47@gmail.com
                 </a>
                 <p className="text-[#6A6054] text-xs">Response time: Within 24 business hours</p>
               </div>
@@ -89,7 +89,9 @@ export default function ContactUsPage() {
               <Phone className="w-4 h-4 text-[#8C6D46] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="text-[11px] font-mono uppercase text-[#8C8072] block">Helpline & WhatsApp Support</span>
-                <p className="text-[#2B2520] font-medium">+44 20 7946 0912 / +91 80 4718 2900</p>
+                <a href="tel:+919699897763" className="text-[#2B2520] font-medium hover:text-[#8C6D46] underline">
+                  +91 96998 97763
+                </a>
               </div>
             </div>
 

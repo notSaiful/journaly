@@ -11,10 +11,10 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderCompl
   const [paymentDetails, setPaymentDetails] = useState(null);
 
   const [formData, setFormData] = useState({
-    email: 'marcus.vance@clarity.io',
-    firstName: 'Marcus',
-    lastName: 'Vance',
-    phone: '+91 98765 43210',
+    email: 'saifulbusiness47@gmail.com',
+    firstName: 'Mohammad',
+    lastName: 'Saiful',
+    phone: '+91 96998 97763',
     address: '142 Berkeley Square, Suite 4B',
     city: 'London',
     postalCode: 'W1J 6BQ',
@@ -210,7 +210,7 @@ export default function CheckoutModal({ isOpen, onClose, cartItems, onOrderCompl
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-3 py-2.5 text-xs rounded-xl border border-[#D9CFBF] focus:outline-none focus:border-[#8C6D46] bg-[#FAF7F2]/40"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 96998 97763"
                   />
                 </div>
               </div>

@@ -518,12 +518,8 @@ export const FAQS_FOR_PRODUCTS = [
     a: 'This journal is built specifically for you. You never have to wonder what to write. The questions guide you step-by-step, helping you capture your real life in just a few honest sentences.'
   },
   {
-    q: 'What if I miss a day or a week?',
-    a: 'There are no printed dates, no streak counters, and zero guilt. If you miss days, simply pick up on the very next page whenever you are ready without wasting a single sheet.'
-  },
-  {
     q: 'What is your return policy?',
-    a: 'We offer hassle-free 7-day returns if you change your mind. Simply reach out to care@journaly.in within 7 days of delivery and our team will assist you with a smooth return.'
+    a: 'We offer hassle-free 7-day returns if you change your mind. Simply reach out to saifulbusiness47@gmail.com or WhatsApp +91 96998 97763 within 7 days of delivery and our team will assist you with a smooth return.'
   },
   {
     q: 'How fast is delivery across India?',
@@ -540,10 +536,6 @@ export const FAQS_BY_CATEGORY = {
     {
       q: 'Why are the questions researched by IntelligentLab?',
       a: 'IntelligentLab designed these specific prompts to make habit formation effortless. 9 out of 10 people build a lasting habit using this structured format.'
-    },
-    {
-      q: 'What if I miss a day?',
-      a: 'The pages are undated. There is no guilt. Start small and come back whenever life allows.'
     }
   ],
   'Mental Clarity & Value': [
@@ -563,7 +555,7 @@ export const FAQS_BY_CATEGORY = {
     },
     {
       q: 'What is your return policy?',
-      a: 'We offer hassle-free 7-day returns. If you change your mind, email care@journaly.in within 7 days of delivery for a seamless return process.'
+      a: 'We offer hassle-free 7-day returns. If you change your mind, email saifulbusiness47@gmail.com or WhatsApp +91 96998 97763 within 7 days of delivery for a seamless return process.'
     }
   ]
 };

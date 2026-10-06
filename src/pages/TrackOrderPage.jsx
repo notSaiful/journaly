@@ -245,7 +245,7 @@ export default function TrackOrderPage() {
                 <span>Hassle-Free 7-Day Returns & Easy Support</span>
               </div>
               <span className="text-[11px] font-mono text-[#8C7E72]">
-                Need help? Email care@journaly.in
+                Need help? Email <a href="mailto:saifulbusiness47@gmail.com" className="underline hover:text-[#1E1B18]">saifulbusiness47@gmail.com</a>
               </span>
             </div>
 

@@ -29,8 +29,8 @@ export default function GuaranteeFAQ({ onShopClick }) {
               </h3>
               <p className="text-xs sm:text-sm text-[#6A6054] leading-relaxed max-w-2xl font-light">
                 We want you to feel complete peace of mind with every order. 
-                If you ever change your mind or need assistance, simply email our team at care@journaly.in 
-                within 7 days of delivery for a swift, courteous resolution.
+                If you ever change your mind or need assistance, simply email our team at saifulbusiness47@gmail.com 
+                or WhatsApp +91 96998 97763 within 7 days of delivery for a swift, courteous resolution.
               </p>
             </div>
           </div>

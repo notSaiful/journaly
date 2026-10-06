@@ -93,7 +93,8 @@ export default function Footer({ onOpenLegal }) {
 
             <div className="pt-2 text-[11px] text-[#8C7E72] font-mono space-y-1">
               <p>Journaly Atelier • Bengaluru, India</p>
-              <p>Concierge: care@journaly.in</p>
+              <p>Email: <a href="mailto:saifulbusiness47@gmail.com" className="hover:text-[#1E1B18] underline">saifulbusiness47@gmail.com</a></p>
+              <p>Helpline / WhatsApp: <a href="tel:+919699897763" className="hover:text-[#1E1B18]">+91 96998 97763</a></p>
             </div>
           </div>
 

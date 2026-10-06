@@ -122,7 +122,7 @@ export default function ShippingPolicyPage() {
           5. Logistics Support
         </h2>
         <p>
-          To change a delivery address prior to dispatch or check consignment status, email <a href="mailto:support@journaly.com" className="text-[#8C6D46] underline">support@journaly.com</a> with your order number.
+          To change a delivery address prior to dispatch or check consignment status, email <a href="mailto:saifulbusiness47@gmail.com" className="text-[#8C6D46] underline">saifulbusiness47@gmail.com</a> with your order number.
         </p>
       </section>
     </div>

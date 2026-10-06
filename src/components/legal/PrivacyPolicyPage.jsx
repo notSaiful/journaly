@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
           6. Your Rights & Data Retention
         </h2>
         <p>
-          You have the right to request access to the personal data we hold about you, request corrections, or request deletion of your account records. To exercise these rights, please email our Data Protection Officer at <a href="mailto:privacy@journaly.com" className="text-[#8C6D46] underline">privacy@journaly.com</a>.
+          You have the right to request access to the personal data we hold about you, request corrections, or request deletion of your account records. To exercise these rights, please email our Data Protection Officer at <a href="mailto:saifulbusiness47@gmail.com" className="text-[#8C6D46] underline">saifulbusiness47@gmail.com</a>.
         </p>
       </section>
     </div>

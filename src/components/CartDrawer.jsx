@@ -23,8 +23,8 @@ export default function CartDrawer({
   // Minimal Shipping Information
   const [shippingInfo, setShippingInfo] = useState({
     fullName: 'Mohammad Saiful',
-    phone: '+91 98765 43210',
-    email: 'saiful@example.com',
+    phone: '+91 96998 97763',
+    email: 'saifulbusiness47@gmail.com',
     address: 'Flat 402, Green Glen Layout, Bellandur',
     city: 'Bengaluru',
     postalCode: '560103',

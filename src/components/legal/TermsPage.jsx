@@ -61,7 +61,7 @@ export default function TermsPage() {
           Receipt of an electronic order confirmation does not constitute our final acceptance of an order. We reserve the right to accept or decline your order for reasons including inventory stock shortages, inaccuracies in pricing, or flagged fraudulent payment behavior.
         </p>
         <p>
-          Orders can be cancelled before dispatch (typically within 12 hours of order placement) by contacting our concierge team at <a href="mailto:support@journaly.com" className="text-[#8C6D46] underline">support@journaly.com</a>.
+          Orders can be cancelled before dispatch (typically within 12 hours of order placement) by contacting our concierge team at <a href="mailto:saifulbusiness47@gmail.com" className="text-[#8C6D46] underline">saifulbusiness47@gmail.com</a>.
         </p>
       </section>
 
