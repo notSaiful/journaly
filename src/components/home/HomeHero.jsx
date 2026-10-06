@@ -24,6 +24,7 @@ export default function HomeHero() {
       {/* Background Looping Film: 100% Natural Lighting, Undarkened */}
       <LoopingVideo
         src="/videos/hero-film.mp4"
+        poster="/images/hero-film-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none brightness-100 contrast-100"
       />
 

@@ -30,6 +30,7 @@ export default function HomeSocialProof() {
             <div className="relative aspect-[16/10] overflow-hidden bg-[#EFE8DD]">
               <LoopingVideo
                 src="/videos/testimonial-gift-prep.mp4"
+                poster="/images/testimonial-gift-prep-poster.jpg"
                 className="w-full h-full object-cover object-center brightness-100 contrast-100"
               />
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-[#1E1B18] border border-[#E5DDCF] shadow-xs flex items-center gap-1.5">
@@ -67,6 +68,7 @@ export default function HomeSocialProof() {
             <div className="relative aspect-[16/10] overflow-hidden bg-[#EFE8DD]">
               <LoopingVideo
                 src="/videos/testimonial-editorial-journal.mp4"
+                poster="/images/testimonial-editorial-journal-poster.jpg"
                 className="w-full h-full object-cover object-center brightness-100 contrast-100"
               />
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-mono uppercase tracking-widest text-[#1E1B18] border border-[#E5DDCF] shadow-xs flex items-center gap-1.5">

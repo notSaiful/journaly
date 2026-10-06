@@ -3,7 +3,8 @@ import React, { useEffect, useRef } from 'react';
 /**
  * Robust Looping Video Component
  * Handles modern browser autoplay restrictions, React muted attribute quirks,
- * intersection observer viewport activation, and guaranteed looping.
+ * intersection observer viewport activation, and guaranteed looping across
+ * mobile (iOS Safari, Android Chrome) and desktop browsers.
  */
 export default function LoopingVideo({
   src,
@@ -14,44 +15,95 @@ export default function LoopingVideo({
 }) {
   const videoRef = useRef(null);
 
+  const setVideoRef = (node) => {
+    videoRef.current = node;
+    if (node) {
+      node.muted = true;
+      node.defaultMuted = true;
+      node.playsInline = true;
+      node.setAttribute('muted', '');
+      node.setAttribute('playsinline', '');
+      node.setAttribute('webkit-playsinline', 'true');
+      node.setAttribute('x5-playsinline', 'true');
+      node.setAttribute('autoplay', '');
+      node.setAttribute('loop', '');
+    }
+  };
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // 1. Force muted & playsinline on the actual DOM properties
-    // (Crucial: React JSX muted attribute does not always set DOM property)
+    let isDisposed = false;
+    let interactionListenersActive = false;
+
+    // Direct guarantee on DOM properties
     video.muted = true;
     video.defaultMuted = true;
     video.playsInline = true;
-    video.loop = true;
 
     const playSafe = () => {
-      if (!video) return;
+      if (!video || isDisposed) return;
       video.muted = true;
       const promise = video.play();
       if (promise !== undefined) {
-        promise.catch(() => {
-          // Fallback: retry on first user interaction if policy blocked
-        });
+        promise
+          .then(() => {
+            // Successfully playing; remove interaction listeners
+            removeListeners();
+          })
+          .catch(() => {
+            // Autoplay delayed or restricted by browser power mode.
+            // Interaction listeners remain active to unlock on first gesture.
+          });
       }
     };
 
-    // 2. Play immediately when metadata/data is ready
-    video.addEventListener('loadeddata', playSafe);
-    video.addEventListener('canplay', playSafe);
+    // 1. Initial play attempt immediately upon mount
+    playSafe();
 
-    // 3. Guaranteed loop fallback if native loop attribute stalls
+    // 2. Preload data if stalled
+    if (video.readyState < 2) {
+      try {
+        video.load();
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    // 3. Media lifecycle listeners
+    const handleLoadedMetadata = () => playSafe();
+    const handleLoadedData = () => playSafe();
+    const handleCanPlay = () => playSafe();
+    const handleCanPlayThrough = () => playSafe();
+    const handlePlaying = () => removeListeners();
+
+    // 4. Guaranteed seamless looping fallback if native loop stalls
     const handleEnded = () => {
-      if (video) {
-        video.currentTime = 0;
+      if (!video || isDisposed) return;
+      video.currentTime = 0;
+      playSafe();
+    };
+
+    // 5. If video pauses unexpectedly while page is visible, resume
+    const handlePause = () => {
+      if (!video || isDisposed) return;
+      if (document.visibilityState === 'visible') {
         playSafe();
       }
     };
-    video.addEventListener('ended', handleEnded);
 
-    // 4. Viewport Intersection Observer: play when visible
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    video.addEventListener('playing', handlePlaying);
+    video.addEventListener('ended', handleEnded);
+    video.addEventListener('pause', handlePause);
+
+    // 6. Intersection Observer: play when element enters viewport
     let observer;
-    if ('IntersectionObserver' in window) {
+    if (typeof IntersectionObserver !== 'undefined') {
       observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -60,62 +112,92 @@ export default function LoopingVideo({
             }
           });
         },
-        { threshold: 0.1 }
+        { threshold: 0.05 }
       );
       observer.observe(video);
     } else {
       playSafe();
     }
 
-    // 5. Page visibility change: resume when tab becomes active
+    // 7. Page visibility change: resume when tab becomes visible
     const handleVisibility = () => {
-      if (!document.hidden) {
+      if (document.visibilityState === 'visible') {
         playSafe();
       }
     };
     document.addEventListener('visibilitychange', handleVisibility);
 
-    // 6. User interaction unlock (touch, click, scroll)
+    // 8. Global gesture unlock across all pointer and scroll events
+    const interactionEvents = [
+      'pointerdown',
+      'touchstart',
+      'touchend',
+      'click',
+      'scroll',
+      'wheel',
+      'keydown'
+    ];
+
     const handleUserInteraction = () => {
       if (video && video.paused) {
         playSafe();
       }
     };
-    window.addEventListener('touchstart', handleUserInteraction, { once: true, passive: true });
-    window.addEventListener('click', handleUserInteraction, { once: true, passive: true });
-    window.addEventListener('scroll', handleUserInteraction, { once: true, passive: true });
 
-    // Initial play attempt
-    playSafe();
+    const addListeners = () => {
+      if (interactionListenersActive) return;
+      interactionListenersActive = true;
+      interactionEvents.forEach((evt) => {
+        window.addEventListener(evt, handleUserInteraction, { passive: true });
+      });
+    };
+
+    const removeListeners = () => {
+      if (!interactionListenersActive) return;
+      interactionListenersActive = false;
+      interactionEvents.forEach((evt) => {
+        window.removeEventListener(evt, handleUserInteraction);
+      });
+    };
+
+    addListeners();
 
     return () => {
+      isDisposed = true;
       if (video) {
-        video.removeEventListener('loadeddata', playSafe);
-        video.removeEventListener('canplay', playSafe);
+        video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('canplaythrough', handleCanPlayThrough);
+        video.removeEventListener('playing', handlePlaying);
         video.removeEventListener('ended', handleEnded);
+        video.removeEventListener('pause', handlePause);
       }
       if (observer) {
         observer.disconnect();
       }
       document.removeEventListener('visibilitychange', handleVisibility);
-      window.removeEventListener('touchstart', handleUserInteraction);
-      window.removeEventListener('click', handleUserInteraction);
-      window.removeEventListener('scroll', handleUserInteraction);
+      removeListeners();
     };
   }, [src]);
 
   return (
     <video
-      ref={videoRef}
+      ref={setVideoRef}
       src={src}
       autoPlay
       muted
       playsInline
+      webkit-playsinline="true"
+      x5-playsinline="true"
       loop
+      preload="auto"
       poster={poster}
       aria-label={ariaLabel}
       className={className}
       {...props}
-    />
+    >
+      <source src={src} type="video/mp4" />
+    </video>
   );
 }
