@@ -194,6 +194,201 @@ export const PRODUCTS = [
       '180° lay-flat design for comfortable writing',
       'Includes 60-day empty book trial guarantee'
     ]
+  },
+  {
+    id: 'blush-guided-diary',
+    slug: '5-minutes-guided-diary-blush-bloom',
+    name: '5 Minutes Guided Diary — Blush Bloom',
+    tagline: 'A beautiful and calm place to capture your memories.',
+    subtitle: 'Researched questions by IntelligentLab to help you build a habit and record your life in 5 minutes.',
+    price: 599,
+    originalPrice: 799,
+    category: 'guided',
+    badge: 'New Release',
+    rating: 4.99,
+    reviewCount: 1920,
+    inStock: true,
+    stockLeft: 11,
+    image: '/images/journal-guided-blush-front.jpg',
+    images: [
+      '/images/journal-guided-blush-front.jpg',
+      '/images/journal-guided-blush-coffee-desk.jpg',
+      '/images/journal-guided-blush-flatlay.jpg',
+      '/images/journal-guided-blush-angle.jpg',
+      '/images/journal-guided-blush-laying.jpg'
+    ],
+    description: '“A beautiful and calm place to capture your memories.” The questions inside are researched questions developed by IntelligentLab to help you easily build a consistent habit of journaling and reflect on your daily life. 9 out of 10 people successfully build a lasting habit using this 5-minute format. Designed to quiet overthinking, anchor intentional thoughts in the morning, and record the real moments of your life that cameras miss.',
+    researchHighlight: {
+      partner: 'IntelligentLab',
+      stat: '9/10 people',
+      claim: 'build a lasting habit of daily reflection using this calibrated question format',
+      summary: 'Calibrated morning and evening prompts eliminate blank-page dread and make daily reflection feel like a peaceful sanctuary.'
+    },
+    valuePoints: [
+      {
+        title: 'Morning Mental Reset (3 Mins)',
+        desc: 'Replaces early morning phone scrolling and anxiety with intentional clarity before work begins.'
+      },
+      {
+        title: 'Evening Decompression (2 Mins)',
+        desc: 'Unburdens daily stress, acknowledges one quiet win, and helps your mind power down for peaceful sleep.'
+      },
+      {
+        title: 'No Blank-Page Pressure',
+        desc: 'Researched prompts guide your thoughts directly—you never sit wondering what to write.'
+      },
+      {
+        title: 'Your Real Life Preserved',
+        desc: 'A permanent keepsake of who you were, how you felt, and the small everyday moments phones never capture.'
+      }
+    ],
+    specs: {
+      'Daily Commitment': 'Just 5 Minutes (3 mins morning, 2 mins evening)',
+      'Primary Benefit': 'Calm memory capture & quiets morning overthinking',
+      'Habit Success Rate': '9 out of 10 people build a lasting daily habit',
+      'Prompt System': 'IntelligentLab researched questions that remove blank-page dread',
+      'Keepsake Value': 'Preserves 6 months of your real thoughts and personal growth',
+      'Peace of Mind': '60-Day Empty Book 100% Full Refund Guarantee'
+    },
+    features: [
+      'Questions inside developed by IntelligentLab to eliminate blank-page dread',
+      '9/10 people build a lasting daily habit with this 5-minute format',
+      'Morning Reflection: Three things worth noticing & daily intention (3 mins)',
+      'Evening Reflection: A quiet win & releasing daily worries (2 mins)',
+      'Creates a peaceful sanctuary on your desk every single day',
+      'Lays completely flat for comfortable writing',
+      'Includes 60-day empty book trial guarantee'
+    ]
+  },
+  {
+    id: 'noir-guided-diary',
+    slug: '5-minutes-guided-diary-contour-noir',
+    name: '5 Minutes Guided Diary — Contour Noir',
+    tagline: 'Express your feelings, because here nobody’s gonna judge you.',
+    subtitle: 'Researched questions by IntelligentLab designed for raw, judgment-free daily decompression.',
+    price: 599,
+    originalPrice: 799,
+    category: 'guided',
+    badge: 'Modern Classic',
+    rating: 4.98,
+    reviewCount: 1640,
+    inStock: true,
+    stockLeft: 8,
+    image: '/images/journal-guided-noir-front.jpg',
+    images: [
+      '/images/journal-guided-noir-front.jpg',
+      '/images/journal-guided-noir-coffee-desk.jpg',
+      '/images/journal-guided-noir-angle.jpg',
+      '/images/journal-guided-noir-shelf.jpg',
+      '/images/journal-guided-noir-laying.jpg'
+    ],
+    description: '“Express your feelings, because here nobody’s gonna judge you.” The questions inside are researched questions developed by IntelligentLab to help you easily build a consistent habit of journaling and reflect on your daily life. 9 out of 10 people successfully build a lasting habit using this 5-minute format. Designed as an unvarnished, pressure-free sanctuary to unpack your raw thoughts, decompress from demanding days, and document who you really are.',
+    researchHighlight: {
+      partner: 'IntelligentLab',
+      stat: '9/10 people',
+      claim: 'build a daily habit of emotional clarity and honest reflection',
+      summary: 'Structured questions remove the need to sound poetic or profound—allowing for pure, honest mental decompression.'
+    },
+    valuePoints: [
+      {
+        title: 'Judgment-Free Mental Offload',
+        desc: 'A private container to express uncensored thoughts and release cognitive weight without performance anxiety.'
+      },
+      {
+        title: '5-Minute Daily Anchor',
+        desc: '3 minutes to clear morning brain fog; 2 minutes to close the loop on workday tension.'
+      },
+      {
+        title: 'No Blank-Page Dread',
+        desc: 'IntelligentLab prompt calibrations give your mind immediate structure so you never stare at empty lines.'
+      },
+      {
+        title: 'The Raw Record of Your Journey',
+        desc: 'Captures the challenges, milestones, and authentic emotional shifts of your life journey.'
+      }
+    ],
+    specs: {
+      'Daily Commitment': 'Just 5 Minutes (3 mins morning, 2 mins evening)',
+      'Primary Benefit': 'Raw mental offload & stops evening overthinking',
+      'Habit Success Rate': '9 out of 10 people build a lasting daily habit',
+      'Prompt System': 'IntelligentLab researched questions that remove blank-page dread',
+      'Keepsake Value': 'Preserves 6 months of your genuine life story',
+      'Peace of Mind': '60-Day Empty Book 100% Full Refund Guarantee'
+    },
+    features: [
+      'Questions inside developed by IntelligentLab to eliminate blank-page dread',
+      '9/10 people build a lasting daily habit with this 5-minute format',
+      'Morning Reflection: Three things worth noticing & daily intention (3 mins)',
+      'Evening Reflection: A quiet win & releasing daily worries (2 mins)',
+      'A completely private, unjudged mental sanctuary',
+      'Lays flat for effortless journaling at your desk or bedside',
+      'Includes 60-day empty book trial guarantee'
+    ]
+  },
+  {
+    id: 'sage-gratitude-journal',
+    slug: '5-minutes-gratitude-journal-sage-botanical',
+    name: '5 Minutes Gratitude Journal — Sage Botanical',
+    tagline: 'Let your gratitude be louder than your worries today.',
+    subtitle: 'Daily gratitude framework by IntelligentLab for habit building & mental peace.',
+    price: 349,
+    originalPrice: 499,
+    category: 'gratitude',
+    badge: 'Trending',
+    rating: 4.99,
+    reviewCount: 3120,
+    inStock: true,
+    stockLeft: 15,
+    image: '/images/journal-gratitude-sage-front.jpg',
+    images: [
+      '/images/journal-gratitude-sage-front.jpg',
+      '/images/journal-gratitude-sage-coffee-desk.jpg',
+      '/images/journal-gratitude-sage-hands.jpg',
+      '/images/journal-gratitude-sage-angle.jpg',
+      '/images/journal-gratitude-sage-candle.jpg'
+    ],
+    description: '“Let your gratitude be louder than your worries today.” Developed with research-backed questions from IntelligentLab, this journal makes gratitude a joyful 5-minute daily habit rather than an exhausting obligation. 9 out of 10 people who start this journal maintain their practice for months. Notice what makes a good life while you are living it, lower chronic mental fatigue, and build an enduring keepsake of your real thoughts.',
+    researchHighlight: {
+      partner: 'IntelligentLab',
+      stat: '9/10 people',
+      claim: 'successfully sustain a daily reflection practice using this framework',
+      summary: 'Grounded prompts train your mind to notice what is already working well before the day disappears.'
+    },
+    valuePoints: [
+      {
+        title: 'Shifts Focus from Stress to Contentment',
+        desc: 'Trains your attention to notice small good moments every day rather than dwelling on what went wrong.'
+      },
+      {
+        title: 'Effortless 5-Minute Routine',
+        desc: 'Short, grounded prompts that fit into chai time or right before turning off the lights.'
+      },
+      {
+        title: 'Emotional Resilience',
+        desc: 'Proven to lower end-of-day burnout and bring mental groundedness during hectic weeks.'
+      },
+      {
+        title: 'Keeps Memories Alive',
+        desc: 'Preserves the simple joys with family, friends, and everyday life that fade from memory.'
+      }
+    ],
+    specs: {
+      'Daily Commitment': 'Just 5 Minutes (Morning & Evening)',
+      'Primary Benefit': 'Relieves daily mental stress & anchors daily gratitude',
+      'Habit Success Rate': '9 out of 10 people sustain a consistent reflection habit',
+      'Prompt System': 'IntelligentLab gratitude framework for effortless reflection',
+      'Keepsake Value': 'Captures half a year of meaningful personal memories',
+      'Peace of Mind': '60-Day Empty Book 100% Full Refund Guarantee'
+    },
+    features: [
+      'IntelligentLab research-backed questions that make gratitude easy and natural',
+      '9/10 users build a consistent daily habit without skipping or burnout',
+      'Morning: Notice three small things already good & set your mindset',
+      'Evening: Capture what made today memorable and release fatigue',
+      'Creates a soothing pocket of calm in your daily schedule',
+      'Lays completely flat on your desk or lap for effortless writing',
+      'Includes 60-day empty book trial guarantee'
+    ]
   }
 ];
 
@@ -269,6 +464,42 @@ export const REVIEWS = [
     title: 'Looking back at my entries made me realize how much I have grown',
     content: "Reading what I wrote two months ago when I was stressed about exams made me smile. We forget how we felt so quickly. This journal holds your real life.",
     product: '5 Minutes Guided Journal — Daisy Meadow',
+    verified: true
+  },
+  {
+    id: 'rev-6',
+    author: 'Kavya Sen',
+    location: 'Kolkata',
+    role: 'Creative Director',
+    rating: 5,
+    date: '3 days ago',
+    title: 'The quote on the cover is exactly what it provides: a calm place',
+    content: "“A beautiful and calm place to capture your memories” is written on the cover, and that is exactly what this is. I used to stare at blank pages with intense guilt. With the IntelligentLab questions, I open this, take 3 minutes with my morning coffee, and feel centered for the day.",
+    product: '5 Minutes Guided Diary — Blush Bloom',
+    verified: true
+  },
+  {
+    id: 'rev-7',
+    author: 'Vikram Aditya',
+    location: 'Hyderabad',
+    role: 'Startup Founder',
+    rating: 5,
+    date: '5 days ago',
+    title: 'The monochrome aesthetic and zero-judgment prompts are unmatched',
+    content: "The tagline “express your feelings, because here nobody’s gonna judge you” gave me permission to just be raw and honest. As a founder, evening anxiety used to ruin my sleep. These 2 minutes at night help me close the cognitive tabs in my brain.",
+    product: '5 Minutes Guided Diary — Contour Noir',
+    verified: true
+  },
+  {
+    id: 'rev-8',
+    author: 'Tanvi Mehta',
+    location: 'Ahmedabad',
+    role: 'Clinical Psychologist',
+    rating: 5,
+    date: '1 week ago',
+    title: 'Let your gratitude be louder than your worries. Best ₹349 spent.',
+    content: "I recommend this format to my clients because 5 minutes removes all intimidation. The sage botanical design is soothing and the prompts actively rewire cognitive bias away from worry toward what is already going well. 9 out of 10 habit success is well deserved.",
+    product: '5 Minutes Gratitude Journal — Sage Botanical',
     verified: true
   }
 ];

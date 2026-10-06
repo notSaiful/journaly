@@ -40,6 +40,36 @@ Key findings:
 - Prompts: Single highest-leverage priority, micro-action check-ins, weekly alignment
 - Guarantee: 60-Day Empty-Book Full Refund Guarantee
 
+### 4. 5 Minutes Guided Diary — Blush Bloom
+- SKU: `blush-guided-diary`
+- URL: https://journaly.in/product/blush-guided-diary
+- Price: ₹599 (Regular ₹799)
+- Category: Guided Reflection & Memory Keepsake
+- Cover Quote: “A beautiful and calm place to capture your memories..”
+- Target Outcome: Gentle daily deceleration, morning centering, and permanent emotional life archiving
+- Prompts: Morning intentionality (3 mins) & evening decompression (2 mins)
+- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+
+### 5. 5 Minutes Guided Diary — Contour Noir
+- SKU: `noir-guided-diary`
+- URL: https://journaly.in/product/noir-guided-diary
+- Price: ₹599 (Regular ₹799)
+- Category: Raw Reflection & Stress Offloading
+- Cover Quote: “Express your feelings, because here nobody’s gonna judge you.”
+- Target Outcome: Judgment-free emotional offload, unburdening workday stress, and tracking personal resilience
+- Prompts: Raw honesty questions calibrated by IntelligentLab
+- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+
+### 6. 5 Minutes Gratitude Journal — Sage Botanical
+- SKU: `sage-gratitude-journal`
+- URL: https://journaly.in/product/sage-gratitude-journal
+- Price: ₹349 (Regular ₹499)
+- Category: Gratitude & Mental Wellbeing
+- Cover Quote: “Let your gratitude be louder than your worries today..”
+- Target Outcome: Lowers cognitive anxiety and trains focus on what is already thriving
+- Prompts: Morning gratitude anchoring, evening appreciation of small wins
+- Guarantee: 60-Day Empty-Book Full Refund Guarantee
+
 ## Customer Guarantees & Policies
 - 60-Day Empty-Book Guarantee: Write in the journal for 60 days. If the five-minute habit doesn't deliver clarity, keep the book and receive a 100% full refund in rupees.
 - Shipping: Free express courier delivery across all Indian pin codes via BlueDart Express and Delhivery Surface. Delivery timeframe: 3–5 business days.
