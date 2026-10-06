@@ -36,6 +36,18 @@ export function loadRazorpayScript() {
 }
 
 /**
+ * Sanitizes contact phone number for Razorpay
+ */
+function sanitizeContact(phone) {
+  if (!phone) return '';
+  const cleaned = phone.replace(/[^0-9]/g, '');
+  if (cleaned.length === 12 && cleaned.startsWith('91')) {
+    return cleaned.slice(2);
+  }
+  return cleaned;
+}
+
+/**
  * Creates an order on the backend via Razorpay Orders API
  */
 export async function createRazorpayOrder({ amount, currency = 'INR', receipt, notes = {} }) {
@@ -46,15 +58,18 @@ export async function createRazorpayOrder({ amount, currency = 'INR', receipt, n
       body: JSON.stringify({ amount, currency, receipt, notes })
     });
 
+    const data = await response.json().catch(() => ({}));
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error || `Failed to create order (${response.status})`);
+      const errMsg = data.error || `Failed to create order (${response.status})`;
+      console.warn('Backend order creation warning:', errMsg);
+      return { success: false, error: errMsg };
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
-    console.warn('Backend order creation warning:', error.message);
-    return null;
+    console.warn('Backend order creation fetch failed:', error.message);
+    return { success: false, error: error.message };
   }
 }
 
@@ -85,10 +100,10 @@ export async function verifyRazorpayPayment({ razorpay_order_id, razorpay_paymen
  * Initiates Razorpay Checkout Modal
  *
  * @param {Object} config
- * @param {number} config.amount Total amount (in major units, e.g. 36.00 or 2999)
+ * @param {number} config.amount Total amount (in major units, e.g. 349 or 499)
  * @param {string} [config.currency='INR'] Currency code ('INR' or 'USD')
  * @param {string} [config.name='JOURNALY'] Store or Brand name
- * @param {string} [config.description='Archival Journal Order'] Payment description
+ * @param {string} [config.description='Guided Journal Order'] Payment description
  * @param {Object} [config.prefill] Customer details { name, email, contact }
  * @param {Object} [config.notes] Custom metadata { address, items, giftNote }
  * @param {Function} config.onSuccess Callback on verified payment completion
@@ -99,7 +114,7 @@ export async function openRazorpayCheckout({
   amount,
   currency = 'INR',
   name = 'JOURNALY',
-  description = 'Archival Journal Order',
+  description = 'Guided Journal Order',
   prefill = {},
   notes = {},
   onSuccess,
@@ -114,14 +129,11 @@ export async function openRazorpayCheckout({
       throw new Error('Razorpay SDK is not available');
     }
 
-    // 2. Fetch Live Key ID from config or environment
-    const keyId = import.meta.env?.VITE_RAZORPAY_KEY_ID || FALLBACK_KEY_ID;
-
-    // 3. Create server-side order
+    // 2. Create server-side order with Razorpay Orders API
     const orderReceipt = `CA_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
     const orderResult = await createRazorpayOrder({
       amount,
-      currency,
+      currency: currency.toUpperCase(),
       receipt: orderReceipt,
       notes: {
         customer_name: prefill.name || '',
@@ -130,22 +142,23 @@ export async function openRazorpayCheckout({
       }
     });
 
+    const keyId = orderResult?.key_id || import.meta.env?.VITE_RAZORPAY_KEY_ID || FALLBACK_KEY_ID;
     const orderId = orderResult?.order?.id;
-    const finalAmountInSubunits = orderResult?.order?.amount || Math.round(amount * 100);
+    const finalAmountInSubunits = orderResult?.order?.amount || Math.round(Number(amount || 0) * 100);
 
-    // 4. Configure Razorpay Standard Checkout options
+    // 3. Configure Razorpay Standard Checkout options
     const options = {
       key: keyId,
       amount: finalAmountInSubunits,
-      currency: currency,
+      currency: currency.toUpperCase(),
       name: name,
       description: description,
       image: '/images/journal-floral-front.png',
-      order_id: orderId, // undefined if server order was bypassed
+      ...(orderId ? { order_id: orderId } : {}),
       prefill: {
         name: prefill.name || '',
         email: prefill.email || '',
-        contact: prefill.contact || ''
+        contact: sanitizeContact(prefill.contact)
       },
       notes: {
         receipt: orderReceipt,

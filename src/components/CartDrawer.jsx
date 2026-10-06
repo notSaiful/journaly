@@ -404,11 +404,6 @@ export default function CartDrawer({
                     </div>
                   )}
 
-                  {/* No Cash On Delivery Notice */}
-                  <div className="p-3 rounded-xl bg-[#FAF7F2] border border-[#E5DDCF] text-[11px] text-[#6A6054] flex items-center gap-2">
-                    <Lock className="w-3.5 h-3.5 text-[#E5A93C]" />
-                    <span>No cash on delivery. 100% online payment via Razorpay.</span>
-                  </div>
 
                   {/* Single Direct Razorpay Payment Button (White Button) */}
                   <button
