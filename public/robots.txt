@@ -1,4 +1,39 @@
+# Robots.txt for JOURNALY — https://journaly.in
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
 
+# Explicit permissions for major AI Search, LLMs & Citation Crawlers
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Canonical Sitemaps & AI Context Endpoints
 Sitemap: https://journaly.in/sitemap.xml

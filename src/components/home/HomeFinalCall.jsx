@@ -34,10 +34,10 @@ export default function HomeFinalCall() {
         <div className="mt-10">
           <button
             onClick={handleFindJournal}
-            className="px-9 py-4 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-2.5 cursor-pointer group"
+            className="px-9 py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-2.5 cursor-pointer group"
           >
             <span>Find Your Journal</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#E5A93C]" />
           </button>
         </div>
 

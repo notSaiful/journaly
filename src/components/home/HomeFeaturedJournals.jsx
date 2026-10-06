@@ -125,7 +125,7 @@ export default function HomeFeaturedJournals({ onAddToCart, onQuickView }) {
                         selectedColor: product.colors[0].name
                       });
                     }}
-                    className="flex-1 py-2.5 px-4 bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-medium uppercase tracking-wider rounded-full transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95"
+                    className="flex-1 py-2.5 px-4 bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider rounded-full transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 text-[#E5A93C]" />
                     <span>Add to Bag</span>

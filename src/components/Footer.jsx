@@ -61,7 +61,7 @@ export default function Footer({ onOpenLegal }) {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3.5 bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm transition-all whitespace-nowrap cursor-pointer flex items-center justify-center gap-1.5"
+                  className="px-6 py-3.5 bg-white hover:bg-[#FAF7F2] text-[#1E1B18] border-2 border-[#1E1B18] rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm transition-all whitespace-nowrap cursor-pointer flex items-center justify-center gap-1.5"
                 >
                   <span>Send Me the Prompt</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -114,8 +114,8 @@ export default function Footer({ onOpenLegal }) {
                 </button>
               </li>
               <li>
-                <button onClick={() => handleLink('/collections')} className="hover:text-[#1E1B18] transition-colors cursor-pointer text-left">
-                  Curated Collections
+                <button onClick={() => handleLink('/track-order')} className="hover:text-[#1E1B18] transition-colors cursor-pointer text-left">
+                  Track Your Order
                 </button>
               </li>
             </ul>

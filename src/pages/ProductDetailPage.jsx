@@ -122,15 +122,15 @@ export default function ProductDetailPage({ onAddToCart }) {
             <div className="flex items-center justify-between py-4 border-y border-[#E5DDCF]/80">
               <div className="flex items-baseline gap-3">
                 <span className="font-serif text-3xl sm:text-4xl font-medium text-[#1E1B18]">
-                  ${product.price}
+                  ₹{product.price}
                 </span>
                 {product.originalPrice && (
                   <span className="text-sm font-mono text-stone-400 line-through">
-                    ${product.originalPrice}
+                    ₹{product.originalPrice}
                   </span>
                 )}
-                <span className="text-xs font-mono text-[#8C7E72]">
-                  (approx. ₹{Math.round(product.price * 83).toLocaleString('en-IN')})
+                <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  Save ₹{product.originalPrice ? product.originalPrice - product.price : 200}
                 </span>
               </div>
 
@@ -153,7 +153,7 @@ export default function ProductDetailPage({ onAddToCart }) {
                 </div>
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] font-semibold">
+                    <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-white text-[#1E1B18] border border-[#E5DDCF] font-semibold">
                       Research Partner: IntelligentLab
                     </span>
                   </div>
@@ -177,7 +177,7 @@ export default function ProductDetailPage({ onAddToCart }) {
               ))}
             </div>
 
-            {/* Quantity & Add to Bag */}
+            {/* Quantity & Add to Bag (White Button) */}
             <div className="flex items-center gap-3 pt-3">
               <div className="flex items-center border border-[#E5DDCF] rounded-full bg-white px-3 py-2">
                 <button
@@ -199,10 +199,10 @@ export default function ProductDetailPage({ onAddToCart }) {
 
               <button
                 onClick={handleAdd}
-                className="flex-1 py-3.5 px-6 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 py-3.5 px-6 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-widest transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4 text-[#E5A93C]" />
-                <span>Add to Bag — ${product.price * quantity}</span>
+                <span>Add to Bag — ₹{product.price * quantity}</span>
               </button>
             </div>
 
@@ -271,19 +271,42 @@ export default function ProductDetailPage({ onAddToCart }) {
           </div>
         </section>
 
-        {/* SPECIFICATIONS */}
-        {product.specs && (
-          <section className="py-16 border-t border-[#E5DDCF]">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E5A93C] font-semibold block mb-2">
-                  Mindful Details
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1E1B18]">
-                  BUILT FOR EVERYDAY LIFE.
-                </h2>
-              </div>
+        {/* DAILY LIFE VALUE & HABIT BENEFITS */}
+        <section className="py-16 border-t border-[#E5DDCF]">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E5A93C] font-semibold block mb-2">
+                Real Daily Transformation
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1E1B18]">
+                VALUE PROVIDED TO YOUR DAY.
+              </h2>
+              <p className="text-xs sm:text-sm text-[#6A6054] max-w-xl mx-auto mt-2">
+                We don't sell paper or ribbons—we give you a proven 5-minute framework to quiet overthinking, build consistency, and record the life you are living.
+              </p>
+            </div>
 
+            {/* Value Pillars */}
+            {product.valuePoints && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                {product.valuePoints.map((vp, idx) => (
+                  <div key={idx} className="p-6 rounded-2xl bg-white border border-[#E5DDCF] shadow-xs hover:shadow-md transition-shadow">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#E5A93C] font-semibold block mb-1.5">
+                      Pillar 0{idx + 1}
+                    </span>
+                    <h3 className="font-serif text-lg font-medium text-[#1E1B18] mb-2">
+                      {vp.title}
+                    </h3>
+                    <p className="text-xs text-[#6A6054] font-light leading-relaxed">
+                      {vp.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Value-Driven Specifications */}
+            {product.specs && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-8 rounded-3xl border border-[#E5DDCF] shadow-md">
                 {Object.entries(product.specs).map(([k, v]) => (
                   <div key={k} className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#E5DDCF]/60 flex items-start justify-between">
@@ -296,9 +319,9 @@ export default function ProductDetailPage({ onAddToCart }) {
                   </div>
                 ))}
               </div>
-            </div>
-          </section>
-        )}
+            )}
+          </div>
+        </section>
 
         {/* CUSTOMER REVIEWS SECTION */}
         <section className="py-16 border-t border-[#E5DDCF]">

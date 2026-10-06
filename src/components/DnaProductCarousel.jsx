@@ -124,8 +124,8 @@ export default function DnaProductCarousel({ onAddToCart, onQuickView }) {
               </div>
 
               {/* Price Pill */}
-              <div className="absolute bottom-3.5 right-3.5 bg-[#1A1816]/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-medium text-[#FAF7F2] shadow-sm">
-                ${item.price}
+              <div className="absolute bottom-3.5 right-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-semibold text-[#1E1B18] border border-[#E5DDCF] shadow-sm">
+                ₹{item.price}
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export default function DnaProductCarousel({ onAddToCart, onQuickView }) {
                 </p>
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons (White Button) */}
               <div className="flex items-center gap-2 pt-4 mt-2 border-t border-[#E5DDCF]/70">
                 <button
                   onClick={() => {
@@ -165,7 +165,7 @@ export default function DnaProductCarousel({ onAddToCart, onQuickView }) {
                       });
                     }
                   }}
-                  className="flex-1 py-2.5 px-4 bg-[#1A1816] hover:bg-[#2B2520] text-[#FAF7F2] text-xs font-medium rounded-full transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
+                  className="flex-1 py-2.5 px-4 bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold rounded-full transition-all flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-95"
                 >
                   <ShoppingBag className="w-3.5 h-3.5 text-[#E5A93C]" />
                   <span>Add to Bag</span>

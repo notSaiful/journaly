@@ -48,14 +48,14 @@ export default function HomeHero() {
           <span className="text-white/95 font-normal">Keep some of it.</span>
         </h1>
 
-        {/* Primary CTA */}
+        {/* Primary CTA (White Button) */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-3.5">
           <button
             onClick={handleExplore}
-            className="px-8 py-3.5 rounded-full bg-[#FAF7F2] hover:bg-white text-[#1E1B18] font-medium text-xs tracking-wider uppercase transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center gap-2 cursor-pointer group"
+            className="px-8 py-3.5 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-white font-semibold text-xs tracking-wider uppercase transition-all shadow-xl hover:shadow-2xl active:scale-95 flex items-center gap-2 cursor-pointer group"
           >
             <span>Explore The Collection</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#E5A93C]" />
           </button>
         </div>
 

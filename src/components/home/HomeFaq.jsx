@@ -50,8 +50,8 @@ export default function HomeFaq() {
                 }}
                 className={`px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                   isSelected
-                    ? 'bg-[#1E1B18] text-[#FAF7F2] shadow-sm'
-                    : 'bg-white border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
+                    ? 'bg-white text-[#1E1B18] border-2 border-[#1E1B18] font-bold shadow-xs'
+                    : 'bg-[#FAF7F2] border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
                 }`}
               >
                 {cat}
@@ -105,7 +105,7 @@ export default function HomeFaq() {
           </div>
           <button
             onClick={() => navigate('/contact')}
-            className="px-6 py-3 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer whitespace-nowrap"
+            className="px-6 py-3 rounded-full bg-white hover:bg-[#FAF7F2] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm active:scale-95 flex items-center gap-2 cursor-pointer whitespace-nowrap"
           >
             <MessageCircle className="w-3.5 h-3.5 text-[#E5A93C]" />
             <span>Contact Support</span>

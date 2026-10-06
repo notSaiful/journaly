@@ -48,7 +48,7 @@ export default function HomeSocialProof() {
                   ))}
                 </div>
                 <p className="text-sm text-[#1E1B18] font-normal leading-relaxed mb-3">
-                  “Opening this felt like receiving a gift from an older, calmer version of myself. The paper and packaging are breathtaking.”
+                  “Writing here every morning feels like a gift to my future self. My mind is noticeably calmer before the workday even starts.”
                 </p>
               </div>
               <div className="pt-3 border-t border-[#E5DDCF]/80 flex items-center justify-between text-xs text-[#6A6054]">
@@ -162,7 +162,7 @@ export default function HomeSocialProof() {
                 The 60-Day Empty-Book Guarantee
               </h3>
               <p className="text-xs sm:text-sm text-[#6A6054] font-light mt-1 max-w-xl">
-                Write in it for 60 days. If the five-minute habit doesn’t bring you clarity, keep the journal and we will refund every rupee or dollar. No forms, no friction.
+                Write in it for 60 days. If the five-minute habit doesn’t bring you clarity, keep the journal and we will refund every rupee. No forms, no friction.
               </p>
             </div>
           </div>

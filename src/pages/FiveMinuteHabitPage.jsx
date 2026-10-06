@@ -44,9 +44,9 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
             <button
               onClick={handleStartJournal}
-              className="px-9 py-4 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs uppercase tracking-widest font-semibold transition-all shadow-lg active:scale-95 flex items-center gap-2.5 cursor-pointer"
+              className="px-9 py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs uppercase tracking-widest font-semibold transition-all shadow-md active:scale-95 flex items-center gap-2.5 cursor-pointer"
             >
-              <span>Start My Journal — $36</span>
+              <span>Start My Journal — ₹{signatureProduct?.price || 349}</span>
               <ArrowRight className="w-4 h-4 text-[#E5A93C]" />
             </button>
           </div>
@@ -113,10 +113,10 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
             </div>
           </div>
 
-          <div className="p-8 rounded-2xl bg-[#1E1B18] text-[#FAF7F2] text-center max-w-2xl mx-auto shadow-lg">
+          <div className="p-8 rounded-2xl bg-white border border-[#E5DDCF] text-[#1E1B18] text-center max-w-2xl mx-auto shadow-xs">
             <p className="font-serif text-2xl font-light leading-snug">
               JOURNALY keeps it simple: <br />
-              <span className="text-[#E5A93C] italic font-normal">
+              <span className="text-[#8C6D46] italic font-normal">
                 Open the page. Answer the prompts. Come back tomorrow.
               </span>
             </p>
@@ -203,9 +203,9 @@ export default function FiveMinuteHabitPage({ onAddToCart }) {
           <div className="mt-8 flex justify-center">
             <button
               onClick={handleStartJournal}
-              className="px-9 py-4 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest transition-all shadow-lg active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="px-9 py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
             >
-              <span>Get Your JOURNALY — $36</span>
+              <span>Get Your JOURNALY — ₹{signatureProduct?.price || 349}</span>
               <ArrowRight className="w-4 h-4 text-[#E5A93C]" />
             </button>
           </div>

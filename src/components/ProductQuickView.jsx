@@ -109,12 +109,12 @@ export default function ProductQuickView({ product, onClose, onAddToCart }) {
               <p className="text-xs text-[#8C6D46] mb-3 font-normal italic">"{product.tagline}"</p>
 
               <div className="flex items-center gap-3 mb-4">
-                <span className="font-serif text-3xl font-bold text-[#1E1B18]">${product.price}</span>
+                <span className="font-serif text-3xl font-bold text-[#1E1B18]">₹{product.price}</span>
                 {product.originalPrice && (
-                  <span className="text-sm text-stone-400 line-through">${product.originalPrice}</span>
+                  <span className="text-sm text-stone-400 line-through">₹{product.originalPrice}</span>
                 )}
-                <span className="text-xs font-mono text-[#8C7E72]">
-                  (₹{Math.round(product.price * 83).toLocaleString('en-IN')})
+                <span className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  Save ₹{product.originalPrice ? product.originalPrice - product.price : 200}
                 </span>
               </div>
 
@@ -142,7 +142,7 @@ export default function ProductQuickView({ product, onClose, onAddToCart }) {
               </div>
             </div>
 
-            {/* Quantity & CTA */}
+            {/* Quantity & CTA (White Button) */}
             <div className="space-y-3 pt-4 border-t border-[#E5DDCF]">
               <div className="flex items-center gap-3">
                 <div className="flex items-center border border-[#E5DDCF] rounded-full bg-[#FAF7F2] px-3 py-2">
@@ -164,10 +164,10 @@ export default function ProductQuickView({ product, onClose, onAddToCart }) {
                 <button
                   onClick={handleAdd}
                   disabled={isAdded}
-                  className="flex-1 py-3 px-6 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 py-3 px-6 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <ShoppingBag className="w-4 h-4 text-[#E5A93C]" />
-                  <span>{isAdded ? 'Added to Bag!' : `Add to Bag — $${product.price * quantity}`}</span>
+                  <span>{isAdded ? 'Added to Bag!' : `Add to Bag — ₹${product.price * quantity}`}</span>
                 </button>
               </div>
 

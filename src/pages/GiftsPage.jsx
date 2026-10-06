@@ -42,7 +42,7 @@ export default function GiftsPage({ onAddToCart }) {
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
               <button
                 onClick={handleAddGift}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs uppercase tracking-widest font-semibold transition-all shadow-md active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs uppercase tracking-widest font-semibold transition-all shadow-md active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <Gift className="w-4 h-4 text-[#E5A93C]" />
                 <span>Shop The Complete Gift Set — ${giftSet.price}</span>

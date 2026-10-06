@@ -92,9 +92,9 @@ export default function OrderSuccessPage() {
           </div>
           <button
             onClick={() => alert("Downloading 'Five_Minutes_Today_Framework.pdf'...")}
-            className="px-3.5 py-2 bg-[#1A1816] hover:bg-[#2E2824] text-[#FAF7F2] rounded-xl text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap shadow-xs cursor-pointer"
+            className="px-3.5 py-2 bg-white hover:bg-[#FAF7F2] text-[#1E1B18] border border-[#E5DDCF] rounded-xl text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap shadow-xs cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-3.5 h-3.5 text-[#E5A93C]" />
             <span>Download</span>
           </button>
         </div>
@@ -102,7 +102,7 @@ export default function OrderSuccessPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => navigate('/track-order')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Track My Order</span>
             <ArrowRight className="w-4 h-4 text-[#E5A93C]" />

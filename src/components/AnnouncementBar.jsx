@@ -7,7 +7,7 @@ export default function AnnouncementBar({ currency, setCurrency }) {
 
   const messages = [
     { icon: Sparkles, text: 'Researched Prompts by IntelligentLab — 9/10 Build a Lasting Habit' },
-    { icon: Truck, text: 'Free Express Priority Delivery Across India & Worldwide' },
+    { icon: Truck, text: 'Free Express Priority Delivery Across India' },
     { icon: ShieldCheck, text: '60-Day "Empty Book" Trial: Keep it & Get 100% Refund if Not Transformed' }
   ];
 
@@ -55,19 +55,10 @@ export default function AnnouncementBar({ currency, setCurrency }) {
           </div>
         </div>
 
-        {/* Currency Switcher */}
-        <div className="hidden sm:flex items-center gap-1">
-          <span className="text-[#8C8072] text-[11px]">Region:</span>
-          <select
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-            className="bg-transparent text-[#2B2520] text-[11px] font-medium focus:outline-none cursor-pointer hover:text-[#8C6D46] transition-colors"
-          >
-            <option value="USD">USD ($)</option>
-            <option value="EUR">EUR (€)</option>
-            <option value="GBP">GBP (£)</option>
-            <option value="CAD">CAD ($)</option>
-          </select>
+        {/* India Delivery & INR Badge */}
+        <div className="hidden sm:flex items-center gap-1.5 font-mono text-[11px] text-[#2B2520]">
+          <span className="w-2 h-2 rounded-full bg-emerald-600 inline-block" />
+          <span className="font-semibold">India Delivery (₹ INR)</span>
         </div>
 
       </div>

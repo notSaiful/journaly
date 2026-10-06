@@ -11,7 +11,7 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
     { label: 'Homepage', path: '/' },
     { label: 'The Habit', path: '/five-minute-habit' },
     { label: 'Shop', path: '/shop' },
-    { label: 'Collections', path: '/collections' },
+    { label: 'Track Order', path: '/track-order' },
     { label: 'About', path: '/about' }
   ];
 

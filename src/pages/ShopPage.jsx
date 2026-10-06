@@ -55,8 +55,8 @@ export default function ShopPage({ onAddToCart, onQuickView }) {
                 }}
                 className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all flex-shrink-0 cursor-pointer ${
                   isSelected
-                    ? 'bg-[#1E1B18] text-[#FAF7F2] shadow-sm'
-                    : 'bg-white border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
+                    ? 'bg-white text-[#1E1B18] border-2 border-[#1E1B18] font-bold shadow-xs'
+                    : 'bg-[#FAF7F2] border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
                 }`}
               >
                 {cat.label}
@@ -88,8 +88,8 @@ export default function ShopPage({ onAddToCart, onQuickView }) {
                   {product.badge}
                 </div>
 
-                <div className="absolute bottom-3.5 right-3.5 bg-[#1E1B18]/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-medium text-[#FAF7F2]">
-                  ${product.price}
+                <div className="absolute bottom-3.5 right-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-semibold text-[#1E1B18] border border-[#E5DDCF] shadow-sm">
+                  ₹{product.price}
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ export default function ShopPage({ onAddToCart, onQuickView }) {
                         price: product.price
                       });
                     }}
-                    className="flex-1 py-2.5 px-4 bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-medium uppercase tracking-wider rounded-full transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95"
+                    className="flex-1 py-2.5 px-4 bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider rounded-full transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95"
                   >
                     <ShoppingBag className="w-3.5 h-3.5 text-[#E5A93C]" />
                     <span>Add to Bag</span>

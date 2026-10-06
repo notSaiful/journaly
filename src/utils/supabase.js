@@ -17,7 +17,7 @@ export function isSupabaseConnected() {
   return isConfigured && Boolean(supabase);
 }
 
-// Default initial mock orders so the admin portal is immediately interactive
+// Default initial mock orders so the admin portal and tracking page are immediately interactive
 const INITIAL_ORDERS = [
   {
     id: 'JRN-94821',
@@ -29,15 +29,15 @@ const INITIAL_ORDERS = [
     city: 'Bengaluru',
     postal_code: '560066',
     items: [
-      { name: '5-Minute Guided Journal — Daisy Meadow', quantity: 1, price: 2988 }
+      { name: '5 Minutes Guided Journal — Daisy Meadow', quantity: 1, price: 599 }
     ],
-    amount: 2988,
+    amount: 599,
     currency: 'INR',
     payment_id: 'pay_P8tLQ9lL001',
     payment_status: 'PAID',
     fulfillment_status: 'Processing',
-    courier: '',
-    tracking_number: ''
+    courier: 'BlueDart Express',
+    tracking_number: 'BLD-BLR-84920'
   },
   {
     id: 'JRN-94819',
@@ -49,15 +49,15 @@ const INITIAL_ORDERS = [
     city: 'New Delhi',
     postal_code: '110024',
     items: [
-      { name: '5-Minute Gratitude Journal — Watercolour Blossom', quantity: 2, price: 5976 }
+      { name: '5 Minutes Gratitude Journal — Watercolour Blossom', quantity: 2, price: 349 }
     ],
-    amount: 5976,
+    amount: 698,
     currency: 'INR',
     payment_id: 'pay_P8tLQ9lL002',
     payment_status: 'PAID',
     fulfillment_status: 'Dispatched',
-    courier: 'BlueDart Express',
-    tracking_number: 'BLD849204918IN'
+    courier: 'Delhivery Surface',
+    tracking_number: 'DLV-DEL-55419'
   },
   {
     id: 'JRN-94815',
@@ -69,15 +69,15 @@ const INITIAL_ORDERS = [
     city: 'Mumbai',
     postal_code: '400020',
     items: [
-      { name: '5-Minute Manifestation Journal — Coral Daisy', quantity: 1, price: 2988 }
+      { name: '5 Minutes Manifestation Journal — Coral Daisy', quantity: 1, price: 499 }
     ],
-    amount: 2988,
+    amount: 499,
     currency: 'INR',
     payment_id: 'pay_P8tLQ9lL003',
     payment_status: 'PAID',
     fulfillment_status: 'Delivered',
-    courier: 'Delhivery Surface',
-    tracking_number: 'DLV992817402'
+    courier: 'BlueDart Express',
+    tracking_number: 'BLD-MUM-99281'
   }
 ];
 

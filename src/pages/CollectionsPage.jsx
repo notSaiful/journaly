@@ -46,7 +46,7 @@ export default function CollectionsPage() {
               <div className="mt-8">
                 <button
                   onClick={() => navigate('/shop')}
-                  className="px-7 py-3 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
+                  className="px-7 py-3 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
                 >
                   <span>Explore Complete Collection</span>
                   <ArrowRight className="w-4 h-4" />

@@ -6,6 +6,7 @@ import CartDrawer from './components/CartDrawer';
 import ProductQuickView from './components/ProductQuickView';
 import QuizModal from './components/QuizModal';
 import LegalLayout from './components/legal/LegalLayout';
+import SEOHead from './components/SEOHead';
 
 // Home Flow (Clean Minimalist Beige Story Flow)
 import HomeHero from './components/home/HomeHero';
@@ -19,7 +20,6 @@ import HomeFinalCall from './components/home/HomeFinalCall';
 // Dedicated Route Pages
 import FiveMinuteHabitPage from './pages/FiveMinuteHabitPage';
 import ShopPage from './pages/ShopPage';
-import CollectionsPage from './pages/CollectionsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import BusinessPage from './pages/BusinessPage';
 import AboutPage from './pages/AboutPage';
@@ -50,7 +50,7 @@ function AppContent() {
       customImage: '/images/journal-daisy-front.jpg',
       paperRuling: 'Daily Guided Prompts',
       quantity: 1,
-      price: 36
+      price: PRODUCTS[0]?.price || 599
     }
   ]);
 
@@ -158,7 +158,8 @@ function AppContent() {
       );
     }
     if (currentPath === '/collections') {
-      return <CollectionsPage onAddToCart={handleAddToCart} />;
+      navigate('/shop');
+      return null;
     }
     if (currentPath.startsWith('/product/')) {
       return <ProductDetailPage onAddToCart={handleAddToCart} />;
@@ -226,6 +227,9 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-[#1E1B18] font-sans flex flex-col selection:bg-[#E5A93C]/20 selection:text-[#1E1B18]">
+      {/* Dynamic SEO & Schema Engine */}
+      <SEOHead />
+
       {/* 1. Scarcity & Perks Announcement Bar */}
       <AnnouncementBar currency={currency} setCurrency={setCurrency} />
 

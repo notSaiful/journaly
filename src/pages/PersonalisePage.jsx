@@ -161,7 +161,7 @@ export default function PersonalisePage({ onAddToCart }) {
             <div className="pt-6 border-t border-[#E5DDCF] space-y-3">
               <button
                 onClick={handleAdd}
-                className="w-full py-4 px-8 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs uppercase tracking-widest font-semibold transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer"
+                className="w-full py-4 px-8 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs uppercase tracking-widest font-semibold transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <ShoppingBag className="w-4 h-4 text-[#E5A93C]" />
                 <span>Preview & Add to Bag — ${selectedProduct.price}</span>

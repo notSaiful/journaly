@@ -33,10 +33,8 @@ export default function CartDrawer({
 
   if (!isOpen) return null;
 
-  // Price calculations (Conversion rate: 1 USD = 83 INR)
-  const USD_TO_INR = 83;
-  const subtotalUsd = cartItems.reduce((acc, item) => acc + (item.price || 0) * (item.quantity || 1), 0);
-  const totalInr = Math.round(subtotalUsd * USD_TO_INR);
+  // Pure INR Pricing (Selling only in INR in India)
+  const totalInr = cartItems.reduce((acc, item) => acc + (item.price || 0) * (item.quantity || 1), 0);
   const totalItemCount = cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0);
 
   const handleInputChange = (e) => {
@@ -101,7 +99,7 @@ export default function CartDrawer({
             items: cartItems.map((it) => ({
               name: it.name,
               quantity: it.quantity || 1,
-              price: Math.round((it.price || 36) * USD_TO_INR)
+              price: it.price || 499
             })),
             amount: chargeAmount,
             currency: 'INR',
@@ -186,7 +184,7 @@ export default function CartDrawer({
                 onClose();
                 navigate('/shop');
               }}
-              className="px-8 py-3.5 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
+              className="px-8 py-3.5 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-wider transition-all shadow-sm active:scale-95 cursor-pointer"
             >
               Explore Collection
             </button>
@@ -227,10 +225,7 @@ export default function CartDrawer({
                           {item.name}
                         </h3>
                         <p className="text-sm font-semibold text-[#1E1B18] mt-2">
-                          ₹{Math.round((item.price || 36) * USD_TO_INR).toLocaleString('en-IN')}
-                          <span className="text-xs text-[#8C7E72] font-normal ml-1">
-                            (${item.price || 36})
-                          </span>
+                          ₹{Number(item.price || 499).toLocaleString('en-IN')}
                         </p>
                       </div>
                     </div>
@@ -272,7 +267,7 @@ export default function CartDrawer({
               <div className="p-4 rounded-xl bg-[#F4EFE6] border border-[#E5DDCF] flex items-center justify-between text-xs text-[#6A6054]">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-[#345941]" />
-                  <span>Complimentary Insured Express Delivery across India & Global</span>
+                  <span>Complimentary Insured Express Delivery across India</span>
                 </div>
                 <span className="font-mono text-[#345941] font-semibold">FREE</span>
               </div>
@@ -415,11 +410,11 @@ export default function CartDrawer({
                     <span>No cash on delivery. 100% online payment via Razorpay.</span>
                   </div>
 
-                  {/* Single Direct Razorpay Payment Button */}
+                  {/* Single Direct Razorpay Payment Button (White Button) */}
                   <button
                     type="submit"
                     disabled={isProcessing}
-                    className="w-full py-4 rounded-full bg-[#1E1B18] hover:bg-[#332C26] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     {isProcessing ? (
                       <>

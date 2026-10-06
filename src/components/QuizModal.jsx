@@ -179,7 +179,7 @@ export default function QuizModal({ isOpen, onClose, onAddToCart }) {
                 </span>
                 <p className="text-[11px] text-[#6A6054] mb-2 font-light">{recommended.subtitle}</p>
                 <div className="flex items-center gap-2">
-                  <span className="font-serif text-xl font-bold text-[#2B2520]">${recommended.price}</span>
+                  <span className="font-serif text-xl font-bold text-[#2B2520]">₹{recommended.price}</span>
                   <span className="text-[11px] bg-[#FAF3E8] text-[#735C3E] font-semibold px-2 py-0.5 rounded border border-[#E8DDCA]">
                     Quiz Perk: 15% OFF in bag
                   </span>
@@ -190,10 +190,10 @@ export default function QuizModal({ isOpen, onClose, onAddToCart }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
                 onClick={handleAddRecommended}
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#332B24] hover:bg-[#251F1A] text-[#FAF7F2] rounded-full text-sm font-semibold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] rounded-full text-sm font-semibold shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Claim Your Matched Journal</span>
-                <ArrowRight className="w-4 h-4 text-[#D9C4A1]" />
+                <ArrowRight className="w-4 h-4 text-[#E5A93C]" />
               </button>
 
               <button

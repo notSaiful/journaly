@@ -37,8 +37,8 @@ export default function FaqPage() {
               }}
               className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-[#1E1B18] text-[#FAF7F2] shadow-sm'
-                  : 'bg-white border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
+                  ? 'bg-white text-[#1E1B18] border-2 border-[#1E1B18] font-bold shadow-xs'
+                  : 'bg-[#FAF7F2] border border-[#E5DDCF] text-[#6A6054] hover:border-[#1E1B18] hover:text-[#1E1B18]'
               }`}
             >
               {cat}
