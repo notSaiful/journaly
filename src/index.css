@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Brand Color Tokens */
+    --color-paper: #FAF7F2;
+    --color-paper-light: #FDFCFA;
+    --color-paper-surface: #F4EFE6;
+    --color-paper-tint: #EFE8DD;
+    --color-paper-border: #E5DDCF;
+    --color-ink: #1E1B18;
+    --color-ink-muted: #6A6054;
+    --color-dark-ink: #141312;
+    --color-journaly-yellow: #E5A93C;
+    --color-journaly-yellow-hover: #D49B28;
+    --color-white: #FFFFFF;
+
+    /* Easing Tokens */
+    --ease-ui: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Single Unified Font Family: Minimalist, Clear & Premium */
+.font-serif,
+.font-sans,
+.font-editorial {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Custom Journaly Brand Accents */
+.journaly-tab {
+  background-color: #E5A93C;
+  color: #141312;
+}
+
+.gold-foil-text {
+  background: linear-gradient(135deg, #A88448 0%, #E8D3A2 35%, #947138 70%, #D8BE88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-emboss {
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4), 0 -1px 1px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #B59355 0%, #F5E5BE 40%, #8C6D37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-foil-emboss {
+  background: linear-gradient(135deg, #D6D2CC 0%, #FFFFFF 50%, #A8A29A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blind-deboss {
+  color: rgba(60, 52, 45, 0.45);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7), -1px -1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Tactile Paper Textures */
+.bg-parchment-pattern {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#E2D8C6 0.8px, transparent 0.8px);
+  background-size: 16px 16px;
+}
+
+.bg-dot-grid-subtle {
+  background-image: radial-gradient(#D5C9B5 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Smooth Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CFBF;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BDB19F;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
