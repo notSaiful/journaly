@@ -3,11 +3,11 @@ import { ChevronDown, Search } from 'lucide-react';
 import { FAQS_BY_CATEGORY } from '../data/products';
 
 export default function FaqPage() {
-  const [activeCategory, setActiveCategory] = useState('Products');
+  const categories = Object.keys(FAQS_BY_CATEGORY);
+  const [activeCategory, setActiveCategory] = useState(categories[0] || '');
   const [openIndex, setOpenIndex] = useState(0);
 
-  const categories = Object.keys(FAQS_BY_CATEGORY);
-  const currentFaqs = FAQS_BY_CATEGORY[activeCategory] || FAQS_BY_CATEGORY['Products'];
+  const currentFaqs = FAQS_BY_CATEGORY[activeCategory] || (categories.length > 0 ? FAQS_BY_CATEGORY[categories[0]] : []);
 
   return (
     <div className="bg-[#FAF7F2] text-[#1E1B18] font-sans min-h-screen py-16 sm:py-24">
