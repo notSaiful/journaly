@@ -6,6 +6,7 @@ import { trackEvent } from '../utils/analytics';
 import { openRazorpayCheckout } from '../utils/razorpay';
 import { UPSELLS } from '../data/products';
 import { saveOrder } from '../utils/supabase';
+import { isShopifyConfigured, createShopifyCheckout } from '../services/shopify';
 
 export default function CartDrawer({
   isOpen,
@@ -44,7 +45,7 @@ export default function CartDrawer({
     });
   };
 
-  // Direct Pay with Razorpay Gateway
+  // Direct Pay with Shopify or Razorpay Gateway
   const handlePayWithRazorpay = async (e) => {
     if (e) e.preventDefault();
 
@@ -52,6 +53,19 @@ export default function CartDrawer({
 
     setIsProcessing(true);
     setPaymentError(null);
+
+    // If Shopify headless store is configured, redirect directly to Shopify Checkout!
+    if (isShopifyConfigured()) {
+      try {
+        const checkoutUrl = await createShopifyCheckout(cartItems);
+        if (checkoutUrl) {
+          window.location.href = checkoutUrl;
+          return;
+        }
+      } catch (shopErr) {
+        console.warn('Shopify checkout initialization failed, falling back to Razorpay:', shopErr);
+      }
+    }
 
     const chargeAmount = totalInr;
 

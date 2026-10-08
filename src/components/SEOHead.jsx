@@ -12,10 +12,10 @@ const ROUTE_SEO = {
     image: 'https://journaly.in/images/hero_journal_desk_1791006815772.jpg'
   },
   '/shop': {
-    title: 'Shop 5-Minute Guided, Gratitude & Manifestation Journals | JOURNALY India',
-    description: 'Explore the JOURNALY collection: The Bloom Journal (₹349), The Coral Intention (₹499), and The Daisy Journal (₹599). Scientifically calibrated prompts by IntelligentLab with hassle-free 7-day returns.',
-    keywords: 'buy journal online India, gratitude journal 349, manifestation diary, guided daily prompts, habit journal',
-    image: 'https://journaly.in/images/journal-collection-stacked.jpg'
+    title: 'The Meadow Diary — 5-Minute Guided Habit Diary | JOURNALY India',
+    description: 'The Meadow Diary (₹599) — “The secret of getting ahead is getting started.” Researched questions by IntelligentLab to quiet morning overthinking and record your life in 5 minutes. Free express delivery in India with 7-day returns.',
+    keywords: 'the meadow diary, 5 minute journal India, guided habit diary, IntelligentLab research, daily journaling habit',
+    image: 'https://journaly.in/images/journal-guided-meadow-front.jpg'
   },
   '/five-minute-habit': {
     title: 'The 5-Minute Daily Habit — IntelligentLab Researched Framework | JOURNALY',
