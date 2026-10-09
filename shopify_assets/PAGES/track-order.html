@@ -1,0 +1,68 @@
+<div style="max-width: 700px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1E1B18; padding: 20px 0;">
+
+  <div style="text-align: center; margin-bottom: 32px;">
+    <span style="font-size: 12px; font-family: monospace; text-transform: uppercase; letter-spacing: 0.2em; color: #8C6D46; font-weight: 600;">Domestic Express Courier</span>
+    <h1 style="font-family: Georgia, serif; font-size: 32px; font-weight: 500; margin: 12px 0 8px; color: #1E1B18;">Track Your JOURNALY Order</h1>
+    <p style="font-size: 15px; color: #6A6054;">Dispatched within 24 hours via BlueDart Express & Delhivery Surface.</p>
+  </div>
+
+  <div style="background: #FFFFFF; border: 1px solid #E5DDCF; border-radius: 16px; padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+    <label style="display: block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #4A4138; margin-bottom: 8px;">
+      Enter Tracking Number (AWB) or Order ID
+    </label>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+      <input 
+        type="text" 
+        id="journaly-awb-input" 
+        placeholder="e.g. BD102938475 or JNY-1024"
+        style="flex: 1; padding: 12px 16px; border: 1px solid #D5C9B8; border-radius: 8px; font-size: 15px; outline: none;"
+      />
+      <button 
+        type="button" 
+        onclick="trackShipment()"
+        style="padding: 12px 24px; background: #FFFFFF; color: #1E1B18; border: 2px solid #1E1B18; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em;"
+      >
+        Track
+      </button>
+    </div>
+
+    <p style="font-size: 13px; color: #8C7E72; margin: 0;">
+      Your tracking link is also sent via SMS and Email as soon as your parcel is scanned at the logistics hub.
+    </p>
+  </div>
+
+  <div style="margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div style="background: #F4EFE6; border: 1px solid #E5DDCF; border-radius: 12px; padding: 20px; text-align: center;">
+      <h3 style="font-family: Georgia, serif; font-size: 16px; margin: 0 0 8px; color: #1E1B18;">BlueDart Express</h3>
+      <p style="font-size: 13px; color: #6A6054; margin: 0 0 12px;">Metros & Tier 1 Cities (2–3 Days)</p>
+      <a href="https://www.bluedart.com/tracking" target="_blank" rel="noopener noreferrer" style="font-size: 12px; font-weight: 600; color: #1E1B18; text-decoration: underline;">Open BlueDart Portal →</a>
+    </div>
+
+    <div style="background: #F4EFE6; border: 1px solid #E5DDCF; border-radius: 12px; padding: 20px; text-align: center;">
+      <h3 style="font-family: Georgia, serif; font-size: 16px; margin: 0 0 8px; color: #1E1B18;">Delhivery Logistics</h3>
+      <p style="font-size: 13px; color: #6A6054; margin: 0 0 12px;">Pan-India Surface (3–5 Days)</p>
+      <a href="https://www.delhivery.com/tracking" target="_blank" rel="noopener noreferrer" style="font-size: 12px; font-weight: 600; color: #1E1B18; text-decoration: underline;">Open Delhivery Portal →</a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 32px; font-size: 13px; color: #8C7E72;">
+    Need help with your parcel? Contact us at <strong>saifulbusiness47@gmail.com</strong> or WhatsApp <strong>+91 96998 97763</strong>
+  </div>
+
+  <script>
+    function trackShipment() {
+      const val = document.getElementById('journaly-awb-input').value.trim();
+      if (!val) {
+        alert('Please enter your AWB Tracking Number or Order ID');
+        return;
+      }
+      if (val.toUpperCase().startsWith('BD') || /^\d{11}$/.test(val)) {
+        window.open('https://www.bluedart.com/tracking?handler=trak&numbers=' + encodeURIComponent(val), '_blank');
+      } else {
+        window.open('https://www.delhivery.com/track/package/' + encodeURIComponent(val), '_blank');
+      }
+    }
+  </script>
+
+</div>

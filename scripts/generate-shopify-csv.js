@@ -110,7 +110,9 @@ ${product.features.map((f) => `  <li>${f}</li>`).join('\n')}
 
   images.forEach((img, index) => {
     const isFirstRow = index === 0;
-    const fullImageUrl = img.startsWith('http') ? img : `https://journaly.in${img}`;
+    const fullImageUrl = img.startsWith('http') 
+      ? img 
+      : `https://raw.githubusercontent.com/notSaiful/journaly/main/public${img}`;
 
     if (isFirstRow) {
       rows.push([

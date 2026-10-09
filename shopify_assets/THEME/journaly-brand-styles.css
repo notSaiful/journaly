@@ -1,0 +1,103 @@
+/* ========================================================
+   JOURNALY BRAND STYLING FOR SHOPIFY (DAWN & OS 2.0)
+   Paste into: Online Store > Themes > Edit Code > Assets/base.css
+   (or add via Theme Settings > Custom CSS)
+   ======================================================== */
+
+:root {
+  --journaly-bg: #FAF7F2;
+  --journaly-card-bg: #FFFFFF;
+  --journaly-dark: #1E1B18;
+  --journaly-stone: #E5DDCF;
+  --journaly-gold: #E5A93C;
+  --journaly-muted: #6A6054;
+  --journaly-cream-accent: #F4EFE6;
+}
+
+/* Page Background */
+body, 
+.gradient,
+.color-background-1,
+.color-background-2 {
+  background-color: var(--journaly-bg) !important;
+  color: var(--journaly-dark) !important;
+}
+
+/* Headings with Editorial Serif Elegance */
+h1, h2, h3, h4, 
+.h1, .h2, .h3, .h4,
+.font-heading-family,
+.product__title h1 {
+  font-family: Georgia, 'Playfair Display', serif !important;
+  font-weight: 500 !important;
+  color: var(--journaly-dark) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Signature White Buttons with Dark Border */
+.button, 
+.button--primary,
+.button--secondary,
+.shopify-payment-button__button--unbranded,
+.product-form__submit {
+  background-color: #FFFFFF !important;
+  color: #1E1B18 !important;
+  border: 2px solid #1E1B18 !important;
+  border-radius: 9999px !important;
+  padding: 12px 28px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+.button:hover,
+.button--primary:hover,
+.product-form__submit:hover {
+  background-color: var(--journaly-cream-accent) !important;
+  color: #1E1B18 !important;
+  border-color: #1E1B18 !important;
+  transform: translateY(-1px);
+}
+
+/* Product Cards */
+.card-wrapper,
+.card {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--journaly-stone) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card-wrapper:hover {
+  box-shadow: 0 12px 28px rgba(30, 27, 24, 0.07) !important;
+}
+
+/* Badge Styling */
+.badge {
+  background-color: rgba(250, 247, 242, 0.95) !important;
+  border: 1px solid var(--journaly-stone) !important;
+  color: var(--journaly-dark) !important;
+  border-radius: 9999px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+/* Header & Navigation */
+.header,
+.header-wrapper {
+  background-color: rgba(250, 247, 242, 0.95) !important;
+  border-bottom: 1px solid var(--journaly-stone) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #F4EFE6 !important;
+  border-top: 1px solid var(--journaly-stone) !important;
+  color: var(--journaly-dark) !important;
+}

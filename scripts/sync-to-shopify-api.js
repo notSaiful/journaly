@@ -62,7 +62,9 @@ async function syncProducts() {
     `.trim();
 
     const images = (product.images || [product.image]).map((img) => ({
-      src: img.startsWith('http') ? img : `https://journaly.in${img}`
+      src: img.startsWith('http') 
+        ? img 
+        : `https://raw.githubusercontent.com/notSaiful/journaly/main/public${img}`
     }));
 
     const payload = {
