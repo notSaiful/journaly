@@ -1,9 +1,15 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.journaly.in" }],
-      "destination": "https://journaly.in/:path*",
+      "destination": "https://journaly.in/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.journaly.in" }],
+      "destination": "https://journaly.in/$1",
       "permanent": true
     },
     { "source": "/quote", "destination": "/business", "permanent": true },
