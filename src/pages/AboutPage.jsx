@@ -1,7 +1,6 @@
 import { BUSINESS, confirmedLegalEntity } from '../config/business';
 import { LegalEntityName, ParentBrandLine } from '../components/b2b/BrandFacts';
 import { Breadcrumbs, CtaPair, Eyebrow } from '../components/b2b/Marketing';
-import SiteLink from '../components/SiteLink';
 
 export default function AboutPage() {
   return (
@@ -25,7 +24,7 @@ export default function AboutPage() {
             A minimum order, a standard lead time, client names, and certifications are not published, because they are not confirmed. Ask in the quote and we will answer with what we can actually do.
           </p>
           <p>
-            Individuals who want a journal without a custom run can use the <SiteLink href="/shop" className="text-[#1E1B18] underline underline-offset-4">ready-made shop</SiteLink>. Those prices belong to that shop. They are not the price of a custom business order.
+            Journaly takes custom orders for businesses. Quantity, branding, and timing are agreed in the quote.
           </p>
         </div>
         <CtaPair quoteLabel="Talk to Journaly" />

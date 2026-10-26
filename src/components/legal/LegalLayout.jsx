@@ -1,5 +1,7 @@
-import React from 'react';
 import { ArrowLeft, Feather, ShieldCheck, FileText, Lock, Truck, Phone } from 'lucide-react';
+import { BUSINESS, confirmedLegalEntity } from '../../config/business';
+
+const COPYRIGHT_YEAR = new Date().getFullYear();
 import TermsPage from './TermsPage';
 import PrivacyPolicyPage from './PrivacyPolicyPage';
 import RefundPolicyPage from './RefundPolicyPage';
@@ -31,7 +33,7 @@ export default function LegalLayout({ activePolicy, setActivePolicy, onClose }) 
             className="flex items-center gap-2 text-xs font-medium text-[#4A4138] hover:text-[#2B2520] px-4 py-2 rounded-full bg-white border border-[#E5DDCF] shadow-xs transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Return to Store</span>
+            <span>Back to Journaly</span>
           </button>
 
           {/* Brand Mark */}
@@ -86,7 +88,7 @@ export default function LegalLayout({ activePolicy, setActivePolicy, onClose }) 
               })}
 
               <div className="pt-4 mt-3 border-t border-[#EFE8DD] px-3 text-[11px] text-[#8C8072] font-light">
-                Securely encrypted & processed with Razorpay. All policies comply with RBI & global e-commerce guidelines.
+                Custom journal orders are agreed by quote. This website does not take payment.
               </div>
             </div>
           </aside>
@@ -102,14 +104,7 @@ export default function LegalLayout({ activePolicy, setActivePolicy, onClose }) 
       {/* Simple Legal Footer */}
       <footer className="border-t border-[#E5DDCF] py-6 text-center text-xs text-[#8C8072] bg-[#FAF7F2]">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span>© 2026 Journaly Bindery Ltd. All rights reserved.</span>
-          <div className="flex items-center gap-4 text-[11px] font-mono">
-            <span>PCI-DSS Certified</span>
-            <span>•</span>
-            <span>Razorpay Compliant</span>
-            <span>•</span>
-            <span>256-Bit SSL</span>
-          </div>
+          <span>© {COPYRIGHT_YEAR} {BUSINESS.brandName}. {confirmedLegalEntity() || 'Legal entity unpublished.'}</span>
         </div>
       </footer>
 

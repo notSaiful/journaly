@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="space-y-3">
             <p className="text-xl tracking-[0.18em] font-medium">JOURNALY</p>
             <p className="text-[#6A6054] font-light leading-relaxed">
-              Custom branded journals and notebooks for businesses in India. Ready-made journals are sold separately in the shop.
+              Custom branded journals and notebooks for businesses in India. Every order is quoted.
             </p>
             <p className="text-xs text-[#6A6054]">
               Brand: {BUSINESS.brandName}
@@ -64,8 +64,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-[#6A6054]">
               <li><SiteLink href="/about" className="hover:text-[#1E1B18]">About</SiteLink></li>
               <li><SiteLink href="/contact" className="hover:text-[#1E1B18]">Contact</SiteLink></li>
-              <li><SiteLink href="/shop" className="hover:text-[#1E1B18]">Ready-made shop</SiteLink></li>
-              <li><SiteLink href="/track-order" className="hover:text-[#1E1B18]">Track an order</SiteLink></li>
+              <li><SiteLink href="/grievance-redressal" className="hover:text-[#1E1B18]">Grievance redressal</SiteLink></li>
             </ul>
           </div>
 
@@ -82,7 +81,7 @@ export default function Footer() {
 
         <div className="pt-6 border-t border-[#E5DDCF] flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-[11px] text-[#6A6054]">
           <p>© {COPYRIGHT_YEAR} {BUSINESS.brandName}. <LegalEntityName /></p>
-          <p>Payments for ready-made shop orders are secured via Razorpay.</p>
+          <p>Quotes on WhatsApp. This website does not take payment.</p>
         </div>
       </div>
     </footer>

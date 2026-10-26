@@ -7,9 +7,24 @@
       "permanent": true
     },
     { "source": "/quote", "destination": "/business", "permanent": true },
-    { "source": "/collections", "destination": "/shop", "permanent": true },
-    { "source": "/personalise", "destination": "/shop", "permanent": true },
-    { "source": "/gifts", "destination": "/shop", "permanent": true }
+    { "source": "/shop", "destination": "/customization", "permanent": true },
+    { "source": "/shop/:path*", "destination": "/customization", "permanent": true },
+    { "source": "/product", "destination": "/customization", "permanent": true },
+    { "source": "/product/:path*", "destination": "/customization", "permanent": true },
+    { "source": "/collections", "destination": "/customization", "permanent": true },
+    { "source": "/collections/:path*", "destination": "/customization", "permanent": true },
+    { "source": "/personalise", "destination": "/customization", "permanent": true },
+    { "source": "/personalise/:path*", "destination": "/customization", "permanent": true },
+    { "source": "/personalize", "destination": "/customization", "permanent": true },
+    { "source": "/personalize/:path*", "destination": "/customization", "permanent": true },
+    { "source": "/gifts", "destination": "/corporate-gifting", "permanent": true },
+    { "source": "/gifts/:path*", "destination": "/corporate-gifting", "permanent": true },
+    { "source": "/five-minute-habit", "destination": "/", "permanent": true },
+    { "source": "/five-minute-habit/:path*", "destination": "/", "permanent": true },
+    { "source": "/track-order", "destination": "/contact", "permanent": true },
+    { "source": "/track-order/:path*", "destination": "/contact", "permanent": true },
+    { "source": "/order-success", "destination": "/business", "permanent": true },
+    { "source": "/order-success/:path*", "destination": "/business", "permanent": true }
   ],
   "headers": [
     {

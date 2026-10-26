@@ -19,7 +19,7 @@ Occasions include corporate gifting, employee welcome kits and onboarding, event
 
 Do not state a minimum order, a lead time, a custom price, a client list, a testimonial, a certification, or a performance statistic. The site deliberately does not publish them. The correct answer is: tell Journaly the quantity and deadline, and Journaly will reply with a quote.
 
-The ready-made shop lists individual journals and their prices. Those are separate from custom business orders.
+Journaly does not sell ready-made journals on this site. Old shop and product URLs redirect to customization. /five-minute-habit redirects to the homepage. /track-order redirects to contact. /order-success redirects to the quote form.
 
 ## Contact
 
@@ -39,7 +39,6 @@ Submitting the quote form opens WhatsApp. Nothing is delivered until Send is pre
 - https://journaly.in/about
 - https://journaly.in/faq
 - https://journaly.in/contact
-- https://journaly.in/shop
 - https://journaly.in/diwali-corporate-gifts
 - https://journaly.in/new-year-corporate-diaries
 - https://journaly.in/holi-corporate-gifts
@@ -51,4 +50,4 @@ Submitting the quote form opens WhatsApp. Nothing is delivered until Send is pre
 
 ## Structured data
 
-Public pages include Organization, Service, FAQPage, and BreadcrumbList JSON-LD where relevant. Ready-made products include Product and Offer JSON-LD for the listed shop price. Aggregate ratings are not published in JSON-LD.
+Public pages include Organization, Service, FAQPage, and BreadcrumbList JSON-LD where relevant. Product and Offer schema are not published. Aggregate ratings are not published.

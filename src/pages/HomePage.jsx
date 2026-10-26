@@ -6,6 +6,7 @@ import ProofSection from '../components/b2b/ProofSection';
 import PriceEstimator from '../components/b2b/PriceEstimator';
 import { HOME_FAQS } from '../content/b2bFaq';
 import { BUSINESS } from '../config/business';
+import JournalCovers from '../components/b2b/JournalCovers';
 
 const LogoMockup = lazy(() => import('../components/b2b/LogoMockup'));
 
@@ -78,16 +79,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="lg:col-span-6">
-          <div className="rounded-3xl overflow-hidden border border-[#E5DDCF] bg-white shadow-xl">
-            <img
-              src="/images/journal-collection-hero.webp"
-              alt="A stack of Journaly notebooks that can be branded for a business order"
-              width="960"
-              height="536"
-              decoding="async"
-              className="w-full h-52 sm:h-72 lg:h-auto object-cover"
-            />
-          </div>
+          <JournalCovers caption="Drawn covers. The word Logo stands in for yours." />
         </div>
       </section>
 
@@ -164,24 +156,16 @@ export default function HomePage() {
           <Eyebrow>Why Journaly</Eyebrow>
           <h2 id="why-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">A business order, not a guess</h2>
           <ul className="mt-6 space-y-4 text-sm text-[#6A6054] font-light leading-relaxed">
-            <li>Made for HR, admin, marketing, procurement, and founders who need a branded journal, not a one-off diary.</li>
+            <li>Made for HR, admin, marketing, procurement, and founders who need a branded journal for a team, a client list, or an event.</li>
             <li>You see the cover and inside approach before the run is produced.</li>
             <li>The conversation stays on WhatsApp, from the first brief to the quote.</li>
-            <li>If you need a journal today, the ready-made shop lists its own prices. Those prices are not custom-order prices.</li>
+            <li>Each order is quoted for the quantity, branding, and date you need.</li>
           </ul>
-          <SiteLink href="/shop" className="inline-block mt-6 text-xs font-semibold uppercase tracking-widest underline underline-offset-4">
-            Ready-made journals
+          <SiteLink href="/customization" className="inline-block mt-6 text-xs font-semibold uppercase tracking-widest underline underline-offset-4">
+            Customization options
           </SiteLink>
         </div>
-        <img
-          src="/images/journal-daisy-gift-box.jpg"
-          alt="A Journaly journal beside a gift box, the kind of object used for corporate gifting"
-          width="1200"
-          height="900"
-          loading="lazy"
-          decoding="async"
-          className="w-full h-auto rounded-3xl border border-[#E5DDCF] object-cover aspect-[5/4]"
-        />
+        <JournalCovers caption="Paper, ink, and a gold edge. Ask for the finish in the quote." />
       </section>
 
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" aria-labelledby="faq-heading">

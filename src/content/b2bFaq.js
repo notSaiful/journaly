@@ -65,11 +65,6 @@ export const B2B_FAQS = [
     category: 'Contact',
     q: 'How do I contact Journaly?',
     a: `WhatsApp ${BUSINESS.whatsappDisplay}, or email ${BUSINESS.contactEmail}. The quote form opens a WhatsApp message with your details filled in. It is sent only when you press Send.`
-  },
-  {
-    category: 'Ready-made',
-    q: 'Do you also sell individual journals?',
-    a: 'Yes. The shop lists ready-made journals with their own prices. Custom business orders are quoted separately and are not those shop prices.'
   }
 ];
 

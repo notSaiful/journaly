@@ -10,24 +10,13 @@ import BusinessPage from '../pages/BusinessPage';
 import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
 import FaqPage from '../pages/FaqPage';
-import ShopPage from '../pages/ShopPage';
-import ProductDetailPage from '../pages/ProductDetailPage';
-import FiveMinuteHabitPage from '../pages/FiveMinuteHabitPage';
-import TrackOrderPage from '../pages/TrackOrderPage';
-import OrderSuccessPage from '../pages/OrderSuccessPage';
 import AdminPortalPage from '../pages/AdminPortalPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import SeasonPage from '../pages/SeasonPage';
 import SeasonBanner from './b2b/SeasonBanner';
 import { FloatingWhatsApp, StickyQuoteBar } from './b2b/ConversionBars';
 import { pageByPath } from '../config/seasons';
-
-const ALIASES = {
-  '/quote': '/business',
-  '/collections': '/shop',
-  '/personalise': '/shop',
-  '/gifts': '/shop'
-};
+import { legacyRedirect } from '../config/legacyRedirects';
 
 function legalPolicy(path) {
   if (path === '/terms-and-conditions') return 'terms';
@@ -38,34 +27,29 @@ function legalPolicy(path) {
   return null;
 }
 
-function PageSwitch({ path, onAddToCart, onQuickView }) {
-  if (path === '/' ) return <HomePage />;
+function PageSwitch({ path }) {
+  if (path === '/') return <HomePage />;
   if (path === '/corporate-gifting') return <CorporateGiftingPage />;
   if (path === '/customization') return <CustomizationPage />;
   if (path === '/business') return <BusinessPage />;
   if (path === '/about') return <AboutPage />;
   if (path === '/contact') return <ContactPage />;
   if (path === '/faq') return <FaqPage />;
-  if (path === '/shop') return <ShopPage onAddToCart={onAddToCart} onQuickView={onQuickView} />;
-  if (path.startsWith('/product/')) return <ProductDetailPage onAddToCart={onAddToCart} />;
-  if (path === '/five-minute-habit') return <FiveMinuteHabitPage onAddToCart={onAddToCart} />;
-  if (path === '/track-order') return <TrackOrderPage />;
-  if (path === '/order-success') return <OrderSuccessPage />;
   if (path === '/admin') return <AdminPortalPage />;
   if (pageByPath(path)) return <SeasonPage path={path} />;
   if (path === '/404') return <NotFoundPage />;
   return <NotFoundPage />;
 }
 
-export default function SiteFrame({ cartCount = 0, onOpenCart = () => {}, onAddToCart = () => {}, onQuickView = () => {} }) {
+export default function SiteFrame() {
   const { currentPath, search, navigate } = useRouter();
-  const alias = ALIASES[currentPath];
+  const destination = legacyRedirect(currentPath);
 
   useEffect(() => {
-    if (alias) navigate(search ? `${alias}${search}` : alias, true);
-  }, [alias, navigate, search]);
+    if (destination) navigate(search ? `${destination}${search}` : destination, true);
+  }, [destination, navigate, search]);
 
-  const path = alias || currentPath;
+  const path = destination || currentPath;
   const policy = legalPolicy(path);
 
   if (policy) {
@@ -96,10 +80,10 @@ export default function SiteFrame({ cartCount = 0, onOpenCart = () => {}, onAddT
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded-full">
         Skip to content
       </a>
-      <Navbar cartCount={cartCount} onOpenCart={onOpenCart} />
+      <Navbar />
       {path === '/admin' ? null : <SeasonBanner />}
       <main id="main" className="flex-1 pb-20 md:pb-0">
-        <PageSwitch path={path} onAddToCart={onAddToCart} onQuickView={onQuickView} />
+        <PageSwitch path={path} />
       </main>
       <Footer />
       {path === '/admin' ? null : (
