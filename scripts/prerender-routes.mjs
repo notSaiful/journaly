@@ -88,6 +88,20 @@ const verificationBody = fs.readFileSync(verificationFile, 'utf8');
 if (verificationBody !== 'google-site-verification: google8d15317021744866.html') {
   throw new Error('Google site verification file missing or altered in dist');
 }
+const contact = fs.readFileSync(path.join(dist, 'contact', 'index.html'), 'utf8');
+const privacy = fs.readFileSync(path.join(dist, 'privacy-policy', 'index.html'), 'utf8');
+const llms = fs.readFileSync(path.join(dist, 'llms.txt'), 'utf8');
+const llmsFull = fs.readFileSync(path.join(dist, 'llms-full.txt'), 'utf8');
+const emailPages = [home, about, quote, contact, privacy, missing, llms, llmsFull];
+if (emailPages.some((file) => !file.includes(BUSINESS.contactEmail))) {
+  throw new Error('business email missing from a public page');
+}
+if (emailPages.some((file) => file.includes('gmail.com'))) {
+  throw new Error('old gmail address still published');
+}
+if (!home.includes(`"email":"${BUSINESS.contactEmail}"`)) {
+  throw new Error('organization email missing from homepage JSON-LD');
+}
 if (!missing.includes('noindex')) throw new Error('404 is indexable');
 if (home.match(/<title>[^<]+<\/title>/)[0] === quote.match(/<title>[^<]+<\/title>/)[0]) {
   throw new Error('homepage and quote titles are identical');
