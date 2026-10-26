@@ -9,7 +9,7 @@ export const GUIDES = [
     title: 'How to Choose Custom Corporate Journals for Employee Gifting in India | Journaly',
     description: 'A buyer’s guide for HR, admin, and founders in India: paper, binding, covers, logo methods, inside pages, and how to brief a custom employee journal without a published price list.',
     keywords: 'custom corporate journals India, employee gifting notebooks, branded journals for employees, corporate diary printing, custom logo notebooks bulk',
-    tldr: 'Choose the journal for the job it has to do in the first month, not for a finish you saw in a photograph. Paper, binding, cover, and the logo method are one brief. Journaly does not publish a price, a minimum order, or a lead time. Send the quantity, the date you need the books in hand, and the logo. The reply is the quote.',
+    tldr: 'Choose the journal for the job it has to do in the first month, not for a finish you saw in a photograph. Paper, binding, cover, and the logo method are one brief. The minimum order is 50 journals. Journaly does not publish a price or a lead time. Send the quantity, the date you need the books in hand, and the logo. The reply is the quote.',
     blocks: [
       { h2: 'Start with the job, not the finish' },
       { p: 'HR and admin teams usually buy employee journals for a joining group, a festival, or a thank-you that should last longer than a hamper. Founders buy them when the company is still small enough that someone knows every name on the list. Marketing and event managers buy them when the same object has to carry a logo into a room and then live on a desk.' },
@@ -32,7 +32,7 @@ export const GUIDES = [
       { h2: 'Packaging and where it has to arrive' },
       { p: 'Employee gifts are usually handed to a person. Client gifts sometimes ship to many cities, and sometimes to one office that does the handing out. Say which. A bulk carton is a different job from a book someone can put straight into a hamper. Packaging is confirmed in the quote. Include the city. The [corporate gifting](/corporate-gifting#india) page covers the same delivery question.' },
       { h2: 'Timelines, without a published lead time' },
-      { p: 'A custom journal is made after you approve a brief. Journaly does not publish a standard lead time, a minimum quantity, or a price. Those are answered for the order you describe, in the quote, or they are not answered on the website. The useful move is to put the real date in the first message. “In the office before the joining Monday” can be checked. “As soon as possible” cannot.' },
+      { p: 'A custom journal is made after you approve a brief. The minimum order is 50 journals. Need fewer than 50? Ask us about a paid sample. Journaly does not publish a standard lead time or a price. The useful move is to put the real date in the first message. “In the office before the joining Monday” can be checked. “As soon as possible” cannot.' },
       { p: 'If the date is a festival, name the day you want the journals in hand, which is often earlier than the festival because someone still has to pack them. Diwali dates and the limits of what a calendar date means are on the [Diwali corporate gifts](/diwali-corporate-gifts) page. A calendar date is not a promise that a late brief can be produced in time.' },
       { h2: 'What to put in the first message' },
       { p: 'Five lines are enough: how many journals, which cities, the date you need them, the branding you are considering, and what the inside should do. Attach the logo. If the quantity is still moving, send the range and say so. The [quote form](/business) opens WhatsApp with those details filled in. Nothing is sent until you press Send. You can also write on WhatsApp at +91 96998 97763.' }
@@ -40,7 +40,7 @@ export const GUIDES = [
     faqs: [
       {
         q: 'Can we order a small first batch for one team?',
-        a: 'A minimum order is not published. Send the quantity you actually need, including a smaller first run, and the quote will say whether that quantity can be taken.'
+        a: 'The minimum order is 50 journals. Need fewer than 50? Ask us about a paid sample. A sample price is not published.'
       },
       {
         q: 'Is there a price list for employee journals?',
@@ -95,7 +95,7 @@ export const GUIDES = [
       { p: 'Choose the cover against the rest of the box. If the tee is already loud, a quiet debossed journal keeps the kit from shouting twice. If the box is plain, a foil mark gives the book a reason to be picked up first. The [printing methods guide](/guides/logo-printing-for-journals) compares deboss, foil, UV, and screen printing. Gold foil and blind deboss are choices on the quote form. Anything else goes in the notes, with the logo file.' },
       { p: 'Paper and binding follow the same logic as any employee journal, set out in the [buyer’s guide to corporate journals](/guides/custom-corporate-journals-for-employee-gifting). A slim book fits a smaller box. A harder case feels more like a gift if the rest of the kit is practical. Say which you are aiming for. A cover menu is not published.' },
       { h2: 'Quantities, cities, and the joining date' },
-      { p: 'Onboarding quantities move. Offers drop. Start dates slip by a week. Build the brief around the cohort you are confident about, and say if a second, smaller batch may follow. A minimum is not published, so a pilot for one team is a fair thing to ask. The answer comes back in the quote, not as a rule on this page.' },
+      { p: 'Onboarding quantities move. Offers drop. Start dates slip by a week. Build the brief around the cohort you are confident about, and say if a second batch may follow. The minimum order is 50 journals. Need fewer than 50? Ask us about a paid sample. The answer comes back in the quote.' },
       { p: 'Name the cities. Some companies hand kits out from one office. Others courier a box to a hire in another city on the Friday before they join. Those are different packing jobs. Say whether you need books packed to hand to a person, or cartons for an office store. The [corporate gifting](/corporate-gifting#welcome-kits) note on welcome kits is the same point, shorter.' },
       { p: 'Put the joining date in the first message, and the date you need the kits packed, which is earlier. Journaly does not publish a lead time. “Before the 4 May cohort” can be confirmed or declined. A vague “soon” cannot. If several cohorts share one design, say the dates. One design across a quarter is often simpler than a new cover every month, and the inside note can still change if you ask.' },
       { h2: 'How to ask' },
@@ -112,7 +112,7 @@ export const GUIDES = [
       },
       {
         q: 'What if we do not know the final headcount?',
-        a: 'Send the number you are confident about and mention that a smaller follow-up may be needed. A minimum order is not published. The quote says whether the quantity can be taken.'
+        a: 'Send the number you are confident about and mention that a follow-up may be needed. The minimum order is 50 journals. Need fewer than 50? Ask us about a paid sample.'
       },
       {
         q: 'Do you sell a ready-made welcome kit with fixed contents?',
@@ -134,7 +134,7 @@ export const GUIDES = [
     title: 'Diwali Corporate Gift Ideas for Employees and Clients | Journaly',
     description: 'Diwali corporate gift ideas for Indian teams and clients, with a planning timeline around the festival calendar. A branded journal is one idea. The date is confirmed in a quote, not assumed.',
     keywords: 'Diwali corporate gift ideas, Diwali gifts for employees, Diwali client gifts India, branded journals Diwali, corporate gifts India',
-    tldr: 'Diwali gifting in India is a list, a budget conversation, and a date that arrives whether the boxes are ready or not. Sweets and dry fruit are the familiar gift. A branded journal is the one that stays on a desk into the new year. Journaly does not publish a Diwali cutoff, a price, or a minimum. The festival dates below are calendar facts. Whether a journal order can be ready is a question for the quote.',
+    tldr: 'Diwali gifting in India is a list, a budget conversation, and a date that arrives whether the boxes are ready or not. Sweets and dry fruit are the familiar gift. A branded journal is the one that stays on a desk into the new year. The minimum order is 50 journals. Journaly does not publish a Diwali cutoff or a price. The festival dates below are calendar facts. Whether a journal order can be ready is a question for the quote.',
     blocks: [
       { h2: 'What companies actually send' },
       { p: 'The Diwali gift that needs no explanation is a box of sweets or dry fruit, sometimes with a diya, a candle, or a short printed card. Clients expect to be remembered. Employees expect the office to mark the week. Both expectations are real, and both are usually met with the same kind of hamper, which is why so many of them feel interchangeable by the third office you visit.' },
@@ -153,7 +153,7 @@ export const GUIDES = [
       { h3: 'When the object is chosen' },
       { p: 'Choose cover, colour, and logo method with the [buyer’s guide](/guides/custom-corporate-journals-for-employee-gifting) and the [printing guide](/guides/logo-printing-for-journals) beside you. Write the greeting. Keep the client version and the employee version apart if they should be. Gold foil and blind deboss are on the quote form. Other methods go in the notes with the logo file.' },
       { h3: 'When you ask for the quote' },
-      { p: 'Send quantity, cities, the day you want journals in hand, and the day you will pack hampers, which is earlier. Ask for one address or for packs that can be handed out. A price, a minimum, and a lead time are not on this page. They come back in the quote, or the date is declined. Build packing time on your side after that yes. Courier queues in festival week are your problem as well as anyone else’s. A book that arrives on the morning of the gift day is a planning miss even if the production made it.' },
+      { p: 'Send quantity, cities, the day you want journals in hand, and the day you will pack hampers, which is earlier. Ask for one address or for packs that can be handed out. The minimum order is 50 journals. A price and a lead time are not on this page. They come back in the quote, or the date is declined. Build packing time on your side after that yes. Courier queues in festival week are your problem as well as anyone else’s. A book that arrives on the morning of the gift day is a planning miss even if the production made it.' },
       { h3: 'The week itself' },
       { p: 'Hand the journal over as part of the gift, not as an afterthought in a plastic mailer the following Monday. If a client is travelling, a book still makes sense after the festival only if your note does not say “this Diwali” in a way that has already passed. For the next year, keep the approved cover notes. Diwali 2027 falls on 29 October. The same brief, started while the previous year’s list is still fresh, is calmer than a brief that begins when the sweets are already on sale.' },
       { h2: 'What to send Journaly' },

@@ -4,6 +4,7 @@ import { trackEvent } from '../../utils/analytics';
 import { trackFunnel } from '../../utils/funnel';
 import { backupQuoteLead } from '../../utils/quoteBackup';
 import { useFeaturedSeason } from '../../utils/useFeaturedSeason';
+import { DESIGN_MOCKUP, UNDER_MINIMUM_NOTE } from '../../config/business';
 import { JOURNAL_TYPES } from '../../config/pricing';
 import {
   BRANDING_OPTIONS,
@@ -199,6 +200,7 @@ export default function QuoteForm({ sampleKit = false, estimate = {} }) {
             ? 'Name, WhatsApp number, and approximate quantity are enough to send. Submitting opens WhatsApp with the message filled in.'
             : 'Skip this if you would rather type the rest in WhatsApp. Nothing is ordered until you press Send.'}
         </p>
+        <p className="mt-3 text-sm text-[#1E1B18]">{DESIGN_MOCKUP}</p>
         {sampleKit ? (
           <p className="mt-3 text-sm text-[#1E1B18]">This request includes a sample kit. We confirm what a sample includes when we reply.</p>
         ) : null}
@@ -231,6 +233,7 @@ export default function QuoteForm({ sampleKit = false, estimate = {} }) {
                 <option key={option.value} value={option.value}>{option.label}</option>
               ))}
             </select>
+            <p className="mt-2 text-sm text-[#6A6054] font-light">{UNDER_MINIMUM_NOTE}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button type="submit" className="inline-flex min-h-11 items-center justify-center px-6 py-3.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest cursor-pointer">

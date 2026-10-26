@@ -8,7 +8,7 @@
  * Each range row, once you have prices:
  * { journalType, quantityTier, brandingMethod, min, max }
  * journalType matches JOURNAL_TYPES[].id
- * quantityTier matches a quantity option value from the quote form (for example "50-100")
+ * quantityTier matches a quantity option value from the quote form (for example "50-99")
  * brandingMethod matches a branding option label from the quote form
  * min and max are numbers in INR, per journal, before you decide tax treatment
  */

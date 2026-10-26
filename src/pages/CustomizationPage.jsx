@@ -1,3 +1,4 @@
+import { NAME_PERSONALISATION } from '../config/business';
 import { Breadcrumbs, CtaPair, Eyebrow, WhatsAppNote } from '../components/b2b/Marketing';
 
 const BLOCKS = [
@@ -10,6 +11,11 @@ const BLOCKS = [
     id: 'branding',
     title: 'Logo and branding',
     text: 'Custom logo notebooks can be requested with foil stamping, blind deboss, or UV print. Send the logo and say where it should sit. If you need another method, describe it. The quote will say what we can actually produce.'
+  },
+  {
+    id: 'names',
+    title: 'Name personalisation',
+    text: `${NAME_PERSONALISATION} Send the list of names with the brief. How each name is applied is confirmed in the quote.`
   },
   {
     id: 'pages',

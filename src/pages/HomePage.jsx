@@ -6,7 +6,7 @@ import ProofSection from '../components/b2b/ProofSection';
 import PriceEstimator from '../components/b2b/PriceEstimator';
 import { HOME_FAQS } from '../content/b2bFaq';
 import { GUIDES } from '../content/guides';
-import { BUSINESS } from '../config/business';
+import { BUSINESS, DESIGN_MOCKUP, NAME_PERSONALISATION } from '../config/business';
 import JournalCovers from '../components/b2b/JournalCovers';
 
 const LogoMockup = lazy(() => import('../components/b2b/LogoMockup'));
@@ -44,7 +44,7 @@ const USE_CASES = [
   { title: 'Events and conferences', text: 'One notebook for the room, with the agenda in the opening pages.', href: '/corporate-gifting#events' },
   { title: 'Diwali and New Year', text: 'Seasonal gifts for clients and teams, quoted around your date.', href: '/corporate-gifting#festive' },
   { title: 'Colleges and cohorts', text: 'A shared journal for a batch, a course, or an orientation.', href: '/corporate-gifting#cohorts' },
-  { title: 'Bulk orders across India', text: 'Tell us the city and the quantity. Delivery is part of the quote.', href: '/corporate-gifting#india' }
+  { title: 'Bulk orders across India', text: 'We deliver across India. Tell us the city and the quantity.', href: '/corporate-gifting#india' }
 ];
 
 const OPTIONS = [
@@ -56,7 +56,7 @@ const OPTIONS = [
 
 const STEPS = [
   { n: '01', title: 'Brief', text: 'Quantity, deadline, branding, and the city in India. If you are unsure of the quantity, say so.' },
-  { n: '02', title: 'Design proof', text: 'We show the cover and the inside approach before production, so you can see the direction.' },
+  { n: '02', title: 'Design mockup', text: DESIGN_MOCKUP },
   { n: '03', title: 'Production', text: 'We make the run to the brief you approved. We do not publish a standard lead time.' },
   { n: '04', title: 'Delivery', text: 'Shipped for delivery across India to the address you give us.' }
 ];
@@ -75,7 +75,8 @@ export default function HomePage() {
             Notebooks and diaries with your logo and your inside pages. For corporate gifts, employee welcome kits, events, and New Year gifting. Tell us the quantity and deadline. We reply with a quote.
           </p>
           <CtaPair />
-          <p className="mt-4">
+          <p className="mt-4 text-sm text-[#6A6054] font-light">{DESIGN_MOCKUP}</p>
+          <p className="mt-2">
             <WhatsAppNote />
           </p>
         </div>
@@ -106,7 +107,7 @@ export default function HomePage() {
           <div className="max-w-2xl mb-8">
             <Eyebrow>Customization</Eyebrow>
             <h2 id="customize-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">Your cover, your mark, your pages</h2>
-            <p className="mt-3 text-[#6A6054] font-light">Nothing here is a published price list. Each option is something you can ask for in the quote.</p>
+            <p className="mt-3 text-[#6A6054] font-light">Nothing here is a published price list. Each option is something you can ask for in the quote. {NAME_PERSONALISATION}</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {OPTIONS.map((item) => (
@@ -139,7 +140,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20" aria-labelledby="process-heading">
         <div className="max-w-2xl mb-8">
           <Eyebrow>How it works</Eyebrow>
-          <h2 id="process-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">Brief, proof, production, delivery</h2>
+          <h2 id="process-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">Brief, mockup, production, delivery</h2>
         </div>
         <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {STEPS.map((step) => (
@@ -158,7 +159,7 @@ export default function HomePage() {
           <h2 id="why-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">A business order, not a guess</h2>
           <ul className="mt-6 space-y-4 text-sm text-[#6A6054] font-light leading-relaxed">
             <li>Made for HR, admin, marketing, procurement, and founders who need a branded journal for a team, a client list, or an event.</li>
-            <li>You see the cover and inside approach before the run is produced.</li>
+            <li>{DESIGN_MOCKUP}</li>
             <li>The conversation stays on WhatsApp, from the first brief to the quote.</li>
             <li>Each order is quoted for the quantity, branding, and date you need.</li>
           </ul>
@@ -203,6 +204,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto rounded-3xl bg-[#1E1B18] text-[#FAF7F2] px-6 sm:px-12 py-12 sm:py-16">
           <h2 className="text-3xl sm:text-4xl font-medium tracking-tight max-w-xl">Tell us the quantity and the deadline.</h2>
           <p className="mt-3 text-[#E7DFD4] font-light max-w-lg">We will reply with a quote for custom journals. If a number is not published on this site, we will not invent it.</p>
+          <p className="mt-3 text-sm text-[#E7DFD4] font-light max-w-lg">{DESIGN_MOCKUP}</p>
           <CtaPair quoteLabel="Get a quote" onDark />
         </div>
       </section>

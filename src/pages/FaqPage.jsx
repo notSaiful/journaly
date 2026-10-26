@@ -11,7 +11,7 @@ export default function FaqPage() {
         <Eyebrow>FAQ</Eyebrow>
         <h1 className="text-4xl sm:text-5xl font-medium tracking-tight">Questions about custom journals</h1>
         <p className="mt-4 text-[#6A6054] font-light leading-relaxed">
-          If a number is not listed, it is not confirmed. We would rather say that than guess a minimum, a lead time, or a price.
+          The minimum order is 50 journals. If another number is not listed, it is not confirmed. We would rather say that than guess a lead time or a price.
         </p>
         <div className="mt-10 space-y-10">
           {categories.map((category) => (

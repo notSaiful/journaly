@@ -1,4 +1,4 @@
-import { BUSINESS, confirmedLegalEntity, parentBrandLink } from '../config/business';
+import { BUSINESS, DESIGN_MOCKUP, NAME_PERSONALISATION, UNDER_MINIMUM_NOTE, confirmedLegalEntity, parentBrandLink } from '../config/business';
 
 function whoRunsAnswer() {
   const legal = confirmedLegalEntity();
@@ -19,7 +19,12 @@ export const B2B_FAQS = [
   {
     category: 'Ordering',
     q: 'Is there a minimum order?',
-    a: 'A minimum order quantity is not published. Tell us how many journals you need, including a smaller run, and we will say if we can take it.'
+    a: `Yes. The minimum order is ${BUSINESS.minimumOrderQuantity} journals. ${UNDER_MINIMUM_NOTE}`
+  },
+  {
+    category: 'Ordering',
+    q: 'Do you provide a design mockup before I order?',
+    a: `Yes. ${DESIGN_MOCKUP}`
   },
   {
     category: 'Ordering',
@@ -29,12 +34,17 @@ export const B2B_FAQS = [
   {
     category: 'Ordering',
     q: 'Do you deliver across India?',
-    a: 'Yes. Journaly takes bulk journal orders for delivery across India. Include the city and the date you need them.'
+    a: 'Yes. Journaly delivers custom journal orders across India. Include the city and the date you need them.'
   },
   {
     category: 'Customization',
     q: 'Can you put our logo on the journal?',
     a: 'Yes. Ask for foil stamping, blind deboss, UV print, or another branding method, and send the logo with your brief. The quote will say what we can produce.'
+  },
+  {
+    category: 'Customization',
+    q: 'Can each journal be personalised with a name?',
+    a: `${NAME_PERSONALISATION} Tell us in the quote if you want a name on every book.`
   },
   {
     category: 'Customization',
@@ -72,8 +82,10 @@ export const HOME_FAQS = B2B_FAQS.filter((item) =>
   [
     'How do I get a price for custom journals?',
     'Is there a minimum order?',
+    'Do you provide a design mockup before I order?',
     'How long does a custom order take?',
     'Can you put our logo on the journal?',
+    'Can each journal be personalised with a name?',
     'Do you deliver across India?',
     'Who runs Journaly?'
   ].includes(item.q)

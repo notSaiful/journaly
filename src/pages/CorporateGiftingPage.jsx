@@ -1,3 +1,4 @@
+import { NAME_PERSONALISATION } from '../config/business';
 import { Breadcrumbs, CtaPair, Eyebrow, WhatsAppNote } from '../components/b2b/Marketing';
 
 const OCCASIONS = [
@@ -43,7 +44,7 @@ export default function CorporateGiftingPage() {
           Corporate gifting journals for teams, clients, and events.
         </h1>
         <p className="mt-5 text-base sm:text-lg text-[#6A6054] font-light leading-relaxed">
-          Personalised corporate gifts in India, made as journals and notebooks rather than another object that gets set aside. Employee welcome kit notebooks, conference books, and New Year corporate diaries start from the same brief: quantity, deadline, and branding.
+          Personalised corporate gifts in India, made as journals and notebooks rather than another object that gets set aside. Employee welcome kit notebooks, conference books, and New Year corporate diaries start from the same brief: quantity, deadline, and branding. {NAME_PERSONALISATION}
         </p>
         <CtaPair />
         <div className="mt-4"><WhatsAppNote /></div>
@@ -59,7 +60,7 @@ export default function CorporateGiftingPage() {
         <div className="p-6 sm:p-8 rounded-3xl bg-[#F4EFE6] border border-[#E5DDCF]">
           <h2 className="text-2xl font-medium tracking-tight">Ask for the quote before you promise a date internally</h2>
           <p className="mt-3 text-sm text-[#6A6054] font-light leading-relaxed">
-            We do not publish a minimum order or a lead time. Share the real number and the real date. We will tell you what we can do.
+            The minimum order is 50 journals. We do not publish a lead time. Share the real number and the real date. We will tell you what we can do.
           </p>
           <CtaPair quoteLabel="Get a gifting quote" />
         </div>

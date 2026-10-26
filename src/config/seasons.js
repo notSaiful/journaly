@@ -47,7 +47,7 @@ const DATED_PAGES = [
     description: 'Branded journals as Diwali corporate gifts for clients and teams in India. Share the quantity and the date you have in mind. Journaly replies with a quote on WhatsApp.',
     keywords: 'Diwali corporate gifts, Diwali branded journals, corporate gifts India, custom journals for businesses India',
     h1: 'Diwali corporate gifts, as branded journals',
-    intro: 'A journal stays on a desk after the hamper is unpacked. Tell us how many you need and the date you are working towards. We reply on WhatsApp with a quote. This page does not publish a price, a minimum, or a lead time.',
+    intro: 'A journal stays on a desk after the hamper is unpacked. Tell us how many you need and the date you are working towards. We reply on WhatsApp with a quote. The minimum order is 50 journals. This page does not publish a price or a lead time.',
     faqs: [
       {
         q: 'Can Journaly make journals as Diwali gifts?',
@@ -247,7 +247,7 @@ const EVERGREEN_PAGES = [
       },
       {
         q: 'Is there a minimum hiring batch?',
-        a: 'No minimum is published. Share the quantity you expect, or say you are unsure. The quote will say what Journaly can take on.'
+        a: 'The minimum order is 50 journals. Need fewer than 50? Ask us about a paid sample.'
       }
     ]
   },

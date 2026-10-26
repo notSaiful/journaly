@@ -21,7 +21,7 @@ export default function AboutPage() {
           </p>
           <ParentBrandLine className="block text-[#1E1B18] underline underline-offset-4" />
           <p>
-            A minimum order, a standard lead time, client names, and certifications are not published, because they are not confirmed. Ask in the quote and we will answer with what we can actually do.
+            The minimum order is 50 journals. A standard lead time, client names, and certifications are not published, because they are not confirmed. Ask in the quote and we will answer with what we can actually do.
           </p>
           <p>
             Journaly takes custom orders for businesses. Quantity, branding, and timing are agreed in the quote.

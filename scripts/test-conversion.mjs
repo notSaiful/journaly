@@ -23,14 +23,16 @@ const withDeadline = bannerCopy({ ...diwali, orderBy: '2026-10-18' });
 assert.equal(withDeadline, `Order by ${formatSeasonDate('2026-10-18')} for Diwali`);
 
 assert.equal(PRICE_RANGES.length, 0);
-assert.equal(findPriceRange({ journalType: 'notebook', quantityTier: '50-100', brandingMethod: 'Gold foil logo' }), null);
+assert.equal(findPriceRange({ journalType: 'notebook', quantityTier: '50-99', brandingMethod: 'Gold foil logo' }), null);
 
-const step1 = validateQuoteStep1({ name: 'Asha', phone: '9699897763', quantity: '50-100' });
+const step1 = validateQuoteStep1({ name: 'Asha', phone: '9699897763', quantity: '50-99' });
 assert.equal(step1, null);
+const belowMinimum = validateQuoteStep1({ name: 'Asha', phone: '9699897763', quantity: '25-50' });
+assert.equal(belowMinimum.field, 'quantity');
 const quote = buildInstitutionalQuoteUrl({
   name: 'Asha',
   phone: '9699897763',
-  quantity: '50-100',
+  quantity: '50-99',
   sampleKit: true,
   journalType: 'Notebook'
 });
@@ -41,7 +43,7 @@ assert.doesNotMatch(decodeURIComponent(quote.url), /Company:/);
 
 const missingEnv = await handleQuoteLead({
   method: 'POST',
-  body: { name: 'Asha', phone: '9699897763', quantity: '50-100' },
+  body: { name: 'Asha', phone: '9699897763', quantity: '50-99' },
   env: {}
 });
 assert.equal(missingEnv.status, 200);

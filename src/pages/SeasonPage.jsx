@@ -1,3 +1,4 @@
+import { NAME_PERSONALISATION } from '../config/business';
 import { pageByPath, nextInstance, formatSeasonDate, bannerCopy } from '../config/seasons';
 import { useFeaturedSeason } from '../utils/useFeaturedSeason';
 import { Breadcrumbs, CtaPair, Eyebrow, FaqList } from '../components/b2b/Marketing';
@@ -22,6 +23,7 @@ export default function SeasonPage({ path }) {
         <Eyebrow>{page.evergreen ? 'Always available' : 'Seasonal'}</Eyebrow>
         <h1 className="text-4xl sm:text-5xl font-medium tracking-tight leading-[1.08]">{page.h1}</h1>
         <p className="mt-5 text-base sm:text-lg text-[#6A6054] font-light leading-relaxed">{page.intro}</p>
+        <p className="mt-4 text-base text-[#6A6054] font-light leading-relaxed">{NAME_PERSONALISATION}</p>
         {showingFeature ? (
           <p className="mt-4 text-sm font-medium" data-season={featured.id}>{bannerCopy(featured)}</p>
         ) : null}
