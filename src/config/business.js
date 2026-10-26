@@ -37,7 +37,7 @@ export const BUSINESS = {
   },
   whatsappDisplay: '+91 96998 97763',
   whatsappE164: '919699897763',
-  contactEmail: 'saifulbusiness47@gmail.com',
+  contactEmail: 'hello@journaly.in',
   country: 'India',
   minimumOrderQuantity: 50,
   leadTime: null,
