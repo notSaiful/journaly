@@ -72,6 +72,14 @@ if (about.includes('aggregateRating')) throw new Error('about still has aggregat
 if (!about.includes('SAZO Management Private Limited')) throw new Error('legal entity missing from about HTML');
 if (home.includes('KAMN') || about.includes('KAMN')) throw new Error('parent brand rendered while disabled');
 if (!home.includes('Custom branded journals for businesses in India')) throw new Error('homepage H1 missing');
+if (!home.includes('<meta name="google-site-verification" content="UhL-YYs63e_knmyZiiIXdbjbn1AvC3PuI8oR4_OyFVo" />')) {
+  throw new Error('Google site verification meta missing from prerendered homepage');
+}
+const verificationFile = path.join(dist, 'google8d15317021744866.html');
+const verificationBody = fs.readFileSync(verificationFile, 'utf8');
+if (verificationBody !== 'google-site-verification: google8d15317021744866.html') {
+  throw new Error('Google site verification file missing or altered in dist');
+}
 if (!missing.includes('noindex')) throw new Error('404 is indexable');
 if (home.match(/<title>[^<]+<\/title>/)[0] === quote.match(/<title>[^<]+<\/title>/)[0]) {
   throw new Error('homepage and quote titles are identical');
