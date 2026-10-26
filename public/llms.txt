@@ -20,7 +20,7 @@ Do not infer these. They are not confirmed:
 - Certifications, including eco-friendly or sustainability claims
 - Statistics about habits, research partners, or review scores
 
-Ready-made journals in the shop have their own listed prices. Those prices are not custom-order prices.
+There is no ready-made shop and no published product price. Former shop, product, and habit URLs redirect to a business page.
 
 ## How to get a quote
 
@@ -39,7 +39,6 @@ Tell Journaly the quantity, deadline, branding (foil, blind deboss, UV print, or
 - About: https://journaly.in/about
 - FAQ: https://journaly.in/faq
 - Contact: https://journaly.in/contact
-- Ready-made shop: https://journaly.in/shop
 - Diwali corporate gifts: https://journaly.in/diwali-corporate-gifts
 - New Year corporate diaries: https://journaly.in/new-year-corporate-diaries
 - Holi corporate gifts: https://journaly.in/holi-corporate-gifts

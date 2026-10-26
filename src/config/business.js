@@ -13,7 +13,8 @@
  * - parentBrand.href: e.g. https://kamn-growth.vercel.app (unused while enabled is false)
  * - minimumOrderQuantity: not confirmed
  * - leadTime: not confirmed
- * - publishedFromPrice: not confirmed (ready-made shop prices live on each product, not here)
+ * - publishedFromPrice: not confirmed
+ * - policy.*: commercial terms. Null means the term is confirmed in the quote, not published here.
  * - clientNames: none confirmed
  * - testimonials: none confirmed for the business offer
  * - certifications: none confirmed (including eco / sustainability claims)
@@ -52,6 +53,14 @@ export const BUSINESS = {
   clientLogos: [],
   caseStudies: [],
   portfolio: [],
+  policy: {
+    paymentTerms: null,
+    cancellationWindow: null,
+    deliveryWindow: null,
+    returnWindow: null,
+    grievanceOfficerName: null,
+    registeredAddress: null
+  },
   heroAb: {
     enabled: false,
     variants: [

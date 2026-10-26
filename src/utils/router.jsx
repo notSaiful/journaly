@@ -48,13 +48,7 @@ export function RouterProvider({ children, initialPath }) {
     return pathFromLocation();
   };
 
-  const getParamsForPath = (path) => {
-    if (path.startsWith('/product/')) {
-      const id = path.replace('/product/', '').split('/')[0];
-      return { productId: id };
-    }
-    return {};
-  };
+  const getParamsForPath = () => ({});
 
   const [currentPath, setCurrentPath] = useState(getInitialPath);
   const [search, setSearch] = useState(() => (typeof window === 'undefined' ? '' : window.location.search || ''));

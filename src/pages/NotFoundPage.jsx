@@ -8,11 +8,11 @@ export default function NotFoundPage() {
         <Eyebrow>404</Eyebrow>
         <h1 className="text-4xl sm:text-5xl font-medium tracking-tight">This page is not on Journaly.</h1>
         <p className="mt-4 text-[#6A6054] font-light leading-relaxed">
-          The link may be old. If you want custom journals for a business, ask for a quote. Ready-made journals are in the shop.
+          The link may be old. Custom journals for a business start with a quote.
         </p>
         <CtaPair />
         <p className="mt-6 text-sm">
-          <SiteLink href="/shop" className="underline underline-offset-4">Ready-made journals</SiteLink>
+          <SiteLink href="/customization" className="underline underline-offset-4">Customization</SiteLink>
         </p>
       </div>
     </div>

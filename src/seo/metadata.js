@@ -1,4 +1,3 @@
-import { PRODUCTS } from '../data/products';
 import { BUSINESS, confirmedLegalEntity, parentBrandLink } from '../config/business';
 import { SEASON_PAGES } from '../config/seasons';
 import { B2B_FAQS, HOME_FAQS } from '../content/b2bFaq';
@@ -6,8 +5,8 @@ import { B2B_FAQS, HOME_FAQS } from '../content/b2bFaq';
 const SITE = BUSINESS.siteUrl;
 
 export const DEFAULT_IMAGE = {
-  path: '/images/journal-collection-stacked.jpg',
-  alt: 'A stack of Journaly notebooks prepared for a business order'
+  path: '/images/branded-journal.svg',
+  alt: 'Placeholder journal covers with a logo mark, for a custom business order'
 };
 
 function abs(path) {
@@ -87,44 +86,9 @@ const STATIC_ROUTES = [
     crumbs: ['FAQ']
   }),
   route({
-    path: '/shop',
-    title: 'Ready-made Journals | Journaly Shop',
-    description: 'Ready-made Journaly journals for individual buyers, with the prices listed on each product. Custom business orders are quoted separately.',
-    keywords: 'ready-made journals India, Journaly shop, buy journal online India',
-    image: '/images/journal-daisy-front.jpg',
-    imageAlt: 'The Daisy Journal, a ready-made Journaly notebook',
-    priority: '0.5',
-    changefreq: 'weekly',
-    crumbs: ['Ready-made journals']
-  }),
-  route({
-    path: '/five-minute-habit',
-    title: 'Ready-made Daily Journal Format | Journaly',
-    description: 'A page about the ready-made Journaly journal format for individual buyers. Custom business orders are quoted separately.',
-    keywords: 'Journaly ready-made journal, daily journal India',
-    priority: '0.3',
-    crumbs: ['Journal format']
-  }),
-  route({
-    path: '/track-order',
-    title: 'Track a Journaly Order',
-    description: 'Track a Journaly shop order with your order id or phone number.',
-    keywords: 'track Journaly order, order status',
-    priority: '0.4',
-    crumbs: ['Track order']
-  }),
-  route({
-    path: '/order-success',
-    title: 'Order Received | Journaly',
-    description: 'Confirmation for a Journaly shop checkout.',
-    robots: 'noindex, nofollow',
-    noIndex: true,
-    crumbs: ['Order received']
-  }),
-  route({
     path: '/admin',
     title: 'Admin | Journaly',
-    description: 'Private order administration.',
+    description: 'Private list of custom-journal quote leads.',
     robots: 'noindex, nofollow',
     noIndex: true,
     crumbs: ['Admin']
@@ -132,7 +96,7 @@ const STATIC_ROUTES = [
   route({
     path: '/privacy-policy',
     title: 'Privacy Policy | Journaly',
-    description: 'How Journaly handles personal information when you enquire or buy.',
+    description: 'How Journaly handles personal information sent with a custom journal enquiry.',
     keywords: 'Journaly privacy policy',
     priority: '0.3',
     crumbs: ['Privacy policy']
@@ -140,7 +104,7 @@ const STATIC_ROUTES = [
   route({
     path: '/terms-and-conditions',
     title: 'Terms and Conditions | Journaly',
-    description: 'Terms for using the Journaly website and buying ready-made journals.',
+    description: 'Terms for using the Journaly website and requesting a custom journal order.',
     keywords: 'Journaly terms and conditions',
     priority: '0.3',
     crumbs: ['Terms']
@@ -148,7 +112,7 @@ const STATIC_ROUTES = [
   route({
     path: '/shipping-delivery-policy',
     title: 'Shipping and Delivery Policy | Journaly',
-    description: 'Shipping and delivery terms for Journaly shop orders.',
+    description: 'How delivery for a custom Journaly order is confirmed in the quote.',
     keywords: 'Journaly shipping policy',
     priority: '0.3',
     crumbs: ['Shipping']
@@ -156,7 +120,7 @@ const STATIC_ROUTES = [
   route({
     path: '/refund-cancellation-policy',
     title: 'Refund and Cancellation Policy | Journaly',
-    description: 'Refund and cancellation terms for Journaly shop orders.',
+    description: 'Cancellation and refund terms for custom Journaly orders. Unpublished windows are confirmed in the quote.',
     keywords: 'Journaly refund policy',
     priority: '0.3',
     crumbs: ['Refunds']
@@ -172,7 +136,7 @@ const STATIC_ROUTES = [
   route({
     path: '/404',
     title: 'Page Not Found | Journaly',
-    description: 'That page is not on Journaly. Request a quote for custom journals, or visit the ready-made shop.',
+    description: 'That page is not on Journaly. Request a quote for custom journals.',
     robots: 'noindex, nofollow',
     noIndex: true,
     crumbs: ['Page not found']
@@ -190,43 +154,14 @@ STATIC_ROUTES.push(...SEASON_PAGES.map((page) => route({
   faqs: page.faqs
 })));
 
-function catalogProducts() {
-  return PRODUCTS.filter((product) => product?.id && product.price && product.name && product.image);
-}
-
-function productRoute(product) {
-  return route({
-    path: `/product/${product.id}`,
-    title: `${product.name} | Ready-made Journal | Journaly`,
-    description: `${product.name} is a ready-made Journaly journal listed at ₹${product.price}. Custom branded journals for businesses are quoted separately.`,
-    keywords: `${product.name}, ready-made journal India, Journaly`,
-    image: product.image,
-    imageAlt: `${product.name}, a ready-made Journaly journal`,
-    priority: '0.5',
-    changefreq: 'weekly',
-    crumbs: ['Ready-made journals', product.name],
-    product
-  });
-}
-
 export function getMetaForPath(pathname) {
   const path = !pathname || pathname === '/' ? '/' : pathname.replace(/\/$/, '');
   if (path === '/404') return STATIC_ROUTES.find((item) => item.path === '/404');
-  const found = STATIC_ROUTES.find((item) => item.path === path);
-  if (found) return found;
-  if (path.startsWith('/product/')) {
-    const id = path.split('/')[2];
-    const product = catalogProducts().find((item) => item.id === id || item.slug === id);
-    if (product) return productRoute(product);
-  }
-  return STATIC_ROUTES.find((item) => item.path === '/404');
+  return STATIC_ROUTES.find((item) => item.path === path) || STATIC_ROUTES.find((item) => item.path === '/404');
 }
 
 export function prerenderPaths() {
-  return [
-    ...STATIC_ROUTES.map((item) => item.path),
-    ...catalogProducts().map((product) => `/product/${product.id}`)
-  ];
+  return STATIC_ROUTES.map((item) => item.path);
 }
 
 export function sitemapPaths() {
@@ -279,7 +214,6 @@ function breadcrumbNode(meta) {
       name
     };
     if (isLast) entry.item = abs(meta.path === '/' ? '/' : meta.path);
-    else if (name === 'Ready-made journals') entry.item = `${SITE}/shop`;
     items.push(entry);
   });
   if (crumbs.length === 0) return null;
@@ -310,26 +244,6 @@ function faqNode(items) {
   };
 }
 
-function productNode(meta) {
-  const product = meta.product;
-  return {
-    '@type': 'Product',
-    name: product.name,
-    image: abs(product.image),
-    description: meta.description,
-    sku: product.id,
-    brand: { '@type': 'Brand', name: BUSINESS.brandName },
-    offers: {
-      '@type': 'Offer',
-      url: abs(meta.path),
-      priceCurrency: 'INR',
-      price: String(product.price),
-      availability: product.inStock === false ? 'https://schema.org/OutOfStock' : 'https://schema.org/InStock',
-      itemCondition: 'https://schema.org/NewCondition'
-    }
-  };
-}
-
 export function buildJsonLd(meta) {
   const graph = [organizationNode()];
   if (meta.path === '/') {
@@ -352,7 +266,6 @@ export function buildJsonLd(meta) {
     graph.push({ ...serviceNode(), url: abs(meta.path) });
     graph.push(faqNode(meta.faqs));
   }
-  if (meta.product) graph.push(productNode(meta));
   const crumbs = breadcrumbNode(meta);
   if (crumbs) graph.push(crumbs);
   return { '@context': 'https://schema.org', '@graph': graph };

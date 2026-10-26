@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useRouter } from '../utils/router';
-import { trackEvent } from '../utils/analytics';
 import { trackFunnel } from '../utils/funnel';
 import { useFeaturedSeason } from '../utils/useFeaturedSeason';
 import SiteLink from './SiteLink';
@@ -13,7 +12,7 @@ const primaryLinks = [
   { label: 'FAQ', path: '/faq' }
 ];
 
-export default function Navbar({ cartCount = 0, onOpenCart }) {
+export default function Navbar() {
   const { currentPath, navigate } = useRouter();
   const season = useFeaturedSeason();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -63,32 +62,12 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <SiteLink
-              href="/shop"
-              className="hidden md:inline text-[11px] uppercase tracking-[0.14em] text-[#6A6054] hover:text-[#1E1B18]"
-            >
-              Shop
-            </SiteLink>
-            <SiteLink
               href="/business"
               onClick={() => trackFunnel('cta_click', { cta: 'nav_quote' })}
               className="hidden sm:inline-flex items-center min-h-11 px-4 py-2.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-[11px] font-semibold uppercase tracking-widest hover:bg-[#3A342C]"
             >
               Get a quote
             </SiteLink>
-            <button
-              type="button"
-              onClick={() => {
-                trackEvent('view_cart', { count: cartCount });
-                onOpenCart();
-              }}
-              className="group flex items-center gap-2 py-2 px-3 rounded-full bg-white border border-[#E5DDCF] hover:border-[#1E1B18] cursor-pointer"
-              aria-label={`Shopping bag, ${cartCount} items`}
-            >
-              <ShoppingBag className="w-4 h-4" aria-hidden="true" />
-              <span className="w-5 h-5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-[10px] font-bold flex items-center justify-center">
-                {cartCount}
-              </span>
-            </button>
             <button
               type="button"
               onClick={() => setMobileMenuOpen((open) => !open)}
@@ -135,14 +114,8 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
               <ArrowRight className="w-4 h-4 opacity-50" aria-hidden="true" />
             </button>
           ))}
-          <button type="button" onClick={() => closeAndGo('/shop')} className="w-full text-left py-3 px-2 text-sm text-[#6A6054] cursor-pointer">
-            Shop ready-made journals
-          </button>
           <button type="button" onClick={() => closeAndGo('/contact')} className="w-full text-left py-3 px-2 text-sm text-[#6A6054] cursor-pointer">
             Contact
-          </button>
-          <button type="button" onClick={() => closeAndGo('/track-order')} className="w-full text-left py-3 px-2 text-sm text-[#6A6054] cursor-pointer">
-            Track an order
           </button>
         </nav>
       ) : null}
