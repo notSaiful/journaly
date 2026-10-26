@@ -11,21 +11,30 @@ export function useRouter() {
   return useContext(RouterContext);
 }
 
-export function RouterProvider({ children }) {
+function normalizePath(path) {
+  if (!path) return '/';
+  const withoutQuery = String(path).split('?')[0].split('#')[0];
+  if (withoutQuery.length > 1 && withoutQuery.endsWith('/')) return withoutQuery.slice(0, -1);
+  return withoutQuery || '/';
+}
+
+function pathFromLocation() {
+  if (typeof window === 'undefined') return '/';
+  const hash = window.location.hash.toLowerCase();
+  if (hash === '#terms' || hash === '#/terms-and-conditions') return '/terms-and-conditions';
+  if (hash === '#privacy' || hash === '#/privacy-policy') return '/privacy-policy';
+  if (hash === '#refund' || hash === '#refund-policy' || hash === '#/refund-cancellation-policy') return '/refund-cancellation-policy';
+  if (hash === '#shipping' || hash === '#shipping-policy' || hash === '#/shipping-delivery-policy') return '/shipping-delivery-policy';
+  if (hash === '#contact' || hash === '#contact-us' || hash === '#/contact') return '/contact';
+  if (hash === '#grievance' || hash === '#grievance-redressal' || hash === '#/grievance-redressal') return '/grievance-redressal';
+  if (hash === '#faq' || hash === '#/faq') return '/faq';
+  return normalizePath(window.location.pathname || '/');
+}
+
+export function RouterProvider({ children, initialPath }) {
   const getInitialPath = () => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.toLowerCase();
-      // Handle legacy hash routing for compliance crawlers
-      if (hash === '#terms' || hash === '#/terms-and-conditions') return '/terms-and-conditions';
-      if (hash === '#privacy' || hash === '#/privacy-policy') return '/privacy-policy';
-      if (hash === '#refund' || hash === '#refund-policy' || hash === '#/refund-cancellation-policy') return '/refund-cancellation-policy';
-      if (hash === '#shipping' || hash === '#shipping-policy' || hash === '#/shipping-delivery-policy') return '/shipping-delivery-policy';
-      if (hash === '#contact' || hash === '#contact-us' || hash === '#/contact') return '/contact';
-      if (hash === '#grievance' || hash === '#grievance-redressal' || hash === '#/grievance-redressal') return '/grievance-redressal';
-      if (hash === '#faq' || hash === '#/faq') return '/faq';
-      return window.location.pathname || '/';
-    }
-    return '/';
+    if (typeof initialPath === 'string') return normalizePath(initialPath);
+    return pathFromLocation();
   };
 
   const getParamsForPath = (path) => {
@@ -41,16 +50,7 @@ export function RouterProvider({ children }) {
 
   useEffect(() => {
     const handlePopState = () => {
-      const hash = window.location.hash.toLowerCase();
-      let path = window.location.pathname || '/';
-      if (hash === '#terms' || hash === '#/terms-and-conditions') path = '/terms-and-conditions';
-      else if (hash === '#privacy' || hash === '#/privacy-policy') path = '/privacy-policy';
-      else if (hash === '#refund' || hash === '#refund-policy' || hash === '#/refund-cancellation-policy') path = '/refund-cancellation-policy';
-      else if (hash === '#shipping' || hash === '#shipping-policy' || hash === '#/shipping-delivery-policy') path = '/shipping-delivery-policy';
-      else if (hash === '#contact' || hash === '#contact-us' || hash === '#/contact') path = '/contact';
-      else if (hash === '#grievance' || hash === '#grievance-redressal' || hash === '#/grievance-redressal') path = '/grievance-redressal';
-      else if (hash === '#faq' || hash === '#/faq') path = '/faq';
-
+      const path = pathFromLocation();
       setCurrentPath(path);
       setParams(getParamsForPath(path));
     };

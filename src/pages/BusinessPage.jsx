@@ -35,7 +35,7 @@ const EMPTY_QUOTE = {
   email: '',
   phone: '',
   company: '',
-  quantity: '50-100',
+  quantity: '',
   useCase: '',
   branding: '',
   deadline: '',
@@ -74,16 +74,14 @@ export default function BusinessPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-4xl mb-16">
-          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E5A93C] font-semibold block mb-3">
-            B2B, Institutional & Corporate Gifting
+          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#7C5A1E] font-semibold block mb-3">
+            Custom journals for businesses
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#1E1B18] tracking-tight leading-tight">
-            MAKE YOUR BRAND <br />
-            PART OF SOMETHING <br />
-            <span className="text-[#6A6054] font-normal">WORTH KEEPING.</span>
+            Request a quote
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#6A6054] font-light max-w-xl">
-            Custom guided journals for teams, colleges, events, and meaningful executive gifting.
+            Tell us the quantity, deadline, and how you want the journals branded. We reply on WhatsApp with a quote. No order is placed on this form.
           </p>
           <a
             href={WHATSAPP_CHAT_URL}
@@ -102,7 +100,7 @@ export default function BusinessPage() {
               <span className="text-xs font-serif font-medium text-[#1E1B18] block mb-1">
                 {item}
               </span>
-              <span className="text-[10px] text-[#8C7E72] font-mono uppercase tracking-wider block">
+              <span className="text-[10px] text-[#6A6054] font-mono uppercase tracking-wider block">
                 Custom Foil Available
               </span>
             </div>
@@ -117,7 +115,7 @@ export default function BusinessPage() {
                 Press Send in WhatsApp
               </h3>
               <p className="text-sm text-[#6A6054] font-light max-w-md mx-auto">
-                Your quote is filled in and ready for {JOURNALY_WHATSAPP_DISPLAY}. WhatsApp should have opened — press Send there so the request reaches us. We reply within one business day.
+                Your quote is filled in and ready for {JOURNALY_WHATSAPP_DISPLAY}. WhatsApp should have opened — press Send there so the request reaches us. We reply on WhatsApp with a quote.
               </p>
               <a
                 href={whatsappUrl}
@@ -146,7 +144,7 @@ export default function BusinessPage() {
                   Request an Institutional Quote
                 </h3>
                 <p className="text-xs text-[#6A6054] font-light mt-1">
-                  Custom blind deboss, gold foil logo stamping, and bespoke interior tip-ins starting at 25 units. Submitting opens WhatsApp with these details filled in.
+                  Tell us the quantity, deadline, and branding. Submitting opens WhatsApp with these details filled in. Nothing is delivered until you press Send.
                 </p>
               </div>
 
@@ -237,6 +235,9 @@ export default function BusinessPage() {
                     onChange={updateField('quantity')}
                     className={fieldClass}
                   >
+                    <option value="" disabled>
+                      Select a quantity
+                    </option>
                     {QUANTITY_OPTIONS.map((option) => (
                       <option key={option.value} value={option.value}>
                         {option.label}

@@ -1,13 +1,15 @@
-# Robots.txt for JOURNALY — https://journaly.in
+# Robots.txt for Journaly — https://journaly.in
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api/
+Disallow: /order-success
 
-# Explicit permissions for major AI Search, LLMs & Citation Crawlers
+# Major search and answer-engine crawlers
 User-agent: GPTBot
 Allow: /
 Disallow: /admin
+Disallow: /api/
 
 User-agent: ChatGPT-User
 Allow: /
@@ -23,10 +25,19 @@ User-agent: ClaudeBot
 Allow: /
 Disallow: /admin
 
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
 Allow: /
 
 User-agent: Applebot-Extended
@@ -44,9 +55,17 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Canonical Sitemaps & AI Context Endpoints
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
 Sitemap: https://journaly.in/sitemap.xml
 
-# LLM Knowledge Discovery (llmstxt.org standard)
+# LLM context
 # https://journaly.in/llms.txt
 # https://journaly.in/llms-full.txt

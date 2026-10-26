@@ -1,9 +1,9 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
-    }
+  "redirects": [
+    { "source": "/quote", "destination": "/business", "permanent": true },
+    { "source": "/collections", "destination": "/shop", "permanent": true },
+    { "source": "/personalise", "destination": "/shop", "permanent": true },
+    { "source": "/gifts", "destination": "/shop", "permanent": true }
   ],
   "headers": [
     {

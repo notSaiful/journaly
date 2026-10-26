@@ -3,9 +3,11 @@
  * Message building stays pure so the link can be checked without a browser.
  */
 
-export const JOURNALY_WHATSAPP_NUMBER = '919699897763';
+import { BUSINESS } from '../config/business';
 
-export const JOURNALY_WHATSAPP_DISPLAY = '+91 96998 97763';
+export const JOURNALY_WHATSAPP_NUMBER = BUSINESS.whatsappE164;
+
+export const JOURNALY_WHATSAPP_DISPLAY = BUSINESS.whatsappDisplay;
 
 const MAX_WHATSAPP_URL_LENGTH = 1800;
 
@@ -14,7 +16,8 @@ export const QUANTITY_OPTIONS = [
   { value: '50-100', label: '50 – 100 Units' },
   { value: '100-250', label: '100 – 250 Units' },
   { value: '250-500', label: '250 – 500 Units' },
-  { value: '500+', label: '500+ Units (Fully Bespoke)' }
+  { value: '500+', label: '500+ Units (Fully Bespoke)' },
+  { value: 'unsure', label: 'Not sure yet' }
 ];
 
 export const USE_CASES = [
