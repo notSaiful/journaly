@@ -1,172 +1,58 @@
-import React, { useState } from 'react';
-import { Building2, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { trackEvent } from '../utils/analytics';
+import { MessageCircle } from 'lucide-react';
+import { useRouter } from '../utils/router';
+import { trackFunnel } from '../utils/funnel';
+import { USE_CASES, WHATSAPP_CHAT_URL, JOURNALY_WHATSAPP_DISPLAY } from '../utils/whatsappQuote';
+import QuoteForm from '../components/quote/QuoteForm';
+import PriceEstimator from '../components/b2b/PriceEstimator';
 
 export default function BusinessPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    quantity: '50-100',
-    useCase: 'Employee Onboarding',
-    notes: ''
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    trackEvent('business_lead', { company: formData.company, quantity: formData.quantity });
-    setSubmitted(true);
+  const { search } = useRouter();
+  const params = new URLSearchParams(search || '');
+  const sampleKit = params.get('sample') === '1';
+  const estimate = {
+    journalType: params.get('journal') || '',
+    quantityTier: params.get('tier') || '',
+    brandingMethod: params.get('branding') || ''
   };
 
   return (
-    <div className="bg-[#FAF7F2] text-[#1E1B18] font-sans min-h-screen py-16 sm:py-24">
+    <div className="bg-[#FAF7F2] text-[#1E1B18] min-h-screen py-16 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="max-w-4xl mb-16">
-          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#E5A93C] font-semibold block mb-3">
-            B2B, Institutional & Corporate Gifting
+        <div className="max-w-3xl mb-12">
+          <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#7C5A1E] font-semibold block mb-3">
+            Custom journals for businesses
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#1E1B18] tracking-tight leading-tight">
-            MAKE YOUR BRAND <br />
-            PART OF SOMETHING <br />
-            <span className="text-[#6A6054] font-normal">WORTH KEEPING.</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+            Request a quote
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#6A6054] font-light max-w-xl">
-            Custom guided journals for teams, colleges, events, and meaningful executive gifting.
+            Start with your name, WhatsApp number, and approximate quantity. Company, email, branding, and deadline can wait. We reply on WhatsApp at {JOURNALY_WHATSAPP_DISPLAY}. No order is placed on this form.
           </p>
+          <a
+            href={WHATSAPP_CHAT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackFunnel('whatsapp_opened', { cta: 'quote_page' })}
+            className="mt-8 inline-flex w-full sm:w-auto min-h-11 items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-widest"
+          >
+            <MessageCircle className="w-4 h-4 text-[#E5A93C]" aria-hidden="true" />
+            <span>Chat on WhatsApp</span>
+          </a>
         </div>
 
-        {/* Use Cases Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-20">
-          {[
-            'Employee Onboarding',
-            'Employee Appreciation',
-            'Colleges & Graduations',
-            'Conferences & Summits',
-            'Boutique Hospitality',
-            'Executive Events'
-          ].map((item) => (
-            <div key={item} className="p-4 rounded-xl bg-white border border-[#E5DDCF] shadow-xs">
-              <span className="text-xs font-serif font-medium text-[#1E1B18] block mb-1">
-                {item}
-              </span>
-              <span className="text-[10px] text-[#8C7E72] font-mono uppercase tracking-wider block">
-                Custom Foil Available
-              </span>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          {USE_CASES.map((item) => (
+            <div key={item} className="p-4 rounded-xl bg-white border border-[#E5DDCF]">
+              <span className="text-xs font-medium text-[#1E1B18] block">{item}</span>
             </div>
           ))}
         </div>
 
-        {/* Inquiry Form Stage */}
-        <div className="bg-white rounded-3xl p-8 sm:p-14 border border-[#E5DDCF] shadow-xl max-w-3xl mx-auto">
-          {submitted ? (
-            <div className="text-center py-10">
-              <CheckCircle2 className="w-12 h-12 text-emerald-700 mx-auto mb-4" />
-              <h3 className="font-serif text-3xl font-normal text-[#1E1B18] mb-2">
-                Inquiry Received.
-              </h3>
-              <p className="text-sm text-[#6A6054] font-light max-w-md mx-auto">
-                Thank you for reaching out. Our atelier concierge will prepare a tailored proposal and volume quotation within one business day.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="border-b border-[#E5DDCF] pb-4 mb-6">
-                <h3 className="font-serif text-2xl font-normal text-[#1E1B18]">
-                  Request an Institutional Quote
-                </h3>
-                <p className="text-xs text-[#6A6054] font-light mt-1">
-                  Custom blind deboss, gold foil logo stamping, and bespoke interior tip-ins starting at 25 units.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#1E1B18] block mb-1.5 font-medium">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDCF] bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#E5A93C]"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#1E1B18] block mb-1.5 font-medium">
-                    Work Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDCF] bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#E5A93C]"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#1E1B18] block mb-1.5 font-medium">
-                    Organization / Company
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDCF] bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#E5A93C]"
-                  />
-                </div>
-
-                <div>
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#1E1B18] block mb-1.5 font-medium">
-                    Estimated Quantity
-                  </label>
-                  <select
-                    value={formData.quantity}
-                    onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DDCF] bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#E5A93C]"
-                  >
-                    <option value="25-50">25 – 50 Units</option>
-                    <option value="50-100">50 – 100 Units</option>
-                    <option value="100-250">100 – 250 Units</option>
-                    <option value="250-500">250 – 500 Units</option>
-                    <option value="500+">500+ Units (Fully Bespoke)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="text-xs font-mono uppercase tracking-wider text-[#1E1B18] block mb-1.5 font-medium">
-                  Project Notes & Timeline
-                </label>
-                <textarea
-                  rows={3}
-                  value={formData.notes}
-                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  placeholder="Tell us about your event, delivery date, or custom branding requirements..."
-                  className="w-full px-4 py-3 rounded-xl border border-[#E5DDCF] bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#E5A93C]"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 rounded-full bg-white hover:bg-[#F4EFE6] text-[#1E1B18] border-2 border-[#1E1B18] text-xs font-semibold uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-              >
-                <span>Request a Quote</span>
-                <ArrowRight className="w-4 h-4 text-[#E5A93C]" />
-              </button>
-            </form>
-          )}
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#E5DDCF] shadow-xl max-w-3xl mx-auto">
+          <QuoteForm key={search || 'quote'} sampleKit={sampleKit} estimate={estimate} />
         </div>
-
       </div>
+      <PriceEstimator id="quote-price-estimator" />
     </div>
   );
 }
