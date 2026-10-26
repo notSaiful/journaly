@@ -12,10 +12,13 @@ import ContactPage from '../pages/ContactPage';
 import FaqPage from '../pages/FaqPage';
 import AdminPortalPage from '../pages/AdminPortalPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import GuidesIndexPage from '../pages/GuidesIndexPage';
+import GuideArticlePage from '../pages/GuideArticlePage';
 import SeasonPage from '../pages/SeasonPage';
 import SeasonBanner from './b2b/SeasonBanner';
 import { FloatingWhatsApp, StickyQuoteBar } from './b2b/ConversionBars';
 import { pageByPath } from '../config/seasons';
+import { guideByPath } from '../content/guides';
 import { legacyRedirect } from '../config/legacyRedirects';
 
 function legalPolicy(path) {
@@ -35,6 +38,8 @@ function PageSwitch({ path }) {
   if (path === '/about') return <AboutPage />;
   if (path === '/contact') return <ContactPage />;
   if (path === '/faq') return <FaqPage />;
+  if (path === '/guides') return <GuidesIndexPage />;
+  if (guideByPath(path)) return <GuideArticlePage guide={guideByPath(path)} />;
   if (path === '/admin') return <AdminPortalPage />;
   if (pageByPath(path)) return <SeasonPage path={path} />;
   if (path === '/404') return <NotFoundPage />;

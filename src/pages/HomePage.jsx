@@ -5,6 +5,7 @@ import TrustStrip from '../components/b2b/TrustStrip';
 import ProofSection from '../components/b2b/ProofSection';
 import PriceEstimator from '../components/b2b/PriceEstimator';
 import { HOME_FAQS } from '../content/b2bFaq';
+import { GUIDES } from '../content/guides';
 import { BUSINESS } from '../config/business';
 import JournalCovers from '../components/b2b/JournalCovers';
 
@@ -166,6 +167,27 @@ export default function HomePage() {
           </SiteLink>
         </div>
         <JournalCovers caption="Paper, ink, and a gold edge. Ask for the finish in the quote." />
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" aria-labelledby="guides-heading">
+        <div className="max-w-2xl mb-8">
+          <Eyebrow>Guides</Eyebrow>
+          <h2 id="guides-heading" className="text-3xl sm:text-4xl font-medium tracking-tight">Notes for the person placing the order</h2>
+          <p className="mt-3 text-[#6A6054] font-light">How to brief paper, a welcome kit, a Diwali gift, and a logo method. Prices and lead times stay in the quote.</p>
+        </div>
+        <ul className="grid sm:grid-cols-2 gap-4">
+          {GUIDES.map((guide) => (
+            <li key={guide.path}>
+              <SiteLink href={guide.path} className="block h-full p-6 rounded-2xl bg-white border border-[#E5DDCF] hover:border-[#1E1B18]">
+                <span className="font-medium">{guide.navTitle}</span>
+                <span className="mt-2 block text-sm text-[#6A6054] font-light leading-relaxed">{guide.description}</span>
+              </SiteLink>
+            </li>
+          ))}
+        </ul>
+        <SiteLink href="/guides" className="inline-block mt-6 text-xs font-semibold uppercase tracking-widest underline underline-offset-4">
+          All guides
+        </SiteLink>
       </section>
 
       <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" aria-labelledby="faq-heading">

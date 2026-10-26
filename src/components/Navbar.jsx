@@ -8,6 +8,7 @@ import SiteLink from './SiteLink';
 const primaryLinks = [
   { label: 'Gifting', path: '/corporate-gifting' },
   { label: 'Customization', path: '/customization' },
+  { label: 'Guides', path: '/guides' },
   { label: 'About', path: '/about' },
   { label: 'FAQ', path: '/faq' }
 ];
@@ -23,7 +24,9 @@ export default function Navbar() {
   };
 
   const linkClass = (path) => {
-    const active = currentPath === path;
+    const active = path === '/guides'
+      ? currentPath === '/guides' || currentPath.startsWith('/guides/')
+      : currentPath === path;
     return `text-xs uppercase tracking-[0.16em] font-medium transition-colors py-1 relative ${
       active ? 'text-[#1E1B18] font-semibold' : 'text-[#6A6054] hover:text-[#1E1B18]'
     }`;
@@ -47,9 +50,9 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-6" aria-label="Primary">
             {primaryLinks.map((link) => (
-              <SiteLink key={link.path} href={link.path} className={linkClass(link.path)} aria-current={currentPath === link.path ? 'page' : undefined}>
+              <SiteLink key={link.path} href={link.path} className={linkClass(link.path)} aria-current={link.path === '/guides' ? (currentPath === '/guides' || currentPath.startsWith('/guides/') ? 'page' : undefined) : (currentPath === link.path ? 'page' : undefined)}>
                 {link.label}
-                {currentPath === link.path ? <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#E5A93C] rounded-full" /> : null}
+                {(link.path === '/guides' ? currentPath === '/guides' || currentPath.startsWith('/guides/') : currentPath === link.path) ? <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#E5A93C] rounded-full" /> : null}
               </SiteLink>
             ))}
             {season ? (
