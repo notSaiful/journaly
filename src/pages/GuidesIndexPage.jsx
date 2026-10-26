@@ -12,7 +12,7 @@ export default function GuidesIndexPage() {
           Guides for buying custom journals in India
         </h1>
         <p className="mt-5 text-base sm:text-lg text-[#6A6054] font-light leading-relaxed">
-          Practical notes for HR, founders, admin, procurement, and the people who run events. They explain how to brief a custom journal. They do not publish a price, a minimum order, or a lead time. Those come back in the quote.
+          Practical notes for HR, founders, admin, procurement, and the people who run events. They explain how to brief a custom journal. The minimum order is 50 journals. They do not publish a price or a lead time. Those come back in the quote.
         </p>
         <CtaPair quoteLabel="Get a quote" />
         <div className="mt-12 space-y-4">

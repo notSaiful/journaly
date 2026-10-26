@@ -3,7 +3,9 @@ import { BUSINESS, hasFact } from '../../config/business';
 function items() {
   const rows = [];
   if (hasFact(BUSINESS.minimumOrderQuantity)) {
-    rows.push({ id: 'moq', label: 'Minimum order', value: String(BUSINESS.minimumOrderQuantity) });
+    const quantity = BUSINESS.minimumOrderQuantity;
+    const value = typeof quantity === 'number' ? `${quantity} units` : String(quantity);
+    rows.push({ id: 'moq', label: 'Minimum order', value });
   }
   if (hasFact(BUSINESS.leadTime)) {
     rows.push({ id: 'lead', label: 'Lead time', value: String(BUSINESS.leadTime) });

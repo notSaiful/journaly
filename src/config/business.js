@@ -7,20 +7,18 @@
  * TODO — owner must fill these in before they are shown as facts.
  * Null, empty string, and empty arrays render nothing. Do not invent values here.
  *
- * - legalEntityName: currently "SAZO Management Private Limited" (unconfirmed)
- * - parentBrand.enabled: keep false until the parent-brand line is confirmed
- * - parentBrand.label: e.g. "A KAMN venture" (unused while enabled is false)
- * - parentBrand.href: e.g. https://kamn-growth.vercel.app (unused while enabled is false)
- * - minimumOrderQuantity: not confirmed
- * - leadTime: not confirmed
+ * - legalEntityName: "SAZO Management Private Limited"
+ * - parentBrand.enabled: stays false. No parent-brand line is published.
+ * - minimumOrderQuantity: 50 units, approved for the public site
+ * - leadTime: not confirmed. Leave null so no lead time is shown.
  * - publishedFromPrice: not confirmed
  * - policy.*: commercial terms. Null means the term is confirmed in the quote, not published here.
  * - clientNames: none confirmed
  * - testimonials: none confirmed for the business offer
  * - certifications: none confirmed (including eco / sustainability claims)
  * - stats: none confirmed
- * - gstInvoice: off until a GST invoice on custom orders is confirmed
- * - panIndiaDelivery: off until pan-India delivery should be shown as a trust point
+ * - gstInvoice: off. Do not show a GST invoice claim.
+ * - panIndiaDelivery: on. Delivery across India is an approved public fact.
  * - clientLogos, caseStudies, portfolio: empty until real assets exist
  * - heroAb.enabled: off. Variants are not shown until the test is turned on
  * - pricing ranges live in src/config/pricing.js and stay empty until real prices exist
@@ -34,14 +32,14 @@ export const BUSINESS = {
   legalEntityName: 'SAZO Management Private Limited',
   parentBrand: {
     enabled: false,
-    label: 'A KAMN venture',
-    href: 'https://kamn-growth.vercel.app'
+    label: '',
+    href: ''
   },
   whatsappDisplay: '+91 96998 97763',
   whatsappE164: '919699897763',
   contactEmail: 'saifulbusiness47@gmail.com',
   country: 'India',
-  minimumOrderQuantity: null,
+  minimumOrderQuantity: 50,
   leadTime: null,
   publishedFromPrice: null,
   clientNames: [],
@@ -49,7 +47,7 @@ export const BUSINESS = {
   certifications: [],
   stats: [],
   gstInvoice: false,
-  panIndiaDelivery: false,
+  panIndiaDelivery: true,
   clientLogos: [],
   caseStudies: [],
   portfolio: [],
@@ -89,6 +87,13 @@ export function parentBrandLink() {
   if (!label || !href) return null;
   return { label, href };
 }
+
+export const DESIGN_MOCKUP =
+  'A free digital design mockup with up to 2 revision rounds before you order.';
+
+export const UNDER_MINIMUM_NOTE = 'Need fewer than 50? Ask us about a paid sample.';
+
+export const NAME_PERSONALISATION = 'Name personalisation on each journal is available.';
 
 export function hasFact(value) {
   if (value == null) return false;

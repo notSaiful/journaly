@@ -8,13 +8,22 @@ Journaly is the brand. The legal entity named on the site is SAZO Management Pri
 
 A parent-brand line is not published.
 
+## Published order facts
+
+- Minimum order: 50 units. Fewer than 50 is not a standard order. The site says: ask about a paid sample. No sample price is published.
+- Delivery: across India.
+- Before you order: a free digital design mockup with up to 2 revision rounds.
+- Name personalisation on each journal is available.
+
 ## What is not published
 
 Do not infer these. They are not confirmed:
 
-- Minimum order quantity
-- Standard lead time
-- Custom-order prices
+- Standard lead time, rush orders, or a production cutoff
+- Custom-order prices, GST rate, or GST invoices
+- Payment terms
+- Sample pricing
+- Shipping partners
 - Client names
 - Testimonials for the business offer
 - Certifications, including eco-friendly or sustainability claims

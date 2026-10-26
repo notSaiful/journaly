@@ -12,12 +12,10 @@ export const JOURNALY_WHATSAPP_DISPLAY = BUSINESS.whatsappDisplay;
 const MAX_WHATSAPP_URL_LENGTH = 1800;
 
 export const QUANTITY_OPTIONS = [
-  { value: '25-50', label: '25 – 50 Units' },
-  { value: '50-100', label: '50 – 100 Units' },
-  { value: '100-250', label: '100 – 250 Units' },
-  { value: '250-500', label: '250 – 500 Units' },
-  { value: '500+', label: '500+ Units (Fully Bespoke)' },
-  { value: 'unsure', label: 'Not sure yet' }
+  { value: '50-99', label: '50–99' },
+  { value: '100-249', label: '100–249' },
+  { value: '250-499', label: '250–499' },
+  { value: '500+', label: '500+' }
 ];
 
 export const USE_CASES = [

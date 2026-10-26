@@ -1,6 +1,7 @@
 import { createServer } from 'vite';
 import fs from 'node:fs';
 import path from 'node:path';
+import { BUSINESS, DESIGN_MOCKUP, UNDER_MINIMUM_NOTE, parentBrandLink } from '../src/config/business.js';
 
 const root = process.cwd();
 const dist = path.join(root, 'dist');
@@ -70,7 +71,14 @@ const quote = fs.readFileSync(path.join(dist, 'business', 'index.html'), 'utf8')
 if (home.includes('aggregateRating')) throw new Error('homepage still has aggregateRating');
 if (about.includes('aggregateRating')) throw new Error('about still has aggregateRating');
 if (!about.includes('SAZO Management Private Limited')) throw new Error('legal entity missing from about HTML');
-if (home.includes('KAMN') || about.includes('KAMN')) throw new Error('parent brand rendered while disabled');
+if (parentBrandLink() || BUSINESS.parentBrand.enabled) throw new Error('parent brand rendered while disabled');
+if (home.includes('50 units') === false) throw new Error('minimum order is not shown on the homepage');
+if (home.includes('Across India') === false) throw new Error('pan-India delivery is not shown on the homepage');
+if (!home.includes(DESIGN_MOCKUP)) throw new Error('design mockup line missing from the homepage');
+if (!quote.includes(UNDER_MINIMUM_NOTE)) throw new Error('under-minimum note missing from the quote form');
+if (!quote.includes('50–99') || quote.includes('25–50') || quote.includes('25 – 50')) {
+  throw new Error('quote quantity options are not the approved ranges');
+}
 if (!home.includes('Custom branded journals for businesses in India')) throw new Error('homepage H1 missing');
 if (!home.includes('<meta name="google-site-verification" content="UhL-YYs63e_knmyZiiIXdbjbn1AvC3PuI8oR4_OyFVo" />')) {
   throw new Error('Google site verification meta missing from prerendered homepage');
