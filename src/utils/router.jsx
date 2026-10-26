@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { trackEvent } from './analytics';
+import { trackFunnel } from './funnel';
 
 const RouterContext = createContext({
   currentPath: '/',
+  search: '',
   navigate: () => {},
   params: {}
 });
@@ -16,6 +17,16 @@ function normalizePath(path) {
   const withoutQuery = String(path).split('?')[0].split('#')[0];
   if (withoutQuery.length > 1 && withoutQuery.endsWith('/')) return withoutQuery.slice(0, -1);
   return withoutQuery || '/';
+}
+
+function splitHref(path) {
+  const raw = String(path || '/');
+  const noHash = raw.split('#')[0];
+  const [pathname, query = ''] = noHash.split('?');
+  return {
+    pathname: normalizePath(pathname),
+    search: query ? `?${query}` : ''
+  };
 }
 
 function pathFromLocation() {
@@ -46,12 +57,14 @@ export function RouterProvider({ children, initialPath }) {
   };
 
   const [currentPath, setCurrentPath] = useState(getInitialPath);
+  const [search, setSearch] = useState(() => (typeof window === 'undefined' ? '' : window.location.search || ''));
   const [params, setParams] = useState(() => getParamsForPath(getInitialPath()));
 
   useEffect(() => {
     const handlePopState = () => {
       const path = pathFromLocation();
       setCurrentPath(path);
+      setSearch(window.location.search || '');
       setParams(getParamsForPath(path));
     };
 
@@ -64,21 +77,24 @@ export function RouterProvider({ children, initialPath }) {
   }, []);
 
   const navigate = (path, replace = false) => {
+    const next = splitHref(path);
     if (typeof window !== 'undefined') {
-      if (replace) {
-        window.history.replaceState({}, '', path);
-      } else {
-        window.history.pushState({}, '', path);
-      }
+      const href = `${next.pathname}${next.search}`;
+      if (replace) window.history.replaceState({}, '', href);
+      else window.history.pushState({}, '', href);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    setCurrentPath(path);
-    setParams(getParamsForPath(path));
-    trackEvent('page_view', { path });
+    setCurrentPath(next.pathname);
+    setSearch(next.search);
+    setParams(getParamsForPath(next.pathname));
   };
 
+  useEffect(() => {
+    trackFunnel('page_view', { path: currentPath });
+  }, [currentPath]);
+
   return (
-    <RouterContext.Provider value={{ currentPath, navigate, params }}>
+    <RouterContext.Provider value={{ currentPath, search, navigate, params }}>
       {children}
     </RouterContext.Provider>
   );

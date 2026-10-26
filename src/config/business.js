@@ -18,6 +18,12 @@
  * - testimonials: none confirmed for the business offer
  * - certifications: none confirmed (including eco / sustainability claims)
  * - stats: none confirmed
+ * - gstInvoice: off until a GST invoice on custom orders is confirmed
+ * - panIndiaDelivery: off until pan-India delivery should be shown as a trust point
+ * - clientLogos, caseStudies, portfolio: empty until real assets exist
+ * - heroAb.enabled: off. Variants are not shown until the test is turned on
+ * - pricing ranges live in src/config/pricing.js and stay empty until real prices exist
+ * - seasonal order-by lead time lives in src/config/seasons.js and stays unset until you choose a campaign deadline
  */
 
 export const BUSINESS = {
@@ -40,7 +46,25 @@ export const BUSINESS = {
   clientNames: [],
   testimonials: [],
   certifications: [],
-  stats: []
+  stats: [],
+  gstInvoice: false,
+  panIndiaDelivery: false,
+  clientLogos: [],
+  caseStudies: [],
+  portfolio: [],
+  heroAb: {
+    enabled: false,
+    variants: [
+      {
+        id: 'control',
+        headline: 'Custom branded journals for businesses in India.'
+      },
+      {
+        id: 'keep',
+        headline: 'Branded journals for clients, teams, and events.'
+      }
+    ]
+  }
 };
 
 export function confirmedLegalEntity() {

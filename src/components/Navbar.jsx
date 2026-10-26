@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
 import { useRouter } from '../utils/router';
 import { trackEvent } from '../utils/analytics';
+import { trackFunnel } from '../utils/funnel';
+import { useFeaturedSeason } from '../utils/useFeaturedSeason';
 import SiteLink from './SiteLink';
 
 const primaryLinks = [
@@ -13,6 +15,7 @@ const primaryLinks = [
 
 export default function Navbar({ cartCount = 0, onOpenCart }) {
   const { currentPath, navigate } = useRouter();
+  const season = useFeaturedSeason();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const closeAndGo = (path) => {
@@ -50,6 +53,12 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
                 {currentPath === link.path ? <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#E5A93C] rounded-full" /> : null}
               </SiteLink>
             ))}
+            {season ? (
+              <SiteLink href={season.path} className={linkClass(season.path)} aria-current={currentPath === season.path ? 'page' : undefined} onClick={() => trackFunnel('cta_click', { cta: 'nav_season', season: season.id })}>
+                {season.navLabel}
+                {currentPath === season.path ? <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#E5A93C] rounded-full" /> : null}
+              </SiteLink>
+            ) : null}
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-3">
@@ -61,7 +70,8 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
             </SiteLink>
             <SiteLink
               href="/business"
-              className="hidden sm:inline-flex items-center px-4 py-2.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-[11px] font-semibold uppercase tracking-widest hover:bg-[#3A342C]"
+              onClick={() => trackFunnel('cta_click', { cta: 'nav_quote' })}
+              className="hidden sm:inline-flex items-center min-h-11 px-4 py-2.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-[11px] font-semibold uppercase tracking-widest hover:bg-[#3A342C]"
             >
               Get a quote
             </SiteLink>
@@ -101,6 +111,19 @@ export default function Navbar({ cartCount = 0, onOpenCart }) {
           >
             Get a quote
           </SiteLink>
+          {season ? (
+            <button
+              type="button"
+              onClick={() => {
+                trackFunnel('cta_click', { cta: 'nav_season', season: season.id });
+                closeAndGo(season.path);
+              }}
+              className="w-full flex items-center justify-between py-3 px-2 text-left text-sm cursor-pointer"
+            >
+              <span>{season.navLabel}</span>
+              <ArrowRight className="w-4 h-4 opacity-50" aria-hidden="true" />
+            </button>
+          ) : null}
           {primaryLinks.map((link) => (
             <button
               key={link.path}

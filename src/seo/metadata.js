@@ -1,5 +1,6 @@
 import { PRODUCTS } from '../data/products';
 import { BUSINESS, confirmedLegalEntity, parentBrandLink } from '../config/business';
+import { SEASON_PAGES } from '../config/seasons';
 import { B2B_FAQS, HOME_FAQS } from '../content/b2bFaq';
 
 const SITE = BUSINESS.siteUrl;
@@ -32,7 +33,6 @@ const STATIC_ROUTES = [
     title: 'Custom Journals for Businesses in India | Journaly',
     description: 'Journaly makes custom branded journals and notebooks for businesses in India. Share your quantity and deadline and we will reply with a quote on WhatsApp.',
     keywords: 'custom journals for businesses India, corporate branded journals, custom logo notebooks bulk, corporate diary printing, personalised corporate gifts India',
-    preload: '/images/journal-collection-hero.webp',
     priority: '1.0',
     changefreq: 'weekly',
     crumbs: []
@@ -178,6 +178,17 @@ const STATIC_ROUTES = [
     crumbs: ['Page not found']
   })
 ];
+
+STATIC_ROUTES.push(...SEASON_PAGES.map((page) => route({
+  path: page.path,
+  title: page.title,
+  description: page.description,
+  keywords: page.keywords,
+  priority: page.evergreen ? '0.7' : '0.8',
+  changefreq: 'weekly',
+  crumbs: [page.crumb],
+  faqs: page.faqs
+})));
 
 function catalogProducts() {
   return PRODUCTS.filter((product) => product?.id && product.price && product.name && product.image);
@@ -337,6 +348,10 @@ export function buildJsonLd(meta) {
     graph.push({ ...serviceNode(), url: abs(meta.path) });
   }
   if (meta.path === '/faq') graph.push(faqNode(B2B_FAQS));
+  if (meta.faqs?.length) {
+    graph.push({ ...serviceNode(), url: abs(meta.path) });
+    graph.push(faqNode(meta.faqs));
+  }
   if (meta.product) graph.push(productNode(meta));
   const crumbs = breadcrumbNode(meta);
   if (crumbs) graph.push(crumbs);

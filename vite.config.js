@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import crypto from 'node:crypto'
+import { handleQuoteLead } from './api/quote-lead.js'
 
 function parseBody(req) {
   return new Promise((resolve, reject) => {
@@ -79,6 +80,21 @@ function razorpayApiPlugin() {
         });
       } catch (err) {
         return sendJson(res, 500, { error: err.message });
+      }
+    }
+
+    if (url === '/api/quote-lead' && (req.method === 'GET' || req.method === 'POST' || req.method === 'OPTIONS')) {
+      try {
+        const body = req.method === 'POST' ? await parseBody(req) : {};
+        const result = await handleQuoteLead({
+          method: req.method,
+          body,
+          headers: req.headers,
+          env: process.env
+        });
+        return sendJson(res, result.status, result.json);
+      } catch {
+        return sendJson(res, 200, { ok: false, stored: false, reason: 'request_failed' });
       }
     }
 

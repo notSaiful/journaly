@@ -86,7 +86,7 @@ function AppContent() {
       ) : null}
 
       {toastMessage ? (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#1E1B18] text-[#FAF7F2] px-5 py-3 rounded-full shadow-xl flex items-center gap-2.5 text-xs font-medium">
+        <div className="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#1E1B18] text-[#FAF7F2] px-5 py-3 rounded-full shadow-xl flex items-center gap-2.5 text-xs font-medium">
           <Sparkles className="w-4 h-4 text-[#E5A93C]" aria-hidden="true" />
           <span>{toastMessage}</span>
           <button type="button" onClick={() => setIsCartOpen(true)} className="ml-2 text-xs text-[#E5A93C] underline font-semibold cursor-pointer">

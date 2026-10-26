@@ -2,6 +2,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import SiteLink from '../SiteLink';
 import { BUSINESS } from '../../config/business';
 import { WHATSAPP_CHAT_URL } from '../../utils/whatsappQuote';
+import { trackFunnel } from '../../utils/funnel';
 
 export const primaryButtonClass =
   'inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#1E1B18] hover:bg-[#3A342C] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest transition-colors';
@@ -27,11 +28,11 @@ export function CtaPair({ quoteLabel = 'Get a quote', onDark = false }) {
   const icon = onDark ? 'text-[#1E1B18]' : 'text-[#E5A93C]';
   return (
     <div className="mt-8 flex flex-col sm:flex-row gap-3">
-      <SiteLink href="/business" className={primary}>
+      <SiteLink href="/business" className={primary} onClick={() => trackFunnel('cta_click', { cta: quoteLabel })}>
         <span>{quoteLabel}</span>
         <ArrowRight className={`w-4 h-4 ${icon}`} aria-hidden="true" />
       </SiteLink>
-      <a href={WHATSAPP_CHAT_URL} target="_blank" rel="noopener noreferrer" className={secondary}>
+      <a href={WHATSAPP_CHAT_URL} target="_blank" rel="noopener noreferrer" className={secondary} onClick={() => trackFunnel('whatsapp_opened', { cta: 'chat' })}>
         <MessageCircle className="w-4 h-4 text-[#E5A93C]" aria-hidden="true" />
         <span>Chat on WhatsApp</span>
       </a>

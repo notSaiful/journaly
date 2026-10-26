@@ -17,6 +17,10 @@ import TrackOrderPage from '../pages/TrackOrderPage';
 import OrderSuccessPage from '../pages/OrderSuccessPage';
 import AdminPortalPage from '../pages/AdminPortalPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import SeasonPage from '../pages/SeasonPage';
+import SeasonBanner from './b2b/SeasonBanner';
+import { FloatingWhatsApp, StickyQuoteBar } from './b2b/ConversionBars';
+import { pageByPath } from '../config/seasons';
 
 const ALIASES = {
   '/quote': '/business',
@@ -48,17 +52,18 @@ function PageSwitch({ path, onAddToCart, onQuickView }) {
   if (path === '/track-order') return <TrackOrderPage />;
   if (path === '/order-success') return <OrderSuccessPage />;
   if (path === '/admin') return <AdminPortalPage />;
+  if (pageByPath(path)) return <SeasonPage path={path} />;
   if (path === '/404') return <NotFoundPage />;
   return <NotFoundPage />;
 }
 
 export default function SiteFrame({ cartCount = 0, onOpenCart = () => {}, onAddToCart = () => {}, onQuickView = () => {} }) {
-  const { currentPath, navigate } = useRouter();
+  const { currentPath, search, navigate } = useRouter();
   const alias = ALIASES[currentPath];
 
   useEffect(() => {
-    if (alias) navigate(alias, true);
-  }, [alias, navigate]);
+    if (alias) navigate(search ? `${alias}${search}` : alias, true);
+  }, [alias, navigate, search]);
 
   const path = alias || currentPath;
   const policy = legalPolicy(path);
@@ -74,11 +79,15 @@ export default function SiteFrame({ cartCount = 0, onOpenCart = () => {}, onAddT
     };
 
     return (
-      <LegalLayout
-        activePolicy={policy}
-        setActivePolicy={handleLegalTabChange}
-        onClose={() => navigate('/')}
-      />
+      <>
+        <LegalLayout
+          activePolicy={policy}
+          setActivePolicy={handleLegalTabChange}
+          onClose={() => navigate('/')}
+        />
+        <StickyQuoteBar />
+        <FloatingWhatsApp />
+      </>
     );
   }
 
@@ -88,10 +97,17 @@ export default function SiteFrame({ cartCount = 0, onOpenCart = () => {}, onAddT
         Skip to content
       </a>
       <Navbar cartCount={cartCount} onOpenCart={onOpenCart} />
-      <main id="main" className="flex-1">
+      {path === '/admin' ? null : <SeasonBanner />}
+      <main id="main" className="flex-1 pb-20 md:pb-0">
         <PageSwitch path={path} onAddToCart={onAddToCart} onQuickView={onQuickView} />
       </main>
       <Footer />
+      {path === '/admin' ? null : (
+        <>
+          <StickyQuoteBar />
+          <FloatingWhatsApp />
+        </>
+      )}
     </>
   );
 }

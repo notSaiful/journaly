@@ -1,6 +1,40 @@
+import { lazy, Suspense, useState } from 'react';
 import SiteLink from '../components/SiteLink';
 import { CtaPair, Eyebrow, FaqList, WhatsAppNote } from '../components/b2b/Marketing';
+import TrustStrip from '../components/b2b/TrustStrip';
+import ProofSection from '../components/b2b/ProofSection';
+import PriceEstimator from '../components/b2b/PriceEstimator';
 import { HOME_FAQS } from '../content/b2bFaq';
+import { BUSINESS } from '../config/business';
+
+const LogoMockup = lazy(() => import('../components/b2b/LogoMockup'));
+
+const DEFAULT_HEADLINE = 'Custom branded journals for businesses in India.';
+
+function useHeroHeadline() {
+  const [headline] = useState(() => {
+    const test = BUSINESS.heroAb;
+    if (!test?.enabled || !Array.isArray(test.variants) || test.variants.length === 0) return DEFAULT_HEADLINE;
+    if (typeof window === 'undefined') return test.variants[0]?.headline || DEFAULT_HEADLINE;
+    const key = 'journaly-hero-variant';
+    let id = '';
+    try {
+      id = window.localStorage.getItem(key) || '';
+    } catch {
+      id = '';
+    }
+    const existing = test.variants.find((item) => item.id === id);
+    if (existing?.headline) return existing.headline;
+    const picked = test.variants[Math.floor(Math.random() * test.variants.length)];
+    try {
+      window.localStorage.setItem(key, picked.id);
+    } catch {
+      // Storage can be blocked. The picked headline still shows for this view.
+    }
+    return picked.headline || DEFAULT_HEADLINE;
+  });
+  return headline;
+}
 
 const USE_CASES = [
   { title: 'Corporate gifting', text: 'A journal people keep on a desk after the hamper is gone.', href: '/corporate-gifting#client-gifts' },
@@ -26,13 +60,14 @@ const STEPS = [
 ];
 
 export default function HomePage() {
+  const headline = useHeroHeadline();
   return (
     <div className="bg-[#FAF7F2] text-[#1E1B18]">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         <div className="lg:col-span-6">
           <Eyebrow>Custom journals for businesses</Eyebrow>
           <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-medium tracking-tight leading-[1.08]">
-            Custom branded journals for businesses in India.
+            {headline}
           </h1>
           <p className="mt-5 text-base sm:text-lg text-[#6A6054] font-light max-w-xl leading-relaxed">
             Notebooks and diaries with your logo and your inside pages. For corporate gifts, employee welcome kits, events, and New Year gifting. Tell us the quantity and deadline. We reply with a quote.
@@ -49,13 +84,14 @@ export default function HomePage() {
               alt="A stack of Journaly notebooks that can be branded for a business order"
               width="960"
               height="536"
-              fetchPriority="high"
               decoding="async"
-              className="w-full h-auto object-cover"
+              className="w-full h-52 sm:h-72 lg:h-auto object-cover"
             />
           </div>
         </div>
       </section>
+
+      <TrustStrip />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20" aria-labelledby="use-cases-heading">
         <div className="max-w-2xl mb-8">
@@ -92,6 +128,20 @@ export default function HomePage() {
           </SiteLink>
         </div>
       </section>
+
+      {import.meta.env.SSR ? (
+        <section id="logo-mockup" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-3xl font-medium tracking-tight">See your logo on a cover</h2>
+          <p className="mt-3 text-sm text-[#6A6054]">The preview runs in your browser. The file is not uploaded.</p>
+        </section>
+      ) : (
+        <Suspense fallback={<section id="logo-mockup" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"><h2 className="text-3xl font-medium tracking-tight">See your logo on a cover</h2><p className="mt-3 text-sm text-[#6A6054]">The preview runs in your browser. The file is not uploaded.</p></section>}>
+          <LogoMockup />
+        </Suspense>
+      )}
+
+      <PriceEstimator />
+      <ProofSection />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20" aria-labelledby="process-heading">
         <div className="max-w-2xl mb-8">

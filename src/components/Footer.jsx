@@ -1,4 +1,5 @@
 import { BUSINESS } from '../config/business';
+import { SEASON_PAGES } from '../config/seasons';
 
 const COPYRIGHT_YEAR = new Date().getFullYear();
 import { LegalEntityName, ParentBrandLine } from './b2b/BrandFacts';
@@ -7,7 +8,7 @@ import { WHATSAPP_CHAT_URL } from '../utils/whatsappQuote';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F4EFE6] text-[#1E1B18] border-t border-[#E5DDCF] pt-14 pb-10">
+    <footer className="bg-[#F4EFE6] text-[#1E1B18] border-t border-[#E5DDCF] pt-14 pb-24 md:pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pb-10 border-b border-[#E5DDCF] flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-xl">
@@ -17,6 +18,17 @@ export default function Footer() {
           <SiteLink href="/business" className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-[#1E1B18] text-[#FAF7F2] text-xs font-semibold uppercase tracking-widest">
             Get a quote
           </SiteLink>
+        </div>
+
+        <div className="pt-8">
+          <h2 className="text-xs font-mono uppercase tracking-widest mb-3">Occasions</h2>
+          <ul className="flex flex-wrap gap-x-5 text-sm text-[#6A6054]">
+            {SEASON_PAGES.map((page) => (
+              <li key={page.path}>
+                <SiteLink href={page.path} className="inline-flex items-center min-h-11 hover:text-[#1E1B18]">{page.navLabel}</SiteLink>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">

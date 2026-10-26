@@ -3,7 +3,7 @@
  * Message building stays pure so the link can be checked without a browser.
  */
 
-import { BUSINESS } from '../config/business';
+import { BUSINESS } from '../config/business.js';
 
 export const JOURNALY_WHATSAPP_NUMBER = BUSINESS.whatsappE164;
 
@@ -69,19 +69,24 @@ function quantityLabel(value) {
 }
 
 function composeQuoteMessage(form, notes) {
-  return [
-    'Institutional quote request - Journaly',
-    '',
-    `Name: ${cleanLine(form.name)}`,
-    `Company: ${cleanLine(form.company)}`,
-    `Email: ${cleanLine(form.email)}`,
-    `Phone: ${cleanLine(form.phone)}`,
-    `Quantity: ${quantityLabel(form.quantity)}`,
-    `Use case: ${cleanLine(form.useCase)}`,
-    `Branding: ${cleanLine(form.branding)}`,
-    `Deadline: ${cleanLine(form.deadline)}`,
-    `Notes: ${notes || 'None'}`
-  ].join('\n');
+  const lines = ['Quote request — Journaly', ''];
+  const add = (label, value) => {
+    const clean = cleanLine(value);
+    if (clean) lines.push(`${label}: ${clean}`);
+  };
+  add('Name', form.name);
+  add('Phone', form.phone);
+  add('Quantity', quantityLabel(form.quantity));
+  add('Company', form.company);
+  add('Email', form.email);
+  add('Use case', form.useCase);
+  add('Branding', form.branding);
+  add('Journal type', form.journalType);
+  add('Deadline', form.deadline);
+  if (form.sampleKit) lines.push('Sample kit: Requested');
+  add('Season', form.season);
+  lines.push(`Notes: ${notes || 'None'}`);
+  return lines.join('\n');
 }
 
 export function buildInstitutionalQuoteUrl(form) {
@@ -102,23 +107,37 @@ function invalid(field, message) {
   return { field, message };
 }
 
-export function validateInstitutionalQuote(form) {
+export function validateQuoteStep1(form) {
   if (!cleanLine(form.name)) return invalid('name', 'Enter your name.');
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanLine(form.email))) {
-    return invalid('email', 'Enter a valid work email.');
-  }
   const phoneDigits = cleanLine(form.phone).replace(/\D/g, '');
   if (phoneDigits.length < 8 || phoneDigits.length > 15) {
-    return invalid('phone', 'Enter a phone number we can reach you on.');
+    return invalid('phone', 'Enter a WhatsApp number we can reach you on.');
   }
-  if (!cleanLine(form.company)) return invalid('company', 'Enter your organization or company.');
   if (!QUANTITY_OPTIONS.some((option) => option.value === form.quantity)) {
-    return invalid('quantity', 'Choose an estimated quantity.');
+    return invalid('quantity', 'Choose an approximate quantity.');
   }
-  if (!USE_CASE_OPTIONS.includes(form.useCase)) return invalid('useCase', 'Choose a use case.');
-  if (!BRANDING_OPTIONS.includes(form.branding)) return invalid('branding', 'Choose a branding option.');
-  if (!DEADLINE_OPTIONS.includes(form.deadline)) return invalid('deadline', 'Choose a deadline.');
   return null;
+}
+
+export function validateQuoteStep2(form) {
+  const email = cleanLine(form.email);
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return invalid('email', 'Enter a valid work email, or leave it blank.');
+  }
+  if (form.useCase && !USE_CASE_OPTIONS.includes(form.useCase)) {
+    return invalid('useCase', 'Choose a use case, or leave it blank.');
+  }
+  if (form.branding && !BRANDING_OPTIONS.includes(form.branding)) {
+    return invalid('branding', 'Choose a branding option, or leave it blank.');
+  }
+  if (form.deadline && !DEADLINE_OPTIONS.includes(form.deadline)) {
+    return invalid('deadline', 'Choose a deadline, or leave it blank.');
+  }
+  return null;
+}
+
+export function validateInstitutionalQuote(form) {
+  return validateQuoteStep1(form) || validateQuoteStep2(form);
 }
 
 /**

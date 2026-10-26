@@ -18,6 +18,7 @@ import {
   updateOrderTracking, 
   isSupabaseConnected 
 } from '../utils/supabase';
+import QuoteLeadsPanel from '../components/admin/QuoteLeadsPanel';
 
 export default function AdminPortalPage() {
   const [orders, setOrders] = useState([]);
@@ -139,6 +140,8 @@ export default function AdminPortalPage() {
             </button>
           </div>
         </div>
+
+        <QuoteLeadsPanel />
 
         {/* Action Notice */}
         {actionNotice && (
