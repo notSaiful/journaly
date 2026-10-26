@@ -43,7 +43,12 @@ for (const routePath of paths) {
   const { appHtml, headHtml } = await renderRoute(routePath);
   const file = destination(routePath);
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.writeFileSync(file, apply(template, headHtml, appHtml));
+  const html = apply(template, headHtml, appHtml);
+  const headings = html.match(/<h1\b/gi) || [];
+  if (headings.length !== 1) {
+    throw new Error(`${routePath} has ${headings.length} h1 elements; expected 1`);
+  }
+  fs.writeFileSync(file, html);
   console.log('prerendered', routePath);
 }
 
