@@ -1,6 +1,7 @@
 import { BUSINESS, confirmedLegalEntity, parentBrandLink } from '../config/business';
 import { SEASON_PAGES } from '../config/seasons';
 import { B2B_FAQS, HOME_FAQS } from '../content/b2bFaq';
+import { GUIDES, GUIDE_PUBLISHED } from '../content/guides';
 
 const SITE = BUSINESS.siteUrl;
 
@@ -78,6 +79,16 @@ const STATIC_ROUTES = [
     crumbs: ['Contact']
   }),
   route({
+    path: '/guides',
+    title: 'Guides for Custom Corporate Journals in India | Journaly',
+    description: 'Buyer guides for custom journals in India: employee gifts, onboarding kits, Diwali gifts, and logo printing methods. Prices and lead times are confirmed in a quote.',
+    keywords: 'custom journals for businesses India, corporate gifting guides, employee welcome kit notebooks, Diwali corporate gifts, logo journals',
+    priority: '0.8',
+    changefreq: 'weekly',
+    crumbs: ['Guides'],
+    guideIndex: true
+  }),
+  route({
     path: '/faq',
     title: 'Custom Journal FAQ for Businesses | Journaly',
     description: 'Answers on pricing, minimums, lead times, logo branding, inside pages, and India-wide delivery for custom Journaly journals. Unpublished facts are called out.',
@@ -142,6 +153,22 @@ const STATIC_ROUTES = [
     crumbs: ['Page not found']
   })
 ];
+
+STATIC_ROUTES.push(...GUIDES.map((guide) => route({
+  path: guide.path,
+  title: guide.title,
+  description: guide.description,
+  keywords: guide.keywords,
+  priority: '0.7',
+  changefreq: 'monthly',
+  crumbs: ['Guides', guide.crumb],
+  faqs: guide.faqs,
+  article: {
+    headline: guide.h1,
+    datePublished: GUIDE_PUBLISHED,
+    dateModified: GUIDE_PUBLISHED
+  }
+})));
 
 STATIC_ROUTES.push(...SEASON_PAGES.map((page) => route({
   path: page.path,
@@ -214,6 +241,7 @@ function breadcrumbNode(meta) {
       name
     };
     if (isLast) entry.item = abs(meta.path === '/' ? '/' : meta.path);
+    else if (name === 'Guides') entry.item = `${SITE}/guides`;
     items.push(entry);
   });
   if (crumbs.length === 0) return null;
@@ -230,6 +258,45 @@ function serviceNode() {
     areaServed: { '@type': 'Country', name: 'India' },
     description: 'Custom journals and notebooks for corporate gifting, employee onboarding, events, and bulk orders across India. Quantity, deadline, branding, and price are confirmed in a quote.',
     url: `${SITE}/`
+  };
+}
+
+function articleNode(meta) {
+  return {
+    '@type': 'Article',
+    '@id': `${abs(meta.path)}#article`,
+    headline: meta.article.headline,
+    description: meta.description,
+    datePublished: meta.article.datePublished,
+    dateModified: meta.article.dateModified,
+    author: {
+      '@type': 'Organization',
+      name: BUSINESS.brandName,
+      url: `${SITE}/`
+    },
+    publisher: { '@id': `${SITE}/#organization` },
+    mainEntityOfPage: abs(meta.path),
+    image: abs(meta.image),
+    inLanguage: 'en-IN'
+  };
+}
+
+function guideIndexNode() {
+  return {
+    '@type': 'CollectionPage',
+    '@id': `${SITE}/guides#collection`,
+    name: 'Guides for buying custom journals in India',
+    url: `${SITE}/guides`,
+    isPartOf: { '@id': `${SITE}/#website` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: GUIDES.map((guide, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: guide.h1,
+        url: abs(guide.path)
+      }))
+    }
   };
 }
 
@@ -262,8 +329,10 @@ export function buildJsonLd(meta) {
     graph.push({ ...serviceNode(), url: abs(meta.path) });
   }
   if (meta.path === '/faq') graph.push(faqNode(B2B_FAQS));
+  if (meta.guideIndex) graph.push(guideIndexNode());
+  if (meta.article) graph.push(articleNode(meta));
   if (meta.faqs?.length) {
-    graph.push({ ...serviceNode(), url: abs(meta.path) });
+    if (!meta.article) graph.push({ ...serviceNode(), url: abs(meta.path) });
     graph.push(faqNode(meta.faqs));
   }
   const crumbs = breadcrumbNode(meta);
@@ -292,7 +361,7 @@ export function buildHeadTags(pathname) {
     `<link rel="canonical" href="${escapeAttr(canonical)}" />`,
     `<meta name="robots" content="${escapeAttr(meta.robots)}" />`,
     `<meta name="theme-color" content="#FAF7F2" />`,
-    `<meta property="og:type" content="website" />`,
+    `<meta property="og:type" content="${meta.article ? 'article' : 'website'}" />`,
     `<meta property="og:site_name" content="${escapeAttr(BUSINESS.brandName)}" />`,
     `<meta property="og:locale" content="en_IN" />`,
     `<meta property="og:url" content="${escapeAttr(url)}" />`,
@@ -308,6 +377,15 @@ export function buildHeadTags(pathname) {
     `<link rel="alternate" type="text/plain" href="${SITE}/llms.txt" title="LLM context for Journaly" />`,
     `<script type="application/ld+json" id="route-schema">${json}</script>`
   ];
+  if (meta.article) {
+    lines.splice(
+      lines.length - 1,
+      0,
+      `<meta property="article:published_time" content="${escapeAttr(meta.article.datePublished)}" />`,
+      `<meta property="article:modified_time" content="${escapeAttr(meta.article.dateModified)}" />`,
+      `<meta property="article:author" content="${escapeAttr(BUSINESS.brandName)}" />`
+    );
+  }
   if (meta.preload) {
     lines.splice(5, 0, `<link rel="preload" as="image" href="${escapeAttr(meta.preload)}" fetchpriority="high" />`);
   }

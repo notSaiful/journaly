@@ -56,6 +56,7 @@ export default function Footer() {
               <li><SiteLink href="/customization" className="hover:text-[#1E1B18]">Customization</SiteLink></li>
               <li><SiteLink href="/business" className="hover:text-[#1E1B18]">Request a quote</SiteLink></li>
               <li><SiteLink href="/faq" className="hover:text-[#1E1B18]">FAQ</SiteLink></li>
+              <li><SiteLink href="/guides" className="hover:text-[#1E1B18]">Guides</SiteLink></li>
             </ul>
           </div>
 

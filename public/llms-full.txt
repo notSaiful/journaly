@@ -39,6 +39,11 @@ Submitting the quote form opens WhatsApp. Nothing is delivered until Send is pre
 - https://journaly.in/about
 - https://journaly.in/faq
 - https://journaly.in/contact
+- https://journaly.in/guides
+- https://journaly.in/guides/custom-corporate-journals-for-employee-gifting
+- https://journaly.in/guides/employee-onboarding-kit-ideas
+- https://journaly.in/guides/diwali-corporate-gift-ideas
+- https://journaly.in/guides/logo-printing-for-journals
 - https://journaly.in/diwali-corporate-gifts
 - https://journaly.in/new-year-corporate-diaries
 - https://journaly.in/holi-corporate-gifts
@@ -50,4 +55,4 @@ Submitting the quote form opens WhatsApp. Nothing is delivered until Send is pre
 
 ## Structured data
 
-Public pages include Organization, Service, FAQPage, and BreadcrumbList JSON-LD where relevant. Product and Offer schema are not published. Aggregate ratings are not published.
+Public pages include Organization, Service, FAQPage, and BreadcrumbList JSON-LD where relevant. Guide articles also include Article JSON-LD, with author Journaly and date published 2026-10-26. Product and Offer schema are not published. Aggregate ratings are not published.
